@@ -88,7 +88,6 @@ fprintf('Phase Crossover Frequency = %e\n', Wgm)
 fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
 
 figure(2)
-subplot(2, 1, 1)
 margin(G_VS)
 
 %% CURRENT SOURCE MODEL
@@ -131,7 +130,6 @@ fprintf('Phase Crossover Frequency = %e\n', Wgm)
 fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
 
 figure(1)
-subplot(2, 1, 1)
 margin(G_CS)
 
 %% COMPENSATOR DESIGN
