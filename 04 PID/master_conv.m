@@ -3,6 +3,18 @@ warning off;
 close all;
 clear all;
 clc;
+
+%% Handling Path for Dependencies
+
+mydir  = pwd;
+if ispc
+    idcs   = strfind(mydir,'\');
+else
+    idcs   = strfind(mydir,'/');
+end
+newdir = strcat(mydir(1:idcs(end)-1), '\Dependencies');
+addpath(newdir, '-end');
+
 %% MASTER DEFINE TIME PERIODS
 T_mach = 180e-6;  % Machining time period
 f_mach = 1 / T_mach;
