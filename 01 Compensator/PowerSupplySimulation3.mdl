@@ -1,0 +1,4123 @@
+Model {
+  Name			  "PowerSupplySimulation3"
+  Version		  8.6
+  MdlSubVersion		  0
+  SavedCharacterEncoding  "windows-1252"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    0
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.35"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  slprops.hdlmdlprops {
+    $PropName		    "HDLParams"
+    $ObjectID		    1
+    Array {
+      Type		      "Cell"
+      Dimension		      2
+      Cell		      "HDLSubsystem"
+      Cell		      "PowerSupplySimulation3"
+      PropName		      "mdlProps"
+    }
+  }
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    2
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      3
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [-4.0, 0.0, 1928.0, 1044.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1878.0, 869.0]
+	ZoomFactor		[0.6]
+	Offset			[-506.54268245583535, -201.25809980812664]
+      }
+    }
+  }
+  PhysicalModelingChecksum "1466007351"
+  PhysicalModelingParameterChecksum "3439876689"
+  PhysicalModelingProducts "Power_System_Blocks"
+  Created		  "Wed Jun 14 10:52:36 2017"
+  Creator		  "Akshay"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "Akshay"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sat Aug 12 21:14:14 2017"
+  RTWModifiedTimeStamp	  422546509
+  ModelVersionFormat	  "1.%<AutoIncrement:35>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "disabled"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    7
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "PowerSupplySimulation3"
+    overrideMode_	    [0U]
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "PowerSupplySimulation3"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      []
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      8
+      Version		      "1.15.1"
+      Array {
+	Type			"Handle"
+	Dimension		11
+	Simulink.SolverCC {
+	  $ObjectID		  9
+	  Version		  "1.15.1"
+	  StartTime		  "0.0"
+	  StopTime		  "360e-6"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "VariableStepAuto"
+	  SolverName		  "VariableStepAuto"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Adaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  10
+	  Version		  "1.15.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Dataset"
+	  SignalLoggingSaveFormat "Dataset"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  11
+	  Version		  "1.15.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  128
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  12
+	  Version		  "1.15.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "none"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "EnableAllAsError"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "none"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  IntegerSaturationMsg	  "warning"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  13
+	  Version		  "1.15.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  64
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
+	  ProdWordSize		  64
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  14
+	  Version		  "1.15.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  15
+	  Version		  "1.15.1"
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  16
+	  Version		  "1.15.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    13
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateMissedCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      17
+	      Version		      "1.15.1"
+	      Array {
+		Type			"Cell"
+		Dimension		24
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"ParameterTuningSideEffectCode"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      18
+	      Version		      "1.15.1"
+	      Array {
+		Type			"Cell"
+		Dimension		12
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"GenerateAllocFcn"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Use local settings"
+	      CombineOutputUpdateFcns on
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      off
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  19
+	  Version		  "1.15.1"
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovMetricSettings	  "dw"
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "off"
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  20
+	  Version		  "1.15.1"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    " "
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
+	SSC.SimscapeCC {
+	  $ObjectID		  21
+	  Version		  "1.0"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Name"
+	    PropName		    "DisabledProps"
+	  }
+	  Name			  "Simscape"
+	  EditingMode		  "Full"
+	  ExplicitSolverDiagnosticOptions "warning"
+	  GlobalZcOffDiagnosticOptions "warning"
+	  SimscapeLogType	  "none"
+	  SimscapeLogSimulationStatistics off
+	  SimscapeLogOpenViewer	  off
+	  SimscapeLogName	  "simlog"
+	  SimscapeLogDecimation	  1
+	  SimscapeLogLimitData	  on
+	  SimscapeLogDataHistory  5000
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 220, 77, 1146, 628 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    8
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    22
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      From
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Goto
+      GotoTag		      "A"
+      IconDisplay	      "Tag"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ManualSwitch
+      CurrentSetting	      "1"
+      varsize		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimitSource	      "Dialog"
+      UpperLimit	      "0.5"
+      LowerLimitSource	      "Dialog"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      GeneratePreprocessorConditionals off
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
+  }
+  System {
+    Name		    "PowerSupplySimulation3"
+    Location		    [-4, 0, 1924, 1044]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "60"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "154"
+    Block {
+      BlockType		      Scope
+      Name		      " "
+      SID		      "148"
+      Ports		      [1]
+      Position		      [210, 234, 245, 286]
+      ZOrder		      7560
+      ForegroundColor	      "green"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1','DataLoggingSaveFormat"
+      "','Array','DataLoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domai"
+      "n',true,'SerializedDisplays',{struct('MinYLimReal','-4.24532','MaxYLimReal','38.20784','YLabelReal','','MinYLimM"
+      "ag','0.00000','MaxYLimMag','38.20784','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Ax"
+      "esColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.850980392156863 0"
+      ".325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0.18"
+      "4313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098"
+      "039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','','LinePropertiesCa"
+      "che',{{struct('Color',[0.870588235294118 0.490196078431373 0],'LineStyle','-','LineWidth',2,'Marker','none','Vis"
+      "ible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'CurrentSrcInducatorCurrent'}},'ShowCont"
+      "ent',true,'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-4.24532','MaxYLimReal','38.20784','YL"
+      "abelReal','','MinYLimMag','0.00000','MaxYLimMag','38.20784','LegendVisibility','On','XGrid',true,'YGrid',true,'P"
+      "lotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0.0745098039215686 0.62352941176470"
+      "6 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686"
+      "2745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+      "le','')),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'"
+      "Version','2015b')),'Version','2015b','Position',[1 45 1920 969])"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      " 1"
+      SID		      "149"
+      Ports		      [1]
+      Position		      [985, 504, 1020, 556]
+      ZOrder		      7561
+      ForegroundColor	      "blue"
+      ShowName		      off
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2','DataLoggingSaveFormat"
+      "','Array','DataLoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domai"
+      "n',true,'SerializedDisplays',{struct('MinYLimReal','-12.65497','MaxYLimReal','104.89053','YLabelReal','','MinYLi"
+      "mMag','0.00000','MaxYLimMag','104.89053','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,"
+      "'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.85098039215686"
+      "3 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0"
+      ".184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745"
+      "098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','','LinePropertie"
+      "sCache',{{struct('Color',[0.870588235294118 0.490196078431373 0],'LineStyle','-','LineWidth',2,'Marker','none','"
+      "Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Output Voltage'}},'ShowContent',true"
+      ",'Placement',1)},'DisplayPropertyDefaults',struct('MinYLimReal','-12.65497','MaxYLimReal','104.89053','YLabelRea"
+      "l','','MinYLimMag','0.00000','MaxYLimMag','104.89053','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMag"
+      "Phase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 "
+      "0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686274509"
+      "8 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title',''"
+      ")),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'Versio"
+      "n','2015b')),'Version','2015b','Position',[1 40 1920 969])"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 1"
+      SID		      "1"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [885, 371, 950, 409]
+      ZOrder		      7442
+      ForegroundColor	      "blue"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "R"
+      Resistance	      "rl2_val"
+      Inductance	      "5e-6"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "0.3e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 2"
+      SID		      "2"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [811, 565, 849, 640]
+      ZOrder		      7440
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "C"
+      Resistance	      "1"
+      Inductance	      "1e-3"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "c2_val"
+      Setx0		      off
+      InitialVoltage	      "50"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 3"
+      SID		      "3"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [1005, 371, 1070, 409]
+      ZOrder		      7439
+      ForegroundColor	      "blue"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "L"
+      Resistance	      "50"
+      Inductance	      "l2_val"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "0.3e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 4"
+      SID		      "4"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [811, 430, 849, 505]
+      ZOrder		      7443
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "R"
+      Resistance	      "rc2_val"
+      Inductance	      "1e-3"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "0.1e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 5"
+      SID		      "22"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [-65, 366, 0, 404]
+      ZOrder		      7460
+      ForegroundColor	      "green"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "R"
+      Resistance	      "rl1_val"
+      Inductance	      "5e-6"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "0.3e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 6"
+      SID		      "23"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [35, 366, 100, 404]
+      ZOrder		      7459
+      ForegroundColor	      "green"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "L"
+      Resistance	      "50"
+      Inductance	      "l1_val"
+      SetiL0		      off
+      InitialCurrent	      "100"
+      Capacitance	      "0.3e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 7"
+      SID		      "24"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [351, 500, 389, 575]
+      ZOrder		      7461
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "R"
+      Resistance	      "r_val"
+      Inductance	      "1e-3"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "0.1e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      " RLC 8"
+      SID		      "150"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [396, 500, 434, 575]
+      ZOrder		      7563
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Elements/Parallel RLC Branch"
+      SourceType	      "Parallel RLC Branch"
+      LConnTagsString	      "a"
+      RConnTagsString	      "__new0"
+      BranchType	      "L"
+      Resistance	      "r_val"
+      Inductance	      "15e-6"
+      SetiL0		      off
+      InitialCurrent	      "0"
+      Capacitance	      "0.1e-6"
+      Setx0		      off
+      InitialVoltage	      "0"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement1"
+      SID		      "42"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [363, 430, 387, 455]
+      ZOrder		      7477
+      BlockRotation	      90
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"LoadCurrent"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement2"
+      SID		      "108"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [-152, 215, -128, 240]
+      ZOrder		      7524
+      BlockRotation	      90
+      ForegroundColor	      "green"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement3"
+      SID		      "113"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [248, 455, 272, 480]
+      ZOrder		      7529
+      BlockRotation	      90
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement4"
+      SID		      "117"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [1098, 590, 1122, 615]
+      ZOrder		      7533
+      BlockRotation	      90
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement5"
+      SID		      "121"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [1123, 230, 1147, 255]
+      ZOrder		      7537
+      BlockRotation	      90
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current\nMeasurement6"
+      SID		      "151"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [745, 378, 770, 402]
+      ZOrder		      7570
+      ForegroundColor	      "red"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"DiodeCurrent"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Current Controller"
+      SID		      "87"
+      Ports		      [2, 1]
+      Position		      [-25, 760, 15, 820]
+      ZOrder		      -62
+      ForegroundColor	      "green"
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Current Controller"
+	Location		[-4, -4, 1924, 1040]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Inductor Current"
+	  SID			  "88"
+	  Position		  [850, 33, 880, 47]
+	  ZOrder		  7520
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  SID			  "89"
+	  Position		  [175, 88, 205, 102]
+	  ZOrder		  7521
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Compensator\nOutput1"
+	  SID			  "140"
+	  Ports			  [1]
+	  Position		  [345, 115, 380, 165]
+	  ZOrder		  7523
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),extmgr."
+	  "Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals'"
+	  ",'Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-20.76831','MaxYLimReal','186.91479','YLabelReal','"
+	  "','MinYLimMag','0.00000','MaxYLimMag','186.91479','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',"
+	  "false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.85098039215"
+	  "6863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0"
+	  ".184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098"
+	  "039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>','LineP"
+	  "ropertiesCache',{{struct('Color',[0 0 1],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Colo"
+	  "r',[0.850980392156863 0.325490196078431 0.0980392156862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible'"
+	  ",'on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Manual Switch1'}},'ShowContent',true,'Placement"
+	  "',1)},'ShowTimeAxisLabel',true,'DisplayPropertyDefaults',struct('MinYLimReal','-20.76831','MaxYLimReal','186.91479'"
+	  ",'YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','186.91479','LegendVisibility','On','XGrid',true,'YGrid',true,"
+	  "'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.74117647058823"
+	  "5;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.49"
+	  "4117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784"
+	  "313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<Signa"
+	  "lLabel>'),'MaximizeAxes','Auto','DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true,'Once"
+	  "AtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015b')),'Versi"
+	  "on','2015b','Position',[1 1 1920 925],'WindowStyle','docked')"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Duty\nRatio1"
+	  SID			  "60"
+	  Ports			  [1]
+	  Position		  [230, 115, 265, 165]
+	  ZOrder		  7489
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),extmgr."
+	  "Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals'"
+	  ",'Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','','MinY"
+	  "LimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
+	  "Color',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.850980392156863 0.3254"
+	  "90196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0.1843137254"
+	  "90196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098039215686 0"
+	  ".933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>','LinePropertiesCa"
+	  "che',{{struct('Color',[0 0 1],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.85098"
+	  "0392156863 0.325490196078431 0.0980392156862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on')}},'U"
+	  "serDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Duty Ratio1'}},'ShowContent',true,'Placement',1)},'ShowTim"
+	  "eAxisLabel',true,'DisplayPropertyDefaults',struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','','Min"
+	  "YLimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
+	  "sColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.850980392156863 0.325"
+	  "490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0.184313725"
+	  "490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098039215686 "
+	  "0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>'),'MaximizeAxes',"
+	  "'Auto','DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAu"
+	  "toscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[1"
+	  " 1 1920 946],'WindowStyle','docked')"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  SID			  "30"
+	  Position		  [585, 125, 615, 155]
+	  ZOrder		  7473
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Commented		  "on"
+	  Gain			  "Ac"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Lead-Lag\nCompensator2"
+	  SID			  "31"
+	  Position		  [570, 22, 630, 58]
+	  ZOrder		  7470
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Numerator		  "num_c1{1,1}"
+	  Denominator		  "den_c1{1,1}"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  "47"
+	  Ports			  [2, 1]
+	  Position		  [115, 31, 145, 64]
+	  ZOrder		  7504
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  ManualSwitch
+	  Name			  "Manual Switch1"
+	  SID			  "84"
+	  Position		  [450, 77, 480, 113]
+	  ZOrder		  7517
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  ManualSwitch
+	  Name			  "Manual Switch2"
+	  SID			  "86"
+	  Position		  [780, 137, 810, 173]
+	  ZOrder		  7519
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PWM Generator\n(DC-DC)1"
+	  SID			  "34"
+	  Ports			  [1, 1]
+	  Position		  [225, 21, 275, 59]
+	  ZOrder		  7468
+	  BlockRotation		  180
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.81"
+	  SourceBlock		  "powerlib_meascontrol/Pulse & Signal\nGenerators/PWM Generator\n(DC-DC)"
+	  SourceType		  "PWM Generator (DC-DC)"
+	  ContentPreviewEnabled	  off
+	  Fsw			  "1e6"
+	  Ts			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PWM Signal1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Reference\nCurrent1"
+	  SID			  "35"
+	  Position		  [850, 105, 880, 135]
+	  ZOrder		  7466
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Value			  "30"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "Reference\nVoltage3"
+	  SID			  "36"
+	  Ports			  [0, 1]
+	  Position		  [850, 174, 880, 206]
+	  ZOrder		  7469
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  Commented		  "on"
+	  PulseType		  "Time based"
+	  Amplitude		  "70"
+	  Period		  "180e-6"
+	  PulseWidth		  "6"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  SID			  "37"
+	  Ports			  [1, 1]
+	  Position		  [345, 25, 375, 55]
+	  ZOrder		  7467
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	  ZeroCross		  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Duty Ratio1"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "38"
+	  Ports			  [2, 1]
+	  Position		  [725, 30, 745, 50]
+	  ZOrder		  7465
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Duty1"
+	  SID			  "90"
+	  Position		  [30, 43, 60, 57]
+	  ZOrder		  7522
+	  BlockMirror		  on
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  307
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  Points		  [-5, 0; 0, -40]
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  308
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "Duty1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  33
+	  SrcBlock		  "Lead-Lag\nCompensator2"
+	  SrcPort		  1
+	  Points		  [-37, 0; 0, 45]
+	  DstBlock		  "Manual Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Duty Ratio1"
+	  ZOrder		  28
+	  Labels		  [1, 1]
+	  SrcBlock		  "Saturation1"
+	  SrcPort		  1
+	  Points		  [-42, 0]
+	  Branch {
+	    ZOrder		    158
+	    Points		    [0, 100]
+	    DstBlock		    "Duty\nRatio1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    26
+	    DstBlock		    "PWM Generator\n(DC-DC)1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  306
+	  SrcBlock		  "Inductor Current"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "PWM Signal1"
+	  ZOrder		  198
+	  Labels		  [1, 1]
+	  SrcBlock		  "PWM Generator\n(DC-DC)1"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  305
+	  SrcBlock		  "Manual Switch2"
+	  SrcPort		  1
+	  Points		  [-40, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  304
+	  SrcBlock		  "Reference\nVoltage3"
+	  SrcPort		  1
+	  Points		  [-18, 0; 0, -25]
+	  DstBlock		  "Manual Switch2"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  297
+	  SrcBlock		  "Manual Switch1"
+	  SrcPort		  1
+	  Points		  [-21, 0]
+	  Branch {
+	    ZOrder		    325
+	    Points		    [0, 45]
+	    DstBlock		    "Compensator\nOutput1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    298
+	    Points		    [0, -55]
+	    DstBlock		    "Saturation1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  300
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  Points		  [-30, 0]
+	  Branch {
+	    ZOrder		    302
+	    Points		    [0, 100]
+	    DstBlock		    "Gain"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    301
+	    DstBlock		    "Lead-Lag\nCompensator2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  303
+	  SrcBlock		  "Reference\nCurrent1"
+	  SrcPort		  1
+	  Points		  [-9, 0; 0, 25]
+	  DstBlock		  "Manual Switch2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  292
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [-50, 0; 0, -35]
+	  DstBlock		  "Manual Switch1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current Measurement"
+      SID		      "26"
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [145, 373, 170, 397]
+      ZOrder		      7464
+      ForegroundColor	      "green"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"CurrentSrcInducatorCurrent"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DC Voltage Source1"
+      SID		      "27"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [-345, 450, -325, 485]
+      ZOrder		      7458
+      BlockRotation	      270
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Electrical\nSources/DC Voltage Source"
+      SourceType	      "DC Voltage Source"
+      ContentPreviewEnabled   off
+      Amplitude		      "Vd_val"
+      Measurements	      "Voltage"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Diode"
+      SID		      "28"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [-177, 500, -133, 560]
+      ZOrder		      7463
+      BlockRotation	      270
+      ForegroundColor	      "green"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Diode"
+      SourceType	      "Diode"
+      ContentPreviewEnabled   off
+      Ron		      "0.001 "
+      Lon		      "0"
+      Vf		      "0.8"
+      IC		      "0"
+      UseSnubber	      off
+      Rs		      "500"
+      Cs		      "250e-9"
+      Measurements	      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Diode VI"
+      SID		      "152"
+      Ports		      [2]
+      Position		      [800, 287, 835, 338]
+      ZOrder		      7571
+      ForegroundColor	      "red"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData3'),extmgr.Configuration("
+      "'Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-103.67753','MaxYLimReal','12.51815','Y"
+      "LabelReal','','MinYLimMag',' 0.00000','MaxYLimMag','103.67753','LegendVisibility','On','XGrid',true,'YGrid',true"
+      ",'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.7411764705"
+      "88235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.1254901960784"
+      "31;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0"
+      ".301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Ti"
+      "tle','','LinePropertiesCache',{{struct('Color',[0 0.447058823529412 0.741176470588235],'LineStyle','-','LineWidt"
+      "h',2,'Marker','none','Visible','on'),struct('Color',[0.850980392156863 0.325490196078431 0.0980392156862745],'Li"
+      "neStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.929411764705882 0.694117647058824"
+      " 0.125490196078431],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.4941176470"
+      "58824 0.184313725490196 0.556862745098039],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struc"
+      "t('Color',[0.466666666666667 0.674509803921569 0.188235294117647],'LineStyle','-','LineWidth',0.5,'Marker','none"
+      "','Visible','on'),struct('Color',[0.301960784313725 0.745098039215686 0.933333333333333],'LineStyle','-','LineWi"
+      "dth',0.5,'Marker','none','Visible','on'),struct('Color',[0.635294117647059 0.0784313725490196 0.184313725490196]"
+      ",'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'"
+      "LineNames',{{'Diode Voltage'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-12.52959','MaxYLimReal',"
+      "'110.92835','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','83.92712','LegendVisibility','On','XGrid',true,"
+      "'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0.870588235294118 0."
+      "490196078431373 0;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 "
+      "0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039"
+      "215686 0.650980392156863],'Title','','LinePropertiesCache',{{struct('Color',[0.870588235294118 0.490196078431373"
+      " 0],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.0745098039215686 0.623529411"
+      "764706 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[1 0.411764705882353 0."
+      "16078431372549],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.39215686274509"
+      "8 0.831372549019608 0.0745098039215686],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('"
+      "Color',[0.717647058823529 0.274509803921569 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),s"
+      "truct('Color',[0.0588235294117647 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('C"
+      "olor',[1 0.0745098039215686 0.650980392156863],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}}"
+      ",'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'DiodeCurrent'}},'ShowContent',true,'Placement',2)},'"
+      "DisplayPropertyDefaults',struct('YLabelReal','','ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4117647"
+      "05882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83137"
+      "2549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'DisplayLayoutDime"
+      "nsions',[2 1]),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY'),extmgr.Configuratio"
+      "n('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[1 40 1920 969])"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Diode1"
+      SID		      "153"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [640, 368, 700, 412]
+      ZOrder		      7568
+      ForegroundColor	      "red"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Diode"
+      SourceType	      "Diode"
+      ContentPreviewEnabled   off
+      Ron		      "0.001 "
+      Lon		      "0"
+      Vf		      "0.8"
+      IC		      "0"
+      UseSnubber	      off
+      Rs		      "500"
+      Cs		      "250e-9"
+      Measurements	      off
+    }
+    Block {
+      BlockType		      From
+      Name		      "From"
+      SID		      "63"
+      Position		      [175, 501, 215, 529]
+      ZOrder		      7492
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "IgnitionControl"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From1"
+      SID		      "65"
+      Position		      [-120, 811, -80, 839]
+      ZOrder		      7505
+      ForegroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "Master"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From10"
+      SID		      "126"
+      Position		      [1335, 451, 1375, 479]
+      ZOrder		      7542
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW2Voltage"
+      Port {
+	PortNumber		1
+	Name			"SW2Voltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From11"
+      SID		      "127"
+      Position		      [1335, 516, 1375, 544]
+      ZOrder		      7543
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW2Current"
+      Port {
+	PortNumber		1
+	Name			"SW2Current"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From12"
+      SID		      "128"
+      Position		      [1335, 601, 1375, 629]
+      ZOrder		      7544
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW3Voltage"
+      Port {
+	PortNumber		1
+	Name			"SW3Voltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From13"
+      SID		      "129"
+      Position		      [1335, 661, 1375, 689]
+      ZOrder		      7545
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW3Current"
+      Port {
+	PortNumber		1
+	Name			"SW3Current"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From14"
+      SID		      "134"
+      Position		      [1335, 811, 1375, 839]
+      ZOrder		      7550
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "SW4Current"
+      Port {
+	PortNumber		1
+	Name			"SW4Current"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From15"
+      SID		      "135"
+      Position		      [1335, 741, 1375, 769]
+      ZOrder		      7551
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "SW4Voltage"
+      Port {
+	PortNumber		1
+	Name			"SW4Voltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From16"
+      SID		      "137"
+      Position		      [1335, 351, 1375, 379]
+      ZOrder		      7553
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "SW1Current"
+      Port {
+	PortNumber		1
+	Name			"SW1Current"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From17"
+      SID		      "138"
+      Position		      [1335, 296, 1375, 324]
+      ZOrder		      7554
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "SW1Voltage"
+      Port {
+	PortNumber		1
+	Name			"SW1Voltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From2"
+      SID		      "66"
+      Position		      [875, 811, 915, 839]
+      ZOrder		      7495
+      ForegroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "Master"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From3"
+      SID		      "69"
+      Position		      [1335, 161, 1375, 189]
+      ZOrder		      7498
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "LoadVoltage"
+      Port {
+	PortNumber		1
+	Name			"LoadVoltage"
+	PropagatedSignals	"Load\nVoltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From4"
+      SID		      "70"
+      Position		      [1335, 216, 1375, 244]
+      ZOrder		      7499
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "LoadCurrent"
+      Port {
+	PortNumber		1
+	Name			"LoadCurrent"
+	PropagatedSignals	"LoadCurrent"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      From
+      Name		      "From5"
+      SID		      "72"
+      Position		      [-120, 741, -80, 769]
+      ZOrder		      7501
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "CurrentSourceOutput"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From6"
+      SID		      "74"
+      Position		      [-230, 261, -190, 289]
+      ZOrder		      7503
+      ForegroundColor	      "green"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "SwitchingSignal1"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From7"
+      SID		      "76"
+      Position		      [910, 266, 950, 294]
+      ZOrder		      7507
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "SwitchingSignal2"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From8"
+      SID		      "80"
+      Position		      [875, 741, 915, 769]
+      ZOrder		      7511
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "VoltageSourceOutput"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From9"
+      SID		      "82"
+      Position		      [290, 586, 330, 614]
+      ZOrder		      7513
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "LoadSwitchingSignal"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto"
+      SID		      "62"
+      Position		      [-425, 245, -385, 275]
+      ZOrder		      7491
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "IgnitionControl"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto1"
+      SID		      "64"
+      Position		      [-425, 455, -385, 485]
+      ZOrder		      7493
+      ForegroundColor	      "orange"
+      ShowName		      off
+      GotoTag		      "Master"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto10"
+      SID		      "111"
+      Position		      [-40, 305, 0, 335]
+      ZOrder		      7528
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "SW1Voltage"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto11"
+      SID		      "114"
+      Position		      [290, 490, 330, 520]
+      ZOrder		      7530
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "SW4Current"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto12"
+      SID		      "115"
+      Position		      [45, 515, 85, 545]
+      ZOrder		      7532
+      BlockMirror	      on
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      GotoTag		      "SW4Voltage"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto13"
+      SID		      "118"
+      Position		      [1265, 645, 1305, 675]
+      ZOrder		      7534
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW3Current"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto14"
+      SID		      "119"
+      Position		      [1265, 590, 1305, 620]
+      ZOrder		      7536
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW3Voltage"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto15"
+      SID		      "122"
+      Position		      [1265, 265, 1305, 295]
+      ZOrder		      7538
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW2Current"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto16"
+      SID		      "123"
+      Position		      [1265, 195, 1305, 225]
+      ZOrder		      7540
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SW2Voltage"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto2"
+      SID		      "67"
+      Position		      [670, 540, 710, 570]
+      ZOrder		      7496
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "LoadVoltage"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto3"
+      SID		      "68"
+      Position		      [670, 455, 710, 485]
+      ZOrder		      7497
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "LoadCurrent"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto4"
+      SID		      "71"
+      Position		      [205, 325, 245, 355]
+      ZOrder		      7500
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "CurrentSourceOutput"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto5"
+      SID		      "73"
+      Position		      [50, 775, 90, 805]
+      ZOrder		      7502
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "SwitchingSignal1"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto6"
+      SID		      "75"
+      Position		      [1040, 775, 1080, 805]
+      ZOrder		      7506
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "SwitchingSignal2"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto7"
+      SID		      "79"
+      Position		      [980, 590, 1020, 620]
+      ZOrder		      7510
+      ForegroundColor	      "blue"
+      ShowName		      off
+      GotoTag		      "VoltageSourceOutput"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto8"
+      SID		      "81"
+      Position		      [-425, 335, -385, 365]
+      ZOrder		      7515
+      ForegroundColor	      "red"
+      ShowName		      off
+      GotoTag		      "LoadSwitchingSignal"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto9"
+      SID		      "110"
+      Position		      [-40, 245, 0, 275]
+      ZOrder		      7526
+      ForegroundColor	      "green"
+      ShowName		      off
+      GotoTag		      "SW1Current"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Ignition\nControl\nSignal"
+      SID		      "52"
+      Ports		      [0, 1]
+      Position		      [-535, 244, -505, 276]
+      ZOrder		      7487
+      ForegroundColor	      "red"
+      PulseType		      "Time based"
+      Period		      "180e-6"
+      PulseWidth	      "94"
+      PhaseDelay	      "6*1.8e-6"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Load\nSwitching\nSignal"
+      SID		      "41"
+      Ports		      [0, 1]
+      Position		      [-535, 334, -505, 366]
+      ZOrder		      7514
+      ForegroundColor	      "red"
+      PulseType		      "Time based"
+      Period		      "180e-6"
+      PulseWidth	      "5"
+      PhaseDelay	      "1.8e-6"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Load\nVoltage,\nCurrent"
+      SID		      "45"
+      Ports		      [2]
+      Position		      [1475, 177, 1510, 228]
+      ZOrder		      7480
+      ForegroundColor	      "red"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData7'),extmgr.Configuration("
+      "'Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-11.66746','MaxYLimReal','105.00718','Y"
+      "LabelReal','Volts','MinYLimMag','0.00000','MaxYLimMag','105.00718','LegendVisibility','On','XGrid',true,'YGrid',"
+      "true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176"
+      "470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196"
+      "078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.1882352941176"
+      "47;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196]"
+      ",'Title','','LinePropertiesCache',{{struct('Color',[0 0.447058823529412 0.741176470588235],'LineStyle','-','Line"
+      "Width',2,'Marker','none','Visible','on'),struct('Color',[0.850980392156863 0.325490196078431 0.0980392156862745]"
+      ",'LineStyle','-','LineWidth',1,'Marker','none','Visible','on'),struct('Color',[0.929411764705882 0.6941176470588"
+      "24 0.125490196078431],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.49411764"
+      "7058824 0.184313725490196 0.556862745098039],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
+      "uct('Color',[0.466666666666667 0.674509803921569 0.188235294117647],'LineStyle','-','LineWidth',0.5,'Marker','no"
+      "ne','Visible','on'),struct('Color',[0.301960784313725 0.745098039215686 0.933333333333333],'LineStyle','-','Line"
+      "Width',0.5,'Marker','none','Visible','on'),struct('Color',[0.635294117647059 0.0784313725490196 0.18431372549019"
+      "6],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1"
+      ",'LineNames',{{'LoadVoltage'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-4.14661','MaxYLimReal','"
+      "37.31948','YLabelReal','Amperes','MinYLimMag','0.00000','MaxYLimMag','37.31948','LegendVisibility','On','XGrid',"
+      "true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.44705882352"
+      "9412 0.741176470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.69411764705882"
+      "4 0.125490196078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0."
+      "188235294117647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184"
+      "313725490196],'Title','','LinePropertiesCache',{{struct('Color',[0.850980392156863 0.325490196078431 0.098039215"
+      "6862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLine"
+      "s',1,'LineNames',{{'LoadCurrent'}},'ShowContent',true,'Placement',2)},'ShowTimeAxisLabel',true,'DisplayPropertyD"
+      "efaults',struct('AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;"
+      "0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.4"
+      "94117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.30196"
+      "0784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196]),'Maximiz"
+      "eAxes','Auto','DisplayContentCache',[],'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Navig"
+      "ation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Versi"
+      "on','2015b')),'Version','2015b','Position',[1 1 1920 925],'WindowStyle','docked')"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator"
+      SID		      "11"
+      Ports		      [1, 1]
+      Position		      [964, 325, 996, 355]
+      ZOrder		      7445
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Operator		      "NOT"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      ManualSwitch
+      Name		      "Manual Switch"
+      SID		      "83"
+      Position		      [-470, 452, -440, 488]
+      ZOrder		      7516
+      ForegroundColor	      "orange"
+      ShowName		      off
+      CurrentSetting	      "0"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Master1"
+      SID		      "46"
+      Ports		      [0, 1]
+      Position		      [-535, 429, -505, 461]
+      ZOrder		      7481
+      ForegroundColor	      "orange"
+      PulseType		      "Time based"
+      Period		      "180e-6"
+      PulseWidth	      "6"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Master2"
+      SID		      "49"
+      Position		      [-535, 475, -505, 505]
+      ZOrder		      7484
+      ForegroundColor	      "orange"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mosfet1"
+      SID		      "12"
+      Ports		      [1, 0, 0, 0, 0, 1, 1]
+      Position		      [1098, 305, 1142, 355]
+      ZOrder		      7436
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Mosfet"
+      SourceType	      "Mosfet"
+      ContentPreviewEnabled   off
+      Ron		      "0.00001"
+      Lon		      "0"
+      Rd		      "0.0000000000001"
+      Vfd		      "0"
+      IC		      "0"
+      Rs		      "1e5"
+      Cs		      "inf "
+      Measurements	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mosfet2"
+      SID		      "13"
+      Ports		      [1, 0, 0, 0, 0, 1, 1]
+      Position		      [1088, 505, 1132, 555]
+      ZOrder		      7437
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "blue"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Mosfet"
+      SourceType	      "Mosfet"
+      ContentPreviewEnabled   off
+      Ron		      "0.00001"
+      Lon		      "0"
+      Rd		      "0.0000000000001"
+      Vfd		      "0"
+      IC		      "0"
+      Rs		      "1e5"
+      Cs		      "inf "
+      Measurements	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mosfet3"
+      SID		      "32"
+      Ports		      [1, 0, 0, 0, 0, 1, 1]
+      Position		      [-177, 295, -133, 345]
+      ZOrder		      7457
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "green"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Mosfet"
+      SourceType	      "Mosfet"
+      ContentPreviewEnabled   off
+      Ron		      "0.00001"
+      Lon		      "0"
+      Rd		      "0.0000000000001"
+      Vfd		      "0"
+      IC		      "0"
+      Rs		      "1e5"
+      Cs		      "inf "
+      Measurements	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mosfet4"
+      SID		      "40"
+      Ports		      [1, 0, 0, 0, 0, 1, 1]
+      Position		      [338, 615, 382, 665]
+      ZOrder		      7475
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Mosfet"
+      SourceType	      "Mosfet"
+      ContentPreviewEnabled   off
+      Ron		      "0.00001"
+      Lon		      "0"
+      Rd		      "0.0000000000001"
+      Vfd		      "0"
+      IC		      "0"
+      Rs		      "1e5"
+      Cs		      "inf "
+      Measurements	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Mosfet5"
+      SID		      "50"
+      Ports		      [1, 0, 0, 0, 0, 1, 1]
+      Position		      [223, 550, 267, 600]
+      ZOrder		      7485
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Power\nElectronics/Mosfet"
+      SourceType	      "Mosfet"
+      ContentPreviewEnabled   off
+      Ron		      "0.00001"
+      Lon		      "0"
+      Rd		      "0.0000000000001"
+      Vfd		      "0"
+      IC		      "0"
+      Rs		      "1e5"
+      Cs		      "inf "
+      Measurements	      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "SW1\nVoltage,\nCurrent"
+      SID		      "143"
+      Ports		      [2]
+      Position		      [1475, 312, 1510, 363]
+      ZOrder		      7556
+      ForegroundColor	      "green"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration("
+      "'Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-12.60413','MaxYLimReal','113.43723','Y"
+      "LabelReal','Volts','MinYLimMag','0.00000','MaxYLimMag','101.8059','LegendVisibility','On','XGrid',true,'YGrid',t"
+      "rue,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.7411764"
+      "70588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.1254901960"
+      "78431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.18823529411764"
+      "7;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],"
+      "'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0 0.447058823529412 0.741176470588235],'LineSty"
+      "le','-','LineWidth',2,'Marker','none','Visible','on'),[]}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineName"
+      "s',{{'SW1Voltage'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-4.15588','MaxYLimReal','37.41288','"
+      "YLabelReal','Amperes','MinYLimMag','0.00000','MaxYLimMag','37.41288','LegendVisibility','On','XGrid',true,'YGrid"
+      "',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.7411"
+      "76470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.1254901"
+      "96078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.18823529411"
+      "7647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.18431372549019"
+      "6],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0.850980392156863 0.325490196078431 0.098039"
+      "2156862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.850980392156863 0.32"
+      "5490196078431 0.0980392156862745],'LineStyle','-','LineWidth',1,'Marker','none','Visible','on'),struct('Color',["
+      "0.929411764705882 0.694117647058824 0.125490196078431],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible'"
+      ",'on'),struct('Color',[0.494117647058824 0.184313725490196 0.556862745098039],'LineStyle','-','LineWidth',0.5,'M"
+      "arker','none','Visible','on'),struct('Color',[0.466666666666667 0.674509803921569 0.188235294117647],'LineStyle'"
+      ",'-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.301960784313725 0.745098039215686 0.93333"
+      "3333333333],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.635294117647059 0."
+      "0784313725490196 0.184313725490196],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefin"
+      "edChannelNames',{{}},'NumLines',1,'LineNames',{{'SW1Current'}},'ShowContent',true,'Placement',2)},'DisplayProper"
+      "tyDefaults',struct('AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0.0745098039215686 0.62352941176470"
+      "6 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.39215686"
+      "2745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'Di"
+      "splayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAu"
+      "toscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position'"
+      ",[1 41 1366 651])"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "SW2\nVoltage,\nCurrent"
+      SID		      "144"
+      Ports		      [2]
+      Position		      [1475, 472, 1510, 523]
+      ZOrder		      7557
+      ForegroundColor	      "blue"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration("
+      "'Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-12.5','MaxYLimReal','112.5','YLabelRea"
+      "l','Volts','MinYLimMag',' 0.00000','MaxYLimMag','308.07872','LegendVisibility','On','XGrid',true,'YGrid',true,'P"
+      "lotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.7411764705882"
+      "35;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;"
+      "0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.30"
+      "1960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title"
+      "','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0 0.447058823529412 0.741176470588235],'LineStyle','-"
+      "','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.850980392156863 0.325490196078431 0.0980392156"
+      "862745],'LineStyle','-','LineWidth',1,'Marker','none','Visible','on'),struct('Color',[0.929411764705882 0.694117"
+      "647058824 0.125490196078431],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.4"
+      "94117647058824 0.184313725490196 0.556862745098039],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
+      "n'),struct('Color',[0.466666666666667 0.674509803921569 0.188235294117647],'LineStyle','-','LineWidth',0.5,'Mark"
+      "er','none','Visible','on'),struct('Color',[0.301960784313725 0.745098039215686 0.933333333333333],'LineStyle','-"
+      "','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.635294117647059 0.0784313725490196 0.1843137"
+      "25490196],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumL"
+      "ines',1,'LineNames',{{'SW2Voltage'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-179.39281','MaxYLi"
+      "mReal','308.07872','YLabelReal','Amperes','MinYLimMag',' 0.00000','MaxYLimMag','308.07872','LegendVisibility','O"
+      "n','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0."
+      "447058823529412 0.741176470588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694"
+      "117647058824 0.125490196078431;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.6745098"
+      "03921569 0.188235294117647;0.301960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.07843137254"
+      "90196 0.184313725490196],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0.850980392156863 0.32"
+      "5490196078431 0.0980392156862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on')}},'UserDefinedCh"
+      "annelNames',{{}},'NumLines',1,'LineNames',{{'SW2Current'}},'ShowContent',true,'Placement',2)},'DisplayPropertyDe"
+      "faults',struct('ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0"
+      "666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0"
+      "588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'DisplayLayoutDimensions',[2 1],'DisplayContentCach"
+      "e',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.C"
+      "onfiguration('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[1 41 1366 651])"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "SW3\nVoltage,\nCurrent"
+      SID		      "145"
+      Ports		      [2]
+      Position		      [1475, 617, 1510, 668]
+      ZOrder		      7558
+      ForegroundColor	      "blue"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData3'),extmgr.Configuration("
+      "'Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-12.5','MaxYLimReal','112.5','YLabelRea"
+      "l','Volts','MinYLimMag',' 0.00000','MaxYLimMag','308.15894','LegendVisibility','On','XGrid',true,'YGrid',true,'P"
+      "lotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.7411764705882"
+      "35;0.850980392156863 0.325490196078431 0.0980392156862745;1 0.411764705882353 0.16078431372549;0.392156862745098"
+      " 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074509803"
+      "9215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0 0.447058823529412 "
+      "0.741176470588235],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.8509803921568"
+      "63 0.325490196078431 0.0980392156862745],'LineStyle','-','LineWidth',1,'Marker','none','Visible','on'),struct('C"
+      "olor',[1 0.411764705882353 0.16078431372549],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
+      "uct('Color',[0.392156862745098 0.831372549019608 0.0745098039215686],'LineStyle','-','LineWidth',0.5,'Marker','n"
+      "one','Visible','on'),struct('Color',[0.717647058823529 0.274509803921569 1],'LineStyle','-','LineWidth',0.5,'Mar"
+      "ker','none','Visible','on'),struct('Color',[0.0588235294117647 1 1],'LineStyle','-','LineWidth',0.5,'Marker','no"
+      "ne','Visible','on'),struct('Color',[1 0.0745098039215686 0.650980392156863],'LineStyle','-','LineWidth',0.5,'Mar"
+      "ker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'SW3Voltage'}},'ShowCont"
+      "ent',true,'Placement',1),struct('MinYLimReal','-308.15894','MaxYLimReal','178.19466','YLabelReal','Amperes','Min"
+      "YLimMag',' 0.00000','MaxYLimMag','308.15894','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',fa"
+      "lse,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.8509803921"
+      "56863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.4941176470588"
+      "24 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0"
+      ".745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabe"
+      "l>','LinePropertiesCache',{{struct('Color',[0.850980392156863 0.325490196078431 0.0980392156862745],'LineStyle',"
+      "'-','LineWidth',2,'Marker','none','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'S"
+      "W3Current'}},'ShowContent',true,'Placement',2)},'DisplayPropertyDefaults',struct('ColorOrder',[0.074509803921568"
+      "6 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.2745098039"
+      "21569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650"
+      "980392156863]),'DisplayLayoutDimensions',[2 1],'DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navi"
+      "gation',true,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015b')),'Ver"
+      "sion','2015b','Position',[1 41 1366 651])"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "SW4\nVoltage,\nCurrent"
+      SID		      "146"
+      Ports		      [2]
+      Position		      [1475, 762, 1510, 813]
+      ZOrder		      7559
+      ForegroundColor	      "red"
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),e"
+      "xtmgr.Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData4'),extmgr.Configuration("
+      "'Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-105.00718','MaxYLimReal','11.66746','Y"
+      "LabelReal','Volts','MinYLimMag',' 0.00000','MaxYLimMag','109.10345','LegendVisibility','On','XGrid',true,'YGrid'"
+      ",true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.74117"
+      "6470588235;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.83137"
+      "2549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 "
+      "0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{struct('Color',[0 0.447058823529412 0.741176"
+      "470588235],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.0745098039215686 0.62"
+      "3529411764706 1],'LineStyle','-','LineWidth',1,'Marker','none','Visible','on'),struct('Color',[1 0.4117647058823"
+      "53 0.16078431372549],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),struct('Color',[0.392156862"
+      "745098 0.831372549019608 0.0745098039215686],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),str"
+      "uct('Color',[0.717647058823529 0.274509803921569 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
+      "n'),struct('Color',[0.0588235294117647 1 1],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','on'),stru"
+      "ct('Color',[1 0.0745098039215686 0.650980392156863],'LineStyle','-','LineWidth',0.5,'Marker','none','Visible','o"
+      "n')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'SW4Voltage'}},'ShowContent',true,'Placement',1)"
+      ",struct('MinYLimReal','-4.09627','MaxYLimReal','36.86639','YLabelReal','Amperes','MinYLimMag','0.00000','MaxYLim"
+      "Mag','36.86639','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'Axes"
+      "TickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.850980392156863 0.325490196078431 0.098"
+      "0392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0.184313725490196 0.556862"
+      "745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098039215686 0.9333333333"
+      "33333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>','LinePropertiesCache',{{s"
+      "truct('Color',[0.850980392156863 0.325490196078431 0.0980392156862745],'LineStyle','-','LineWidth',2,'Marker','n"
+      "one','Visible','on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'SW4Current'}},'ShowContent',tr"
+      "ue,'Placement',2)},'DisplayPropertyDefaults',struct('ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.411"
+      "764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.8"
+      "31372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'DisplayLayout"
+      "Dimensions',[2 1],'DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configur"
+      "ation('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[1 41 1366 651])"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode1"
+      SID		      "20"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [905, 589, 930, 616]
+      ZOrder		      7444
+      ForegroundColor	      "blue"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"Output\nVoltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode2"
+      SID		      "44"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [605, 539, 630, 566]
+      ZOrder		      7479
+      ForegroundColor	      "red"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"Load\nVoltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode3"
+      SID		      "112"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [-90, 301, -65, 334]
+      ZOrder		      7527
+      ForegroundColor	      "green"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode4"
+      SID		      "116"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [120, 514, 145, 541]
+      ZOrder		      7531
+      BlockRotation	      180
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode5"
+      SID		      "120"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [1205, 589, 1230, 616]
+      ZOrder		      7535
+      ForegroundColor	      "blue"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode6"
+      SID		      "124"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [1205, 194, 1230, 221]
+      ZOrder		      7539
+      ForegroundColor	      "blue"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VDiode7"
+      SID		      "154"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [656, 315, 689, 340]
+      ZOrder		      7569
+      BlockRotation	      270
+      ForegroundColor	      "red"
+      ShowName		      off
+      LibraryVersion	      "1.2676"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ContentPreviewEnabled   off
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	Name			"Diode Voltage"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Voltage Controller"
+      SID		      "100"
+      Ports		      [2, 1]
+      Position		      [960, 759, 1000, 821]
+      ZOrder		      -66
+      ForegroundColor	      "blue"
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Voltage Controller"
+	Location		[-4, -4, 1924, 1040]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In1"
+	  SID			  "101"
+	  Position		  [750, 33, 780, 47]
+	  ZOrder		  7522
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In2"
+	  SID			  "102"
+	  Position		  [245, 73, 275, 87]
+	  ZOrder		  7523
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Compensator\nOutput2"
+	  SID			  "142"
+	  Ports			  [1]
+	  Position		  [415, 95, 450, 145]
+	  ZOrder		  7528
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),extmgr."
+	  "Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData4'),extmgr.Configuration('Visuals'"
+	  ",'Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-42.03058','MaxYLimReal','300.64002','YLabelReal','"
+	  "','MinYLimMag','0.00000','MaxYLimMag','300.64002','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',"
+	  "false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.85098039215"
+	  "6863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0"
+	  ".184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098"
+	  "039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>','LineP"
+	  "ropertiesCache',{{struct('Color',[0 0 1],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Colo"
+	  "r',[0.850980392156863 0.325490196078431 0.0980392156862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible'"
+	  ",'on')}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Lead-Lag Compensator1'}},'ShowContent',true,'Pl"
+	  "acement',1)},'ShowTimeAxisLabel',true,'DisplayPropertyDefaults',struct('MinYLimReal','-42.03058','MaxYLimReal','300"
+	  ".64002','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','300.64002','LegendVisibility','On','XGrid',true,'YGrid"
+	  "',true,'PlotMagPhase',false,'AxesColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.7411764"
+	  "70588235;0.850980392156863 0.325490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.1254901960784"
+	  "31;0.494117647058824 0.184313725490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.30"
+	  "1960784313725 0.745098039215686 0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','"
+	  "%<SignalLabel>'),'MaximizeAxes','Auto','DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',tru"
+	  "e,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015b'))"
+	  ",'Version','2015b','Position',[1 1 1920 946],'WindowStyle','docked')"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Duty\nRatio2"
+	  SID			  "141"
+	  Ports			  [1]
+	  Position		  [310, 95, 345, 145]
+	  ZOrder		  7527
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true,'FigureColor',[1 1 1]),extmgr.Configuration('Core','Source UI',true),extmgr."
+	  "Configuration('Sources','WiredSimulink',true,'DataLoggingVariableName','ScopeData3'),extmgr.Configuration('Visuals'"
+	  ",'Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','','MinY"
+	  "LimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axes"
+	  "Color',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.850980392156863 0.3254"
+	  "90196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0.1843137254"
+	  "90196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098039215686 0"
+	  ".933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>','LinePropertiesCa"
+	  "che',{{struct('Color',[0 0 1],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on'),struct('Color',[0.85098"
+	  "0392156863 0.325490196078431 0.0980392156862745],'LineStyle','-','LineWidth',2,'Marker','none','Visible','on')}},'U"
+	  "serDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Duty Ratio2'}},'ShowContent',true,'Placement',1)},'ShowTim"
+	  "eAxisLabel',true,'DisplayPropertyDefaults',struct('MinYLimReal','-0.125','MaxYLimReal','1.125','YLabelReal','','Min"
+	  "YLimMag','0.00000','MaxYLimMag','1.125','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagPhase',false,'Axe"
+	  "sColor',[1 1 1],'AxesTickColor',[0 0 0],'ColorOrder',[0 0.447058823529412 0.741176470588235;0.850980392156863 0.325"
+	  "490196078431 0.0980392156862745;0.929411764705882 0.694117647058824 0.125490196078431;0.494117647058824 0.184313725"
+	  "490196 0.556862745098039;0.466666666666667 0.674509803921569 0.188235294117647;0.301960784313725 0.745098039215686 "
+	  "0.933333333333333;0.635294117647059 0.0784313725490196 0.184313725490196],'Title','%<SignalLabel>'),'MaximizeAxes',"
+	  "'Auto','DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAu"
+	  "toscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2015b')),'Version','2015b','Position',[1"
+	  " 1 1920 946],'WindowStyle','docked')"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Lead Compensator"
+	  SID			  "8"
+	  Position		  [520, 102, 580, 138]
+	  ZOrder		  7446
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  Commented		  "on"
+	  Numerator		  "[1.748e31 1.488e39]"
+	  Denominator		  "[4.591e30 5.445e39]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Lead-Lag\nCompensator"
+	  SID			  "9"
+	  Position		  [520, 182, 580, 218]
+	  ZOrder		  7456
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  Commented		  "on"
+	  Numerator		  "[1.714e36 1.461e44 1.459e49]"
+	  Denominator		  "[4.591e35 5.445e44 5.445e39]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Lead-Lag\nCompensator1"
+	  SID			  "10"
+	  Position		  [520, 22, 580, 58]
+	  ZOrder		  7455
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  Numerator		  "num_c2{1,1}"
+	  Denominator		  "den_c2{1,1}"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  "48"
+	  Ports			  [2, 1]
+	  Position		  [185, 31, 215, 64]
+	  ZOrder		  7483
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  ManualSwitch
+	  Name			  "Manual Switch1"
+	  SID			  "91"
+	  Position		  [670, 137, 700, 173]
+	  ZOrder		  7521
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  CurrentSetting	  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "PWM Generator\n(DC-DC)"
+	  SID			  "15"
+	  Ports			  [1, 1]
+	  Position		  [305, 21, 355, 59]
+	  ZOrder		  7450
+	  BlockRotation		  180
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  LibraryVersion	  "1.81"
+	  SourceBlock		  "powerlib_meascontrol/Pulse & Signal\nGenerators/PWM Generator\n(DC-DC)"
+	  SourceType		  "PWM Generator (DC-DC)"
+	  ContentPreviewEnabled	  off
+	  Fsw			  "1e6"
+	  Ts			  "0"
+	  Port {
+	    PortNumber		    1
+	    Name		    "PWM Signal2"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Reference\nVoltage"
+	  SID			  "16"
+	  Position		  [750, 105, 780, 135]
+	  ZOrder		  7448
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  Value			  "70"
+	}
+	Block {
+	  BlockType		  DiscretePulseGenerator
+	  Name			  "Reference\nVoltage2"
+	  SID			  "17"
+	  Ports			  [0, 1]
+	  Position		  [750, 174, 780, 206]
+	  ZOrder		  7451
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  PulseType		  "Time based"
+	  Amplitude		  "70"
+	  Period		  "180e-6"
+	  PulseWidth		  "7"
+	  PhaseDelay		  "-1e-6"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "18"
+	  Ports			  [1, 1]
+	  Position		  [420, 25, 450, 55]
+	  ZOrder		  7449
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	  ZeroCross		  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Duty Ratio2"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  SID			  "19"
+	  Ports			  [2, 1]
+	  Position		  [615, 30, 635, 50]
+	  ZOrder		  7447
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out1"
+	  SID			  "105"
+	  Position		  [120, 43, 150, 57]
+	  ZOrder		  7526
+	  BlockMirror		  on
+	  ForegroundColor	  "blue"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  341
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Out1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  18
+	  SrcBlock		  "Lead-Lag\nCompensator1"
+	  SrcPort		  1
+	  Points		  [-26, 0]
+	  Branch {
+	    ZOrder		    356
+	    Points		    [0, 80]
+	    DstBlock		    "Compensator\nOutput2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    16
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "Duty Ratio2"
+	  ZOrder		  11
+	  Labels		  [-1, 0]
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [-26, 0]
+	  Branch {
+	    ZOrder		    355
+	    Points		    [0, 80]
+	    DstBlock		    "Duty\nRatio2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    9
+	    DstBlock		    "PWM Generator\n(DC-DC)"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Lead-Lag\nCompensator1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  338
+	  SrcBlock		  "In2"
+	  SrcPort		  1
+	  Points		  [-5, 0; 0, -25]
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "PWM Signal2"
+	  ZOrder		  202
+	  Labels		  [0, 0]
+	  SrcBlock		  "PWM Generator\n(DC-DC)"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  337
+	  SrcBlock		  "In1"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  309
+	  SrcBlock		  "Reference\nVoltage"
+	  SrcPort		  1
+	  Points		  [-22, 0; 0, 25]
+	  DstBlock		  "Manual Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  311
+	  SrcBlock		  "Manual Switch1"
+	  SrcPort		  1
+	  Points		  [-40, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  310
+	  SrcBlock		  "Reference\nVoltage2"
+	  SrcPort		  1
+	  Points		  [-22, 0; 0, -25]
+	  DstBlock		  "Manual Switch1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "powergui"
+      SID		      "21"
+      Ports		      []
+      Position		      [-525, 625, -444, 679]
+      ZOrder		      7441
+      ShowName		      off
+      Priority		      "1"
+      LibraryVersion	      "1.2676"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      SourceBlock	      "powerlib/powergui"
+      SourceType	      "PSB option menu block"
+      ContentPreviewEnabled   off
+      SimulationMode	      "Continuous"
+      SolverType	      "Backward Euler"
+      SampleTime	      "5e-07"
+      frequency		      "60"
+      SPID		      on
+      DisableSnubberDevices   off
+      DisableRonSwitches      off
+      DisableVfSwitches	      off
+      SwTol		      "0"
+      DisplayEquations	      off
+      Interpol		      off
+      ExternalGateDelay	      off
+      methode		      off
+      Ts		      "0"
+      FunctionMessages	      off
+      echomessages	      off
+      HookPort		      off
+      EnableUseOfTLC	      off
+      x0status		      "zero"
+      frequencyindice	      "0"
+      Pbase		      "100e6"
+      ErrMax		      "1e-4"
+      Iterations	      "50"
+      UnitsV		      "kV"
+      UnitsW		      "MW"
+      buscounter	      "0"
+      RestoreLinks	      "warning"
+      ResistiveCurrentMeasurement off
+      Frange		      "[0:2:500]"
+      Ylog		      off
+      Xlog		      on
+      ShowGrid		      off
+      save		      off
+      variable		      "ZData"
+      structure		      "ScopeData"
+      ZoomFFT		      off
+      StartTime		      "0.0"
+      cycles		      "5"
+      DisplayStyle	      "2"
+      fundamental	      "50"
+      FreqAxis		      off
+      MaxFrequency	      "50000"
+      frequencyindicesteady   "1"
+      RmsSteady		      "1"
+      display		      off
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      31
+      SrcBlock		      " RLC 3"
+      SrcPort		      RConn1
+      Points		      [35, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	Points			[1120, 377; 0, 13]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "Mosfet1"
+	  SrcPort		  RConn1
+	  Points		  [0, 7]
+	}
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "VDiode6"
+	  SrcPort		  LConn2
+	  Points		  [-16, 0; 0, 162; -54, 0]
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 97]
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "VDiode5"
+	  SrcPort		  LConn1
+	  Points		  [-19, 0; 0, -108; -51, 0]
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "Mosfet2"
+	  DstPort		  LConn1
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      35
+      Points		      [830, 688; 40, 0]
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		" RLC 2"
+	SrcPort			RConn1
+	Points			[0, 33]
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	Points			[584, 688; 246, 0]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  Points		  [360, 688; 224, 0]
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    Points		    [245, 688; 115, 0]
+	    Branch {
+	      ConnectType	      "SRC_DEST"
+	      Points		      [245, 638; 0, 50]
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"VDiode4"
+		SrcPort			LConn1
+		Points			[0, 103; 85, 0]
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"Mosfet5"
+		SrcPort			RConn1
+		Points			[0, 23]
+	      }
+	    }
+	    Branch {
+	      ConnectType	      "SRC_DEST"
+	      Points		      [-155, 688; 400, 0]
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"DC Voltage Source1"
+		SrcPort			LConn1
+		Points			[0, 188; 180, 0]
+	      }
+	      Branch {
+		ConnectType		"SRC_DEST"
+		SrcBlock		"Diode"
+		SrcPort			LConn1
+		Points			[0, 113]
+	      }
+	    }
+	  }
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Mosfet4"
+	    SrcPort		    RConn1
+	    Points		    [0, 8]
+	  }
+	}
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "VDiode2"
+	  SrcPort		  LConn2
+	  Points		  [-6, 0; 0, 128]
+	}
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	Points			[1105, 688; -235, 0]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "Current\nMeasurement4"
+	  SrcPort		  RConn1
+	  Points		  [0, 58]
+	}
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "VDiode5"
+	  SrcPort		  LConn2
+	  Points		  [-19, 0; 0, 78; -66, 0]
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, -78]
+	DstBlock		"VDiode1"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      48
+      SrcBlock		      " RLC 2"
+      SrcPort		      LConn1
+      Points		      [0, -15]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		" RLC 4"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"VDiode1"
+	SrcPort			LConn1
+	Points			[-21, 0; 0, -60; -39, 0]
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      2
+      SrcBlock		      " RLC 1"
+      SrcPort		      RConn1
+      DstBlock		      " RLC 3"
+      DstPort		      LConn1
+    }
+    Line {
+      ZOrder		      4
+      SrcBlock		      "Logical\nOperator"
+      SrcPort		      1
+      Points		      [0, 87; 120, 0]
+      DstBlock		      "Mosfet2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Output\nVoltage"
+      ZOrder		      7
+      Labels		      [1, 1]
+      SrcBlock		      "VDiode1"
+      SrcPort		      1
+      Points		      [27, 0]
+      Branch {
+	ZOrder			455
+	Points			[0, -75]
+	DstBlock		" 1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			454
+	DstBlock		"Goto7"
+	DstPort			1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      64
+      SrcBlock		      " RLC 5"
+      SrcPort		      LConn1
+      Points		      [-75, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	Points			[-155, 360; 0, 25]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "VDiode3"
+	  SrcPort		  LConn2
+	  Points		  [-7, 0; 0, 35; -43, 0]
+	}
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "Mosfet3"
+	  SrcPort		  RConn1
+	  Points		  [0, 0]
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Diode"
+	DstPort			RConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      19
+      SrcBlock		      "DC Voltage Source1"
+      SrcPort		      RConn1
+      Points		      [0, -280; 195, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	Points			[1135, 155; -1275, 0]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "Current\nMeasurement5"
+	  SrcPort		  LConn1
+	  Points		  [0, -60]
+	}
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "VDiode6"
+	  SrcPort		  LConn1
+	  Points		  [-14, 0; 0, -45; -41, 0]
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 44]
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "VDiode3"
+	  SrcPort		  LConn1
+	  Points		  [-9, 0; 0, -111; -26, 0]
+	}
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "Current\nMeasurement2"
+	  SrcPort		  LConn1
+	  Points		  [0, -1]
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      22
+      SrcBlock		      " RLC 5"
+      SrcPort		      RConn1
+      DstBlock		      " RLC 6"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      66
+      SrcBlock		      "Current Measurement"
+      SrcPort		      LConn1
+      DstBlock		      " RLC 6"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      81
+      SrcBlock		      "Current\nMeasurement1"
+      SrcPort		      RConn1
+      DstBlock		      " RLC 7"
+      DstPort		      LConn1
+    }
+    Line {
+      ZOrder		      162
+      SrcBlock		      "Ignition\nControl\nSignal"
+      SrcPort		      1
+      DstBlock		      "Goto"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      164
+      SrcBlock		      "From"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Mosfet5"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Load\nVoltage"
+      ZOrder		      169
+      Labels		      [1, 1]
+      SrcBlock		      "VDiode2"
+      SrcPort		      1
+      DstBlock		      "Goto2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "LoadCurrent"
+      ZOrder		      170
+      Labels		      [2, 1]
+      SrcBlock		      "Current\nMeasurement1"
+      SrcPort		      1
+      Points		      [0, 10]
+      DstBlock		      "Goto3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "LoadVoltage"
+      ZOrder		      172
+      Labels		      [3, 1]
+      SrcBlock		      "From3"
+      SrcPort		      1
+      Points		      [13, 0; 0, 15]
+      DstBlock		      "Load\nVoltage,\nCurrent"
+      DstPort		      1
+    }
+    Line {
+      Name		      "LoadCurrent"
+      ZOrder		      173
+      Labels		      [3, 1]
+      SrcBlock		      "From4"
+      SrcPort		      1
+      Points		      [14, 0; 0, -15]
+      DstBlock		      "Load\nVoltage,\nCurrent"
+      DstPort		      2
+    }
+    Line {
+      Name		      "CurrentSrcInducatorCurrent"
+      ZOrder		      174
+      SrcBlock		      "Current Measurement"
+      SrcPort		      1
+      Points		      [13, 0; 0, -40]
+      Branch {
+	ZOrder			453
+	Labels			[1, 1]
+	Points			[0, -80]
+	DstBlock		" "
+	DstPort			1
+      }
+      Branch {
+	ZOrder			415
+	DstBlock		"Goto4"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      201
+      SrcBlock		      "From6"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Mosfet3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      205
+      SrcBlock		      "From7"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	ZOrder			207
+	DstBlock		"Logical\nOperator"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			206
+	Points			[130, 0]
+	DstBlock		"Mosfet1"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      223
+      SrcBlock		      "Load\nSwitching\nSignal"
+      SrcPort		      1
+      DstBlock		      "Goto8"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      227
+      SrcBlock		      "From9"
+      SrcPort		      1
+      DstBlock		      "Mosfet4"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      286
+      SrcBlock		      "Manual Switch"
+      SrcPort		      1
+      DstBlock		      "Goto1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      287
+      SrcBlock		      "Master1"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Manual Switch"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      288
+      SrcBlock		      "Master2"
+      SrcPort		      1
+      Points		      [12, 0; 0, -10]
+      DstBlock		      "Manual Switch"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      306
+      SrcBlock		      "From5"
+      SrcPort		      1
+      Points		      [23, 0; 0, 20]
+      DstBlock		      "Current Controller"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      307
+      SrcBlock		      "From1"
+      SrcPort		      1
+      Points		      [25, 0; 0, -20]
+      DstBlock		      "Current Controller"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      308
+      SrcBlock		      "Current Controller"
+      SrcPort		      1
+      DstBlock		      "Goto5"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      337
+      SrcBlock		      "From8"
+      SrcPort		      1
+      Points		      [13, 0; 0, 20]
+      DstBlock		      "Voltage Controller"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      338
+      SrcBlock		      "From2"
+      SrcPort		      1
+      Points		      [15, 0; 0, -20]
+      DstBlock		      "Voltage Controller"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      339
+      SrcBlock		      "Voltage Controller"
+      SrcPort		      1
+      DstBlock		      "Goto6"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      341
+      SrcBlock		      "Current\nMeasurement2"
+      SrcPort		      RConn1
+      DstBlock		      "Mosfet3"
+      DstPort		      LConn1
+    }
+    Line {
+      ZOrder		      345
+      SrcBlock		      "Current\nMeasurement2"
+      SrcPort		      1
+      Points		      [0, 15]
+      DstBlock		      "Goto9"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      346
+      SrcBlock		      "VDiode3"
+      SrcPort		      1
+      DstBlock		      "Goto10"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      355
+      SrcBlock		      "Current\nMeasurement3"
+      SrcPort		      RConn1
+      DstBlock		      "Mosfet5"
+      DstPort		      LConn1
+    }
+    Line {
+      ZOrder		      356
+      SrcBlock		      "Current\nMeasurement3"
+      SrcPort		      1
+      Points		      [0, 20]
+      DstBlock		      "Goto11"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      357
+      SrcBlock		      "VDiode4"
+      SrcPort		      1
+      DstBlock		      "Goto12"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      362
+      SrcBlock		      "Current\nMeasurement4"
+      SrcPort		      LConn1
+      DstBlock		      "Mosfet2"
+      DstPort		      RConn1
+    }
+    Line {
+      ZOrder		      365
+      SrcBlock		      "Current\nMeasurement4"
+      SrcPort		      1
+      Points		      [0, 40]
+      DstBlock		      "Goto13"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      371
+      SrcBlock		      "VDiode5"
+      SrcPort		      1
+      DstBlock		      "Goto14"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      373
+      SrcBlock		      "Current\nMeasurement5"
+      SrcPort		      RConn1
+      DstBlock		      "Mosfet1"
+      DstPort		      LConn1
+    }
+    Line {
+      ZOrder		      385
+      SrcBlock		      "VDiode6"
+      SrcPort		      1
+      DstBlock		      "Goto16"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      386
+      SrcBlock		      "Current\nMeasurement5"
+      SrcPort		      1
+      Points		      [0, 20]
+      DstBlock		      "Goto15"
+      DstPort		      1
+    }
+    Line {
+      Name		      "SW2Voltage"
+      ZOrder		      404
+      Labels		      [3, 1]
+      SrcBlock		      "From10"
+      SrcPort		      1
+      Points		      [12, 0; 0, 20]
+      DstBlock		      "SW2\nVoltage,\nCurrent"
+      DstPort		      1
+    }
+    Line {
+      Name		      "SW2Current"
+      ZOrder		      406
+      Labels		      [3, 1]
+      SrcBlock		      "From11"
+      SrcPort		      1
+      Points		      [13, 0; 0, -20]
+      DstBlock		      "SW2\nVoltage,\nCurrent"
+      DstPort		      2
+    }
+    Line {
+      Name		      "SW3Voltage"
+      ZOrder		      407
+      Labels		      [3, 1]
+      SrcBlock		      "From12"
+      SrcPort		      1
+      Points		      [15, 0; 0, 15]
+      DstBlock		      "SW3\nVoltage,\nCurrent"
+      DstPort		      1
+    }
+    Line {
+      Name		      "SW3Current"
+      ZOrder		      408
+      Labels		      [3, 1]
+      SrcBlock		      "From13"
+      SrcPort		      1
+      Points		      [15, 0; 0, -20]
+      DstBlock		      "SW3\nVoltage,\nCurrent"
+      DstPort		      2
+    }
+    Line {
+      Name		      "SW1Voltage"
+      ZOrder		      411
+      Labels		      [3, 1]
+      SrcBlock		      "From17"
+      SrcPort		      1
+      Points		      [5, 0; 0, 15]
+      DstBlock		      "SW1\nVoltage,\nCurrent"
+      DstPort		      1
+    }
+    Line {
+      Name		      "SW1Current"
+      ZOrder		      412
+      Labels		      [3, 1]
+      SrcBlock		      "From16"
+      SrcPort		      1
+      Points		      [8, 0; 0, -15]
+      DstBlock		      "SW1\nVoltage,\nCurrent"
+      DstPort		      2
+    }
+    Line {
+      Name		      "SW4Voltage"
+      ZOrder		      413
+      Labels		      [3, 1]
+      SrcBlock		      "From15"
+      SrcPort		      1
+      Points		      [13, 0; 0, 20]
+      DstBlock		      "SW4\nVoltage,\nCurrent"
+      DstPort		      1
+    }
+    Line {
+      Name		      "SW4Current"
+      ZOrder		      414
+      Labels		      [3, 1]
+      SrcBlock		      "From14"
+      SrcPort		      1
+      Points		      [10, 0; 0, -25]
+      DstBlock		      "SW4\nVoltage,\nCurrent"
+      DstPort		      2
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      456
+      SrcBlock		      " RLC 7"
+      SrcPort		      RConn1
+      Points		      [0, -6; 45, 0]
+      DstBlock		      " RLC 8"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      457
+      SrcBlock		      " RLC 8"
+      SrcPort		      LConn1
+      Points		      [0, 4; 24, 0; 0, 111]
+      DstBlock		      "Mosfet4"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      79
+      SrcBlock		      "VDiode2"
+      SrcPort		      LConn1
+      Points		      [-4, 0; 0, -155]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[-211, 0]
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "Current\nMeasurement1"
+	  SrcPort		  LConn1
+	  Points		  [0, -25]
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  Points		  [-115, 0]
+	  Branch {
+	    ConnectType		    "DEST_DEST"
+	    Points		    [260, 425; 0, -35]
+	    Branch {
+	      ConnectType	      "SRC_DEST"
+	      SrcBlock		      "VDiode4"
+	      SrcPort		      LConn2
+	      Points		      [0, -95; 100, 0]
+	    }
+	    Branch {
+	      ConnectType	      "SRC_DEST"
+	      SrcBlock		      "Current\nMeasurement3"
+	      SrcPort		      LConn1
+	      Points		      [0, -15]
+	    }
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Current Measurement"
+	    DstPort		    RConn1
+	  }
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[39, 0]
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  Points		  [1, 0; 0, -35]
+	  DstBlock		  "VDiode7"
+	  DstPort		  LConn1
+	}
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "Diode1"
+	  SrcPort		  LConn1
+	  Points		  [0, 0]
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      12
+      Points		      [722, 390; -7, 0]
+      DstBlock		      "Diode1"
+      DstPort		      RConn1
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"Current\nMeasurement6"
+	SrcPort			LConn1
+	Points			[-8, 0]
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"VDiode7"
+	SrcPort			LConn2
+	Points			[0, 7; 42, 0; 0, 28]
+      }
+    }
+    Line {
+      Name		      "Diode Voltage"
+      ZOrder		      458
+      Labels		      [2, 1]
+      SrcBlock		      "VDiode7"
+      SrcPort		      1
+      Points		      [0, -10]
+      DstBlock		      "Diode VI"
+      DstPort		      1
+    }
+    Line {
+      Name		      "DiodeCurrent"
+      ZOrder		      459
+      Labels		      [2, 1]
+      SrcBlock		      "Current\nMeasurement6"
+      SrcPort		      1
+      Points		      [9, 0; 0, -60]
+      DstBlock		      "Diode VI"
+      DstPort		      2
+    }
+    Line {
+      LineType		      "Connection"
+      ZOrder		      1
+      SrcBlock		      " RLC 4"
+      SrcPort		      LConn1
+      Points		      [0, -20]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, -5]
+	DstBlock		" RLC 1"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Current\nMeasurement6"
+	DstPort			RConn1
+      }
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    P ,   8    (     @         %    \"     $    !     0         %  0 #     $   \"0    <&]W9"
+    "7)G=6D     <W1E861Y<W1A=&4 :6YI='-T871E<P  ;&]A9&9L;W<     ;&]A9&9L;W=N97< ;'1I=FEE=P      >FUE=&5R        9F9T=&]"
+    "O;       <F5P;W)T        :'ES=&5R97-I<P  ;&EN97!A<F%M    5',             #@   #     &    \"     8         !0    @ "
+    "              $         \"0         .    B     8    (    $0         !          $ ! !-0T]3 0   !    !M871L86(N=6DN1"
+    "FEG=7)E#@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !          $   "
+    " .    ,     8    (    !@         %    \"                0         )          X    P    !@    @    &          4    "
+    "(               !          D         #@   #     &    \"     8         !0    @               $         \"0         "
+    ".    ,     8    (    !@         %    \"                0         )          X    P    !@    @    &          4    ("
+    "               !          D         #@   #     &    \"     8         !0    @               $         \"0         ."
+    "    ,     8    (    !@         %    \"                0         )          X    P    !@    @    &          4    ( "
+    "              !          D         #@   #     &    \"     8         !0    @               $         \"0         . "
+    "   ,     8    (    !@         %    \"                0         )          X   #H @  !@    @    )          4    (  "
+    "   0   +@\"   !          (   \"X @    %)30     .    & (   8    (     @         %    \"     $    !     0         % "
+    " 0 !0    $    %    34-/4P     .    T $   8    (    $0         !          $ ! !-0T]3 0    T   !&:6QE5W)A<'!E<E]?   "
+    " #@   ) !   &    \"     $         !0    @    #     0    $         #@   *@    &    \"     D         !0    @   !X   "
+    "  0    $          @   '@    \"     @   $    !@    8    '@   !X    >               1FEG=7)E &UA=&QA8BYU:0          "
+    "                      (    !                                               .          X   \"H    !@    @    !     "
+    "     4    (     @    $    !          X    X    !@    @    \"          4    (     0         !          4 !  !     0"
+    "         .    .     8    (     @         %    \"     $          0         %  0  0    $         #@   (@    &    \" "
+    "    D         !0    @    !    6     $          @   %@      4E-      X   !(    !@    @    \"          4    (     0 "
+    "   $    !          4 !  %     0    4   !-0T]3      X         "
+  }
+}
