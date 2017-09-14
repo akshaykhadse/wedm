@@ -15,9 +15,8 @@ end
 newdir = strcat(mydir(1:idcs(end)-1), '\Dependencies');
 addpath(newdir, '-end');
 
-%% MASTER DEFINE TIME PERIODS
-
-T_mach = 180e-6;  % Machining time period
+%% MACHINING TIMES
+T_mach = 200e-6;  % Machining time period
 f_mach = 1 / T_mach;
 duty = 10;        % duty cycle in percentage
 t2 = duty * T_mach / 100;  % time delay
@@ -39,8 +38,8 @@ I2_ripple = 0.1*I_ref; % Output current of 2 quadrant chopper is close to zero -
 Vd_val = 110;
 r_val = 1;
 Eg = 30;
-% f_sw = 500e3;
 f_sw = 50e3;
+fSampling = f_sw;
 
 %% INDUCTOR FOR SINGLE QUADRANT CHOPPER
 Vo1 = I_ref*r_val + Eg;
@@ -54,12 +53,6 @@ rc2_val = 0.0001;
 %% INDUCTOR FOR TWO QUADRANT CHOPPER
 l2_val = V_ref*(Vd_val-V_ref)/(I2_ripple*f_sw*Vd_val)
 rl2_val = 0.0001;
-
-%% MANUAL PID TUNING
-% For Current Source
-Kp1 = 10;
-Ki1 = 0;
-Kd1 = 0;
 
 %% VOLTAGE SOURCE MODEL
 % Declare Symbolic Variables
@@ -94,6 +87,9 @@ vohat_dhat = simplify(C*inv(s*eye(2)-A)*(B1-B2)*Vd);
 G_VS = syms2tf(subs(vohat_dhat, [rc2, c2, rl2, l2, Vd],...
         [rc2_val, c2_val, rl2_val, l2_val, Vd_val]))
 
+% Discrete Time Transfer Function
+discreteG_VS = c2d(G_VS, 1/fSampling, 'tustin')
+
 % Gain Margin, Phase Margin, Bode Plot
 [Gm,Pm,Wgm,Wpm] = margin(G_VS);
 fprintf('Gain Margin = %e\n', Gm)
@@ -101,7 +97,7 @@ fprintf('Phase Margin = %e\n', Pm)
 fprintf('Phase Crossover Frequency = %e\n', Wgm)
 fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
 
-figure(2)
+figure(1)
 margin(G_VS)
 
 %% CURRENT SOURCE MODEL
@@ -136,6 +132,9 @@ fprintf('Small Signal Transfer Function of Uncomepensated System\n')
 G_CS = syms2tf(subs(vohat_dhat, [r, rl1, l1, Vd],...
         [r_val, rl1_val, l1_val, Vd_val]))
 
+% Discrete Time Transfer Function
+discreteG_CS = c2d(G_CS, 1/fSampling, 'tustin')
+
 % Gain Margin, Phase Margin, Bode Plot
 [Gm,Pm,Wgm,Wpm] = margin(G_CS);
 fprintf('Gain Margin = %e\n', Gm)
@@ -143,7 +142,7 @@ fprintf('Phase Margin = %e\n', Pm)
 fprintf('Phase Crossover Frequency = %e\n', Wgm)
 fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
 
-figure(1)
+figure(2)
 margin(G_CS)
 
 %% SNUBBER DESIGN OF Qd
