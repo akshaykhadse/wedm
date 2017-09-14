@@ -1,3 +1,4 @@
 # Power Supply Design for Wire EDM Cutting of Silicon
 
-Part of project titled *Modelling and Control of Wire Electro Discharge Machining Processes for Cutting of Silicon Wafers*
+Part of project titled *Modelling and Control of Wire Electro Discharge Machining Processes for Cutting of Silicon Wafers*.
+See the documentation [here](https://akshaykhadse.github.io/WEDMController)
