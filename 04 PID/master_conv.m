@@ -16,6 +16,7 @@ newdir = strcat(mydir(1:idcs(end)-1), '\Dependencies');
 addpath(newdir, '-end');
 
 %% MASTER DEFINE TIME PERIODS
+
 T_mach = 180e-6;  % Machining time period
 f_mach = 1 / T_mach;
 duty = 10;        % duty cycle in percentage
@@ -38,7 +39,8 @@ I2_ripple = 0.1*I_ref; % Output current of 2 quadrant chopper is close to zero -
 Vd_val = 110;
 r_val = 1;
 Eg = 30;
-f_sw = 500e3;
+% f_sw = 500e3;
+f_sw = 50e3;
 
 %% INDUCTOR FOR SINGLE QUADRANT CHOPPER
 Vo1 = I_ref*r_val + Eg;
