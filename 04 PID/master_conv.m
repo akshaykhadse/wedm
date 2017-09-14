@@ -24,6 +24,7 @@ t1 = t2 * 30/100; % IGNITION delay assumed to be 10% of the total spark duration
 duty_inv = 100 - duty;   % Duty for control signal of ignition or dead time switch
 duty_load = (t2-t1)/T_mach*100;  % Duty for turning ON load
 delay_load = t1;
+delayVC = 2e-4; % Delay between start of vsrc and csrc
 
 %% CALCULATION OF INDUCTORS AND CAPACITORS BASED ON RIPPLE
 
