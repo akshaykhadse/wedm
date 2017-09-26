@@ -10,7 +10,7 @@ syms a1 T1 a2 T2;
 % Parameters
 pm_des = 60; % Desired Phase Margin
 wcross = Wpm;
-a2_val = 1e-1;
+a2_val = 1e-2;
 
 % Lead Compensator Design
 Gc1 = (1+a1*T1*s)/(1+T1*s);

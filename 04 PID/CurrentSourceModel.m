@@ -1,21 +1,5 @@
 %% CURRENT SOURCE MODEL
 
-%% Handling Path for Dependencies
-
-stack = dbstack;
-if stack(length(stack)).name ~= 'master_conv'
-    mydir  = pwd;
-    if ispc
-        idcs   = strfind(mydir,'\');
-    else
-        idcs   = strfind(mydir,'/');
-    end
-    newdir = strcat(mydir(1:idcs(end)-1), '\Dependencies');
-    addpath(newdir, '-end');
-    fprintf('path added\n')
-end
-clear stack
-
 %% Declare Symbolic Variables
 syms r rl1 l1 Vd d2 s;
 
