@@ -48,7 +48,7 @@ fSampling = f_sw;
 
 Vo1 = I_ref*r_val + Eg;
 %l1_val = Vo1*(Vd_val-Vo1)/(I1_ripple*f_sw*Vd_val)
-l1_val = (Vd_val-I_ref*r_val)*I_ref*r_val/(2*I_ref*r_val*Vd_val*f_sw);
+l1_val = (Vd_val-I_ref*r_val)*I_ref*r_val/(2*I_ref*r_val*Vd_val*f_sw)
 %l1_val = 9.09e-6;
 rl1_val = 0.0002;
 
