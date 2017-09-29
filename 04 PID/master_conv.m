@@ -25,7 +25,7 @@ t1 = t2 * 30/100; % IGNITION delay assumed to be 10% of the total spark duration
 duty_inv = 100 - duty;   % Duty for control signal of ignition or dead time switch
 duty_load = (t2-t1)/T_mach*100;  % Duty for turning ON load
 delay_load = t1;
-delayVC = 2e-4; % Delay between start of vsrc and csrc
+delayVC = 1e-3; % Delay between start of vsrc and csrc
 
 %% DESIRED PARAMETERS
 
@@ -46,25 +46,37 @@ fSampling = f_sw;
 
 %% INDUCTOR FOR SINGLE QUADRANT CHOPPER
 
-Vo1 = I_ref*r_val + Eg;
-%l1_val = Vo1*(Vd_val-Vo1)/(I1_ripple*f_sw*Vd_val)
-l1_val = (Vd_val-I_ref*r_val)*I_ref*r_val/(2*I_ref*r_val*Vd_val*f_sw)
-%l1_val = 9.09e-6;
+% From Datasheet
 rl1_val = 0.0002;
+
+% For 1% ripple in current
+Vo1 = I_ref*r_val + Eg;
+l1_val = Vo1*(Vd_val-Vo1)/(I1_ripple*f_sw*Vd_val)
+
+% From the fact that conyinous conduction has to be maintained 
+% even for 1/20 th of reference current
+%alpha = 1/20;
+%l1_val = r_val*(Vd_val-I_ref*r_val)/(2*alpha*f_sw*Vd_val)
 
 %% INDUCTOR FOR TWO QUADRANT CHOPPER
 
 %l2_val = V_ref*(Vd_val-V_ref)/(I2_ripple*f_sw*Vd_val) %working
-l2_val = (Vd_val-V_ref)*V_ref/(2*V_ref/r_val*Vd_val*f_sw) %working2
+%l2_val = (Vd_val-V_ref)*V_ref/(2*V_ref/r_val*Vd_val*f_sw) %working2
 %l2_val = 2.72e-6;
 rl2_val = 0.0001;
+
+beta = 1/5;
+l2_val = r_val*(Vd_val-V_ref)/(2*beta*f_sw*Vd_val)
 
 %% CAPACITOR FOR TWO QUADRANT CHOPPER
 
 %c2_val = I2_ripple/(8*f_sw*V2_ripple) %working
 %c2_val = 660e-6; % ND Muhammad
-c2_val = V_ref*(1-V_ref/Vd_val)/(8*l2_val*0.01*V_ref*f_sw^2) %working2
+%c2_val = V_ref*(1-V_ref/Vd_val)/(8*l2_val*0.01*V_ref*f_sw^2) %working2
 rc2_val = 0.0001;
+
+gamma = 0.01;
+c2_val = (1-V_ref/Vd_val)/(8*gamma*l2_val*f_sw^2)
 
 %% Calling Other Functions
 

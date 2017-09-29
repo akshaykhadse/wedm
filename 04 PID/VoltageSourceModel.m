@@ -8,7 +8,7 @@ syms rc2 c2 rl2 l2 Vd d2 s;
 % Power Supply As described in Paper
 % Switch ON Time
 A1 = [-(rl2+rc2)/l2 -1/l2;
-      1/c2 0];
+      1/c2 -1/(r_val*c2_val)];
 B1 = [1/l2; 0];
 C1 = [0 1];
 
@@ -22,13 +22,11 @@ A = simplify(d2*A1+(1-d2)*A2);
 B = simplify(d2*B1+(1-d2)*B2);
 C = simplify(d2*C1+(1-d2)*C2);
 
-% Steady State Transfer Function
-Vo_Vd = -C*inv(A)*B;
-X = Vo_Vd*Vd;
+X = [V_ref/r_val ;V_ref];
 
 % Small Signal Transfer Function
 fprintf('Small Signal Transfer Function of Uncomepensated System\n')
-vohat_dhat = simplify(C*inv(s*eye(2)-A)*(B1-B2)*Vd);
+vohat_dhat = simplify(C*inv(s*eye(2)-A)*((A1 - A2)*X+(B1-B2)*Vd)+(C1-C2)*X);
 G_VS = syms2tf(subs(vohat_dhat, [rc2, c2, rl2, l2, Vd],...
         [rc2_val, c2_val, rl2_val, l2_val, Vd_val]))
 
