@@ -13,7 +13,7 @@ wgc = 2*pi*f_sw/10;
 
 
 % ACE Method
-%{
+
 % Parameters
 % Desired Phase Margin
 %wcross = Wpm;
@@ -49,7 +49,7 @@ fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 figure(3)
 margin(Gc*G_VS)
 [num_c2, den_c2] = tfdata(Gc);
-%}
+
 
 % K Factor Method
 %{
