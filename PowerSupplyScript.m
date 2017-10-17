@@ -28,7 +28,7 @@ v2_ripple = 0.01;
 
 % Working Values when PM was being calculated wromg are
 %a2_vs = 1e-8;
-%pm_des = 30;
+%pm_des_vs = 30;
 
 % If -1/(r_val*c2_val) present in vs modelling
 %pm_des_vs = 60;
@@ -39,6 +39,10 @@ v2_ripple = 0.01;
 pm_des_vs = 60;
 a2_vs = 1e-8;
 wm2=1;
+
+Ron = 32e-3;
+Vf = 1.3;
+
 %% MACHINING TIMES
 
 f_mach = 1 / T_mach;
@@ -48,7 +52,7 @@ t1 = t2 * 30/100; % IGNITION delay assumed to be 10% of the total spark duration
 duty_inv = 100 - duty;   % Duty for control signal of ignition or dead time switch
 duty_load = (t2-t1)/T_mach*100;  % Duty for turning ON load
 delay_load = t1;
-delayVC = 2e-3; % Delay between start of vsrc and csrc
+delayVC = 0; % Delay between start of vsrc and csrc
 
 %% INDUCTOR FOR SINGLE QUADRANT CHOPPER
 
@@ -58,7 +62,8 @@ l1_val = Vo1*(Vd_val-Vo1)/(delta_i1*f_sw*Vd_val)
 
 %% INDUCTOR FOR TWO QUADRANT CHOPPER
 
-l2_val = 2.5*r_val*(Vd_val-V_ref)/(f_sw*Vd_val)
+l2_val = 10*2.5*r_val*(Vd_val-V_ref)/(f_sw*Vd_val)
+% 10 times original value because the current through Q2 was high
 
 %% CAPACITOR FOR TWO QUADRANT CHOPPER
 
@@ -116,10 +121,10 @@ syms a1 T1 a2 T2;
 
 %% Compensator Design
 
-wcross2 = 2*pi*f_sw/10;
+wcross2 = 2*pi*f_sw/3.25;
 % Lead Compensator Design
 Gc1 = (1+a1*T1*s)/(1+T1*s);
-[Mag, Ph] = bode(G_VS, wcross2);
+[~, Ph] = bode(G_VS, wcross2);
 phi_m = pm_des_vs-(180+Ph);
 
 a1_val = (1+sind(phi_m))/(1-sind(phi_m));
@@ -225,16 +230,26 @@ fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 
 figure(4)
 margin(Gc*G_CS)
+Gc = tf(1);
 [num_c1, den_c1] = tfdata(Gc);
 
 
 %% SNUBBER DESIGN OF Qd
 
-Rs = V_ref / I_ref
-Ton = (T_mach - t2) / 100;
+Rs = V_ref / I_ref;
+Ton = (T_mach - t2);
 L = l1_val + l2_val; % Max worst case inductance across Qd
 Cs_min = L * I_ref^2 / V_ref^2;
 Cs_max = Ton / (10 * Rs);
-Cs = (Cs_min + Cs_max) / 2
-%}
+Cs = (Cs_min + Cs_max) / 2;
+
+%% SNUBBER DESIGN OF Q2
+
+Rs2 = 110 / 160;
+Ton = (0.432 - 0.42)*1e-3;
+L = l1_val + l2_val; % Max worst case inductance across Qd
+Cs_min = L * 160^2 / 110^2;
+Cs_max = Ton / (10 * Rs);
+Cs2 = (Cs_min + Cs_max) / 2;
+
 %% END
