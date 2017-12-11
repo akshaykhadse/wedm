@@ -1,9 +1,9 @@
-x = D1.time;
+x = Load.time;
 xlab = 'Time(ms)';
-y1 = -D1.signals(1).values;
-y1lab = '$V_{D1}$ (V)';
-y2 = -D1.signals(2).values;
-y2lab = '$I_{D1}$ (A)';
+y1 = Load.signals(1).values;
+y1lab = '$V_{l}$ (V)';
+y2 = Load.signals(2).values;
+y2lab = '$I_{l}$ (A)';
 
 x0=0;
 y0=0;
@@ -15,7 +15,7 @@ hAxis(1) = subplot(2,1,1);
 plot(x, y1, 'LineWidth',1);
 set(gca,...
 'Units','normalized',...
-'YTick',-100:20:0,...
+'YTick',0:20:80,...
 'XTick',0:x(end)/10:x(end),...
 'FontUnits','points',...
 'FontWeight','normal',...
@@ -33,7 +33,7 @@ xlabel(xlab,...
 'FontWeight','normal',...
 'FontSize',15,...
 'FontName','Times')
-ylim([-120 10]);
+ylim([-5 85]);
 
 hAxis(2) = subplot(2,1,2);
 hAxis(2).Position(2) = 0.1500;
@@ -61,4 +61,4 @@ xlabel('Time(ms)',...
 'FontName','Times')
 ylim([-1 11]);
 
-print -deps D1.eps
+print -deps loa_cmc.eps
