@@ -1,0 +1,18 @@
+.MUR3020WTG :1
+TO545P530X1588X2590-3P
+*STM IC
+*NGS
+*PLB 1="1" 2="2" 3="3"
+*MXP 3
+*DFN MUR3020WTG
+~!Supplier_Name (RS)
+~!RS Part Number (7737822)
+~!Manufacturer_Name (ON Semiconductor)
+~!Manufacturer_Part_Number (MUR3020WTG)
+~!Allied_Number (70099560)
+~!Other Part Number (-)
+~!Link Datasheet (http://www.onsemi.com/pub/Collateral/MUR3020WT-D.PDF)
+~!Height (5.3mm)
+~!3D_Model (MUR3020WTG)
+MUR3020WTG
+1.1!U 2.1!U 3.1!U 

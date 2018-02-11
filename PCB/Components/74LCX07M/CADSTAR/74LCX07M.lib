@@ -1,0 +1,18 @@
+.74LCX07M :1 ;Buffer/Driver 6-Ch Open Drain SOIC14 74LCX07M, 6-Bit Buffer, LCX, 3-State Non-Inverting 2  5.5 V 14-Pin SOIC
+SOIC127P600X175-14N
+*STM IC
+*NGS
+*PLB 1="A0" 2="O0" 3="A1" 4="O1" 5="A2" 6="O2" 7="GND" 8="O5" 9="A5" 10="O4" 11="A4" 12="O3" 13="A3" 14="VCC"
+*MXP 14
+*DFN 74LCX07M
+~!Supplier_Name (RS)
+~!RS Part Number (1454566)
+~!Manufacturer_Name (Fairchild Semiconductor)
+~!Manufacturer_Part_Number (74LCX07M)
+~!Allied_Number (-)
+~!Other Part Number (-)
+~!Link Datasheet (https://www.fairchildsemi.com/datasheets/74/74LCX07.pdf)
+~!Height (1.75mm)
+~!3D_Model (74LCX07M)
+"74LCX07M"
+1.1!I 2.1!Y 3.1!I 4.1!Y 5.1!I 6.1!Y 7.1!P 14.1!P 13.1!I 12.1!Y 11.1!I 10.1!Y 9.1!I 8.1!Y 

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP HLSR_16-P
+D LEM - HLSR 16-P - CURRENT SENSOR, 16A, VOLTAGE O/P, 5VDC
+K
+F http://www.lem.com/docs/products/hlsr-p_series.pdf
+$ENDCMP
+#
+#End Doc Library

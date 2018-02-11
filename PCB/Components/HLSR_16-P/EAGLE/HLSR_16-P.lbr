@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--/545509/30955/2.18/10/4/Undefined or Miscellaneous/-->
+<!DOCTYPE curve SYSTEM "eagle.dtd">
+<eagle version="7.7.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>&lt;LEM - HLSR 16-P - CURRENT SENSOR, 16A, VOLTAGE O/P, 5VDC&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="HLSR16-P">
+<description>&lt;b&gt;HLSR16-P&lt;/b&gt;&lt;br&gt;
+</description>
+<pad name="1" x="3.09" y="-17.2" drill="1.15" diameter="1.9"/>
+<pad name="2" x="4.36" y="-19.4" drill="1.15" diameter="1.9"/>
+<pad name="3" x="5.63" y="-17.2" drill="1.15" diameter="1.9"/>
+<pad name="4" x="6.9" y="-19.4" drill="1.15" diameter="1.9"/>
+<pad name="5" x="15.5" y="-9.43" drill="1.75" diameter="3.1"/>
+<pad name="6" x="15.5" y="-6.89" drill="1.75" diameter="3.1"/>
+<pad name="7" x="15.5" y="-4.35" drill="1.75" diameter="3.1"/>
+<pad name="8" x="-5.5" y="-4.35" drill="1.75" diameter="3.1"/>
+<pad name="9" x="-5.5" y="-6.89" drill="1.75" diameter="3.1"/>
+<pad name="10" x="-5.5" y="-9.43" drill="1.75" diameter="3.1"/>
+<text x="4.582" y="-10" align="center" size="1.27" layer="25" rot="R0" >&gt;NAME</text>
+<text x="4.582" y="-10" align="center" size="1.27" layer="51" rot="R0" >&gt;VALUE</text>
+<wire x1="0" y1="0" x2="10" y2="0" width="0.254" layer="51"/>
+<wire x1="10" y1="0" x2="10" y2="-19.4" width="0.254" layer="51"/>
+<wire x1="10" y1="-19.4" x2="0" y2="-19.4" width="0.254" layer="51"/>
+<wire x1="0" y1="-19.4" x2="0" y2="0" width="0.254" layer="51"/>
+<wire x1="0" y1="-19.4" x2="0" y2="0" width="0.254" layer="25"/>
+<wire x1="0" y1="0" x2="10" y2="0" width="0.254" layer="25"/>
+<wire x1="10" y1="0" x2="10" y2="-19.4" width="0.254" layer="25"/>
+<wire x1="0" y1="-19.4" x2="3.1" y2="-19.4" width="0.254" layer="25"/>
+<wire x1="10" y1="-19.4" x2="8.171" y2="-19.4" width="0.254" layer="25"/>
+<circle x="-0.918" y="-16.376" radius="0.14" width="0.254" layer="25"/>
+</package>
+</packages>
+<symbols>
+<symbol name="HLSR_16-P">
+<wire x1="5.08" y1="2.54" x2="20.32" y2="2.54" width="0.254" layer="94"/>
+<wire x1="20.32" y1="2.54" x2="20.32" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="20.32" y1="-12.7" x2="5.08" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-12.7" x2="5.08" y2="2.54" width="0.254" layer="94"/>
+<text x="12.7" y="5.08" align="center" size="1.778" layer="95">&gt;NAME</text>
+<text x="12.7" y="-15.24" align="center" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VREF" x="0" y="0" length="middle" direction="pas"/>
+<pin name="VOUT" x="0" y="-2.54" length="middle" direction="pas"/>
+<pin name="GND" x="0" y="-5.08" length="middle" direction="pas"/>
+<pin name="+UC" x="0" y="-7.62" length="middle" direction="pas"/>
+<pin name="5" x="0" y="-10.16" length="middle" direction="pas"/>
+<pin name="6" x="25.4" y="0" length="middle" direction="pas" rot="R180"/>
+<pin name="7" x="25.4" y="-2.54" length="middle" direction="pas" rot="R180"/>
+<pin name="8" x="25.4" y="-5.08" length="middle" direction="pas" rot="R180"/>
+<pin name="9" x="25.4" y="-7.62" length="middle" direction="pas" rot="R180"/>
+<pin name="10" x="25.4" y="-10.16" length="middle" direction="pas" rot="R180"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="HLSR_16-P" prefix="U">
+<description>&lt;b&gt;LEM - HLSR 16-P - CURRENT SENSOR, 16A, VOLTAGE O/P, 5VDC&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="http://www.lem.com/docs/products/hlsr-p_series.pdf"&gt; Datasheet &lt;/a&gt;</description>
+<gates>
+<gate name="G$1" symbol="HLSR_16-P" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="HLSR16-P">
+<connects>
+<connect gate="G$1" pin="VREF" pad="1"/>
+<connect gate="G$1" pin="VOUT" pad="2"/>
+<connect gate="G$1" pin="GND" pad="3"/>
+<connect gate="G$1" pin="+UC" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="G$1" pin="7" pad="7"/>
+<connect gate="G$1" pin="8" pad="8"/>
+<connect gate="G$1" pin="9" pad="9"/>
+<connect gate="G$1" pin="10" pad="10"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="Supplier_Name" value="RS" constant="no"/>
+<attribute name="RS_Part_Number" value="" constant="no"/>
+<attribute name="Manufacturer_Name" value="LEM" constant="no"/>
+<attribute name="Manufacturer_Part_Number" value="HLSR 16-P" constant="no"/>
+<attribute name="Allied_Number" value="" constant="no"/>
+<attribute name="Other_Part_Number" value="" constant="no"/>
+<attribute name="Description" value="LEM - HLSR 16-P - CURRENT SENSOR, 16A, VOLTAGE O/P, 5VDC" constant="no"/>
+<attribute name="Height" value="mm" constant="no"/>
+<attribute name="3D_Package" value="" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>

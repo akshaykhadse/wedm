@@ -1,0 +1,17 @@
+.NC7SZ04M5 :1 ;Fairchild Semiconductor NC7SZ04M5 Inverter, 1.65  5.5 V, 5-Pin SOT-23
+SOT95P280X145-5N
+*STM U
+*NGS
+*PLB 1="NC" 2="A" 3="GND" 4="Y" 5="VCC"
+*MXP 5
+*DFN NC7SZ04M5
+~!Supplier_Name (RS)
+~!RS Part Number (7614555)
+~!Manufacturer_Name (Fairchild Semiconductor)
+~!Manufacturer_Part_Number (NC7SZ04M5)
+~!Allied_Number (-)
+~!Other Part Number (-)
+~!Link Datasheet (-)
+~!Height (-)
+NC7SZ04M5
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 

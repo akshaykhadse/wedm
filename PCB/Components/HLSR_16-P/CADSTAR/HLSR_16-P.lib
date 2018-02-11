@@ -1,0 +1,17 @@
+.HLSR_16-P :1 ;LEM - HLSR 16-P - CURRENT SENSOR, 16A, VOLTAGE O/P, 5VDC
+HLSR16-P
+*STM U
+*NGS
+*PLB 1="VREF" 2="VOUT" 3="GND" 4="+UC" 5="5" 6="6" 7="7" 8="8" 9="9" 10="10"
+*MXP 10
+*DFN HLSR_16-P
+~!Supplier_Name (RS)
+~!RS Part Number (-)
+~!Manufacturer_Name (LEM)
+~!Manufacturer_Part_Number (HLSR 16-P)
+~!Allied_Number (-)
+~!Other Part Number (-)
+~!Link Datasheet (http://www.lem.com/docs/products/hlsr-p_series.pdf)
+~!Height (-)
+HLSR_16-P
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 9.1!U 10.1!U 

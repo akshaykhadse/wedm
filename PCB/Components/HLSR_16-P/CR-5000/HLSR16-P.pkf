@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "HLSR16-P"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "HLSR16-P")
+        (spec "default")
+    )
+)
