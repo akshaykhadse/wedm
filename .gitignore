@@ -22,7 +22,6 @@ octave-workspace
 *.autosave
 
 *.ini
-*.fig
 *.png
 slprj/
 *.slx.*
