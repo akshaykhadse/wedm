@@ -4,7 +4,7 @@
 %% VOLTAGE SOURCE COMPENSATOR
 syms a1 T1 a2 T2; % Declare Symbolic Variables
 wcross2 = 2*pi*f_sw / 10; % Gain crossover frequency an order lower than switching freq
-%{
+
 % Lead Compensator Design
 Gc1 = (1+a1*T1*s)/(1+T1*s);
 [~, Ph] = bode(G_VS, wcross2);
@@ -24,15 +24,15 @@ fprintf('Compensator Transfer Function\n')
 Gc = Ac*Gc1*Gc2
 
 % Gain Margin, Phase Margin, Bode Plot of Compensated System
-[Gm,Pm,Wgm,Wpm] = margin(Gc*G_VS);
-fprintf('New Gain Margin = %e\n', Gm)
-fprintf('New Phase Margin = %e\n', Pm)
-fprintf('New Phase Crossover Frequency = %e\n', Wgm)
-fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
-figure(3)
+% [Gm,Pm,Wgm,Wpm] = margin(Gc*G_VS);
+% fprintf('New Gain Margin = %e\n', Gm)
+% fprintf('New Phase Margin = %e\n', Pm)
+% fprintf('New Phase Crossover Frequency = %e\n', Wgm)
+% fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
+figure(5)
 margin(Gc*G_VS)
 [num_c2, den_c2] = tfdata(Gc);
-%}
+
 %% CURRENT SOURCE COMPENSATOR
 syms a1 T1 a2 T2; % Declare Symbolic Variables
 a2_val = 1e-10;
@@ -52,12 +52,12 @@ fprintf('Compensator Transfer Function\n')
 Gc = Ac*Gc1
 
 % Gain Margin, Phase Margin, Bode Plot of Compensated System
-[Gm,Pm,Wgm,Wpm] = margin(Gc*G_CS);
-fprintf('New Gain Margin = %e\n', Gm)
-fprintf('New Phase Margin = %e\n', Pm)
-fprintf('New Phase Crossover Frequency = %e\n', Wgm)
-fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
-figure(4)
+% [Gm,Pm,Wgm,Wpm] = margin(Gc*G_CS);
+% fprintf('New Gain Margin = %e\n', Gm)
+% fprintf('New Phase Margin = %e\n', Pm)
+% fprintf('New Phase Crossover Frequency = %e\n', Wgm)
+% fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
+figure(6)
 margin(Gc*G_CS)
 [num_c1, den_c1] = tfdata(Gc);
 
