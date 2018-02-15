@@ -35,10 +35,6 @@ rc2_val = 0.0001; % Resistance of Capacitor C2
 i1_ripple = 0.01; % Maximum allowed ripple in L1 current
 v2_ripple = 0.01; % Maximum allowed ripple in Voltage Source Output
 
-pm_des_vs = 60; % Desired phase margin
-a2_vs = 1e-8; % ??????
-wm2 = 1; % ??????
-
 %% PASSIVE COMPONENT SIZING
 
 % Current Source inductor
