@@ -47,6 +47,8 @@ discreteG_CS = c2d(G_CS, 1/fSampling, 'tustin');
 % fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
 figure(3);hold on
 margin(G_CS)
+figure(8)
+margin(G_CS)
 figure(4);hold on
 pzmap(G_CS2)
 set(gca, 'XScale', 'log')
@@ -75,7 +77,7 @@ fprintf('New Gain Margin = %e\n', Gm)
 fprintf('New Phase Margin = %e\n', Pm)
 fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
-figure(8)
+figure(8);hold on
 margin(Gc*G_CS)
 [num_c1, den_c1] = tfdata(Gc);
 

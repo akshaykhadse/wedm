@@ -32,7 +32,7 @@ Gc = Ac*Gc1*Gc2
 % fprintf('New Phase Margin = %e\n', Pm)
 % fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
-figure(5)
+figure(2); hold on
 margin(Gc*G_VS)
 [num_c2, den_c2] = tfdata(Gc);
 
@@ -60,7 +60,7 @@ Gc = Ac*Gc1
 % fprintf('New Phase Margin = %e\n', Pm)
 % fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
-figure(6)
+figure(5); hold on
 margin(Gc*G_CS)
 [num_c1, den_c1] = tfdata(Gc);
 

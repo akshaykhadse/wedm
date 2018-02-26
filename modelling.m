@@ -43,6 +43,8 @@ discreteG_VS = c2d(G_VS, 1/fSampling, 'tustin');
 figure(1)
 margin(G_VS)
 figure(2)
+margin(G_VS)
+figure(3)
 pzmap(G_VS2)
 
 
@@ -85,9 +87,11 @@ discreteG_CS = c2d(G_CS, 1/fSampling, 'tustin');
 % fprintf('Phase Margin = %e\n', Pm);
 % fprintf('Phase Crossover Frequency = %e\n', Wgm);
 % fprintf('Gain Crossover Frequency = %e\n\n', Wpm);
-figure(3)
-margin(G_CS);
 figure(4)
+margin(G_CS);
+figure(5)
+margin(G_CS);
+figure(6)
 pzmap(G_CS2)
 
 %% END
