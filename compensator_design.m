@@ -36,6 +36,9 @@ figure(2); hold on
 margin(Gc*G_VS)
 [num_c2, den_c2] = tfdata(Gc);
 
+discreteGc_VS = c2d(Gc, 1/fSampling, 'tustin')
+[dis_num_c2, dis_den_c2] = tfdata(discreteGc_VS);
+
 %% CURRENT SOURCE COMPENSATOR
 syms a1 T1 a2 T2; % Declare Symbolic Variables
 a2_val = 1e-10;
@@ -63,5 +66,8 @@ Gc = Ac*Gc1
 figure(5); hold on
 margin(Gc*G_CS)
 [num_c1, den_c1] = tfdata(Gc);
+
+discreteGc_CS = c2d(Gc, 1/fSampling, 'tustin')
+[dis_num_c1, dis_den_c1] = tfdata(discreteGc_CS);
 
 %% END
