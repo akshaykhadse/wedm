@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP MIC4451YM
-D Gate Drivers 12A Hi-Speed, Hi-Current Single MOSFET Driver
-K
-F http://ww1.microchip.com/downloads/en/DeviceDoc/mic4451.pdf
-$ENDCMP
-#
-#End Doc Library

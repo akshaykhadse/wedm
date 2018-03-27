@@ -1,9 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP 74LCX07M
-D Buffer/Driver 6-Ch Open Drain SOIC14 74LCX07M, 6-Bit Buffer, LCX, 3-State Non-Inverting 2  5.5 V 14-Pin SOIC
-K
-F https://www.fairchildsemi.com/datasheets/74/74LCX07.pdf
-$ENDCMP
-#
-#End Doc Library
