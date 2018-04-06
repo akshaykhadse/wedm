@@ -28,15 +28,15 @@ X = [I_ref; V_ref]; % Final value of state vector
 % Small Signal Transfer Function
 vohat_dhat = simplify(C*inv(s*eye(2)-A)*((A1 - A2)*X+(B1-B2)*Vd)+(C1-C2)*X);
 % fprintf('Small Signal Transfer Function of Uncomepensated System\n')
-G_VS = syms2tf(subs(vohat_dhat, [r, rl2, l2, rc2, c2, Vd],...
+G_VS_norm = syms2tf(subs(vohat_dhat, [r, rl2, l2, rc2, c2, Vd],...
         [r_val, rl2_val, l2_val,rc2_val, c2_val, Vd_val]))
 
-G_VS2 = feedback(G_VS, 1);
-[num1,den1] = tfdata(G_VS2,'v');
-[z1,p1,k1] = tf2zp(num1,den1)
+G_VS2_norm = feedback(G_VS_norm, 1);
+[num1_compr,den1_compr] = tfdata(G_VS2_norm,'v');
+[z1,p1,k1] = tf2zp(num1_compr,den1_compr)
 
 % Discrete Time Transfer Function
-discreteG_VS = c2d(G_VS, 1/fSampling, 'tustin');
+discreteG_VS = c2d(G_VS_norm, 1/fSampling, 'tustin');
 
 % Gain Margin, Phase Margin, Bode Plot
 % [Gm,Pm,Wgm,Wpm] = margin(G_VS_0);
@@ -45,12 +45,12 @@ discreteG_VS = c2d(G_VS, 1/fSampling, 'tustin');
 % fprintf('Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
 figure(1); hold on;
-margin(G_VS)
+margin(G_VS_norm)
 figure(7)
-margin(G_VS)
-figure(2)
+margin(G_VS_norm)
+figure(3)
 hold on;
-pzmap(G_VS2)
+pzmap(G_VS2_norm)
 set(gca, 'XScale', 'log')
 
 %% COMPENSATOR
@@ -59,7 +59,7 @@ a2_val = 1e-10;
 
 % Lead Compensator Design
 Gc1 = (1+a1*T1*s)/(1+T1*s);
-[~, Ph] = bode(G_VS, wcross2);
+[~, Ph] = bode(G_VS_norm, wcross2);
 phi_m = pm_des_vs-(180+Ph);
 a1_val = (1+sind(phi_m))/(1-sind(phi_m));
 T1_val = 1/(wcross2*sqrt(a1_val));
@@ -71,7 +71,7 @@ T2_val = 1/(wm2*sqrt(a2_vs));
 Gc2 = syms2tf(subs(Gc2, [a2, T2], [a2_vs, T2_val]));
 
 % Balancing Loop Gain
-Ac = 1/(evalfr(G_VS, wcross2)*evalfr(Gc1, wcross2)*evalfr(Gc2, wcross2));
+Ac = 1/(evalfr(G_VS_norm, wcross2)*evalfr(Gc1, wcross2)*evalfr(Gc2, wcross2));
 fprintf('Compensator Transfer Function\n')
 Gc = Ac*Gc1*Gc2
 
@@ -82,7 +82,7 @@ Gc = Ac*Gc1*Gc2
 % fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 figure(7); hold on;
-margin(Gc*G_VS)
-[num_c2, den_c2] = tfdata(Gc);
+margin(Gc*G_VS_norm)
+[num_c2_compr, den_c2_compr] = tfdata(Gc);
 
 %% END

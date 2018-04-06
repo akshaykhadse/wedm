@@ -69,9 +69,9 @@ C = simplify(d2*C1+(1-d2)*C2);
 X = I_ref; % Final value of state vector
 
 % Small Signal Transfer Function
-vohat_dhat = simplify(C*inv(s*eye(1)-A)*((A1 - A2)*X+(B1-B2)*Vd)+(C1-C2)*X);
+iohat_dhat = simplify(C*inv(s*eye(1)-A)*((A1 - A2)*X+(B1-B2)*Vd)+(C1-C2)*X);
 % fprintf('Small Signal Transfer Function of Uncomepensated System\n');
-G_CS = syms2tf(subs(vohat_dhat, [r, rl1, l1, Vd],...
+G_CS = syms2tf(subs(iohat_dhat, [r, rl1, l1, Vd],...
         [r_val, rl1_val, l1_val, Vd_val]))
 
 G_CS2 = feedback(G_CS, 1);

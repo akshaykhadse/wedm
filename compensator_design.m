@@ -24,19 +24,19 @@ Gc2 = syms2tf(subs(Gc2, [a2, T2], [a2_vs, T2_val]));
 % Balancing Loop Gain
 Ac = 1/(evalfr(G_VS, wcross2)*evalfr(Gc1, wcross2)*evalfr(Gc2, wcross2));
 fprintf('Compensator Transfer Function\n')
-Gc = Ac*Gc1*Gc2
+Gc_VS = Ac*Gc1*Gc2
 
 % Gain Margin, Phase Margin, Bode Plot of Compensated System
-% [Gm,Pm,Wgm,Wpm] = margin(Gc*G_VS);
+% [Gm,Pm,Wgm,Wpm] = margin(Gc_VS*G_VS);
 % fprintf('New Gain Margin = %e\n', Gm)
 % fprintf('New Phase Margin = %e\n', Pm)
 % fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 figure(2); hold on
-margin(Gc*G_VS)
-[num_c2, den_c2] = tfdata(Gc);
+margin(Gc_VS*G_VS)
+[num_c2, den_c2] = tfdata(Gc_VS);
 
-discreteGc_VS = c2d(Gc, 1/fSampling, 'tustin')
+discreteGc_VS = c2d(Gc_VS, 1/fSampling, 'tustin')
 [dis_num_c2, dis_den_c2] = tfdata(discreteGc_VS);
 
 tfa = dis_num_c2{1,1}(1)
@@ -62,19 +62,19 @@ Gc1 = syms2tf(subs(Gc1, [a1, T1], [a1_val, T1_val]));
 % Balancing Loop Gain
 Ac = 1/(evalfr(G_CS, wcross)*evalfr(Gc1, wcross));
 fprintf('Compensator Transfer Function\n')
-Gc = Ac*Gc1
+Gc_CS = Ac*Gc1
 
 % Gain Margin, Phase Margin, Bode Plot of Compensated System
-% [Gm,Pm,Wgm,Wpm] = margin(Gc*G_CS);
+% [Gm,Pm,Wgm,Wpm] = margin(Gc_CS*G_CS);
 % fprintf('New Gain Margin = %e\n', Gm)
 % fprintf('New Phase Margin = %e\n', Pm)
 % fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 figure(5); hold on
-margin(Gc*G_CS)
-[num_c1, den_c1] = tfdata(Gc);
+margin(Gc_CS*G_CS)
+[num_c1, den_c1] = tfdata(Gc_CS);
 
-discreteGc_CS = c2d(Gc, 1/fSampling, 'tustin')
+discreteGc_CS = c2d(Gc_CS, 1/fSampling, 'tustin')
 [dis_num_c1, dis_den_c1] = tfdata(discreteGc_CS);
 
 %% END

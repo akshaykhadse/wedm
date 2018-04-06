@@ -29,15 +29,15 @@ X = [I_ref; V_ref]; % Final value of state vector
 % Small Signal Transfer Function
 vohat_dhat = simplify(C*inv(s*eye(2)-A)*((A1 - A2)*X+(B1-B2)*Vd)+(C1-C2)*X);
 % fprintf('Small Signal Transfer Function of Uncomepensated System\n')
-G_CS = syms2tf(subs(vohat_dhat, [r, rl1, l1, rc2, c2, Vd],...
+G_CS_norm = syms2tf(subs(vohat_dhat, [r, rl1, l1, rc2, c2, Vd],...
         [r_val, rl1_val, l1_val,rc2_val, c2_val, Vd_val]))
 
-G_CS2 = feedback(G_CS, 1);
-[num1,den1] = tfdata(G_CS2,'v');
-[z1,p1,k1] = tf2zp(num1,den1)
+G_CS2_norm = feedback(G_CS_norm, 1);
+[num1_compr,den1_compr] = tfdata(G_CS2_norm,'v');
+[z1,p1,k1] = tf2zp(num1_compr,den1_compr)
 
 % Discrete Time Transfer Function
-discreteG_CS = c2d(G_CS, 1/fSampling, 'tustin');
+discreteG_CS = c2d(G_CS_norm, 1/fSampling, 'tustin');
 
 % Gain Margin, Phase Margin, Bode Plot
 % [Gm,Pm,Wgm,Wpm] = margin(G_CS_0);
@@ -45,12 +45,12 @@ discreteG_CS = c2d(G_CS, 1/fSampling, 'tustin');
 % fprintf('Phase Margin = %e\n', Pm)
 % fprintf('Phase Crossover Frequency = %e\n', Wgm)
 % fprintf('Gain Crossover Frequency = %e\n\n', Wpm)
-figure(3);hold on
-margin(G_CS)
-figure(8)
-margin(G_CS)
 figure(4);hold on
-pzmap(G_CS2)
+margin(G_CS_norm)
+figure(8)
+margin(G_CS_norm)
+figure(6);hold on
+pzmap(G_CS2_norm)
 set(gca, 'XScale', 'log')
 % set(gca, 'YScale', 'log')
 %% COMPENSATOR
@@ -60,25 +60,28 @@ a2_val = 1e-10;
 % Lead Compensator Design
 wcross = wcross2;
 Gc1 = (1+a1*T1*s)/(1+T1*s);
-[Mag, Ph] = bode(G_CS, wcross2);
+[Mag, Ph] = bode(G_CS_norm, wcross2);
 phi_m = pm_des_vs-(180+Ph);
 a1_val = (1+sind(phi_m))/(1-sind(phi_m));
 T1_val = 1/(wcross*sqrt(a1_val));
 Gc1 = syms2tf(subs(Gc1, [a1, T1], [a1_val, T1_val]));
 
 % Balancing Loop Gain
-Ac = 1/(evalfr(G_CS, wcross)*evalfr(Gc1, wcross));
+Ac = 1/(evalfr(G_CS_norm, wcross)*evalfr(Gc1, wcross));
 fprintf('Compensator Transfer Function\n')
 Gc = Ac*Gc1
 
 % Gain Margin, Phase Margin, Bode Plot of Compensated System
-[Gm,Pm,Wgm,Wpm] = margin(Gc*G_CS);
+[Gm,Pm,Wgm,Wpm] = margin(Gc*G_CS_norm);
 fprintf('New Gain Margin = %e\n', Gm)
 fprintf('New Phase Margin = %e\n', Pm)
 fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 figure(8);hold on
-margin(Gc*G_CS)
-[num_c1, den_c1] = tfdata(Gc);
+margin(Gc*G_CS_norm)
+[num_c1_compr, den_c1_compr] = tfdata(Gc);
+
+%% Restoring c2_val from master_conv
+c2_val = 0.1e-3;
 
 %% END
