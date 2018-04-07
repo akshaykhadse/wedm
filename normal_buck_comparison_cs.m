@@ -1,8 +1,4 @@
 %% This script calculates model and designs controller.
-%  Run master_conv2.m and modelling.m before executing this script
-%master_conv2;
-%modelling;
-%compensator_design;
 
 %% MODELLING OF NORMAL BUCK CONVERTER AS CURRENT SOURCE
 syms r rl1 l1 rc2 c2 Vd d1 s; % Declare Symbolic Variables

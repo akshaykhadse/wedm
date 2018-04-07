@@ -55,11 +55,11 @@ l2_val = (V_ref / Vd_val)* (Vd_val-V_ref) / (2 * I_L2) / f_sw ;
 c2_val = (1-V_ref/Vd_val)/(8*v2_ripple*l2_val*f_sw^2);
 
 % Overriding caluclated values
-l2_val = 2e-3;
+% l2_val = 2e-3;
 c2_val = 0.1e-3;            % Bigger capacitor for safe operation
 % 2018/04/07 - Optimising values for pulsed reference
-% l1_val = 10e-6;
-% l2_val = 0.1e-3;
+l1_val = 10e-6;
+l2_val = 0.1e-3;
 
 %% SNUBBER DESIGN OF Qd
 
