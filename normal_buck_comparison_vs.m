@@ -1,6 +1,5 @@
-%% This script calculates model and designs controller.
-
 %% MODELLING OF NORMAL BUCK CONVERTER AS VOLTAGE SOURCE
+
 syms r rc2 c2 rl2 l2 Vd d2 s; % Declare Symbolic Variables
 
 % During ON time of Q1
@@ -50,6 +49,7 @@ pzmap(G_VS2_norm)
 set(gca, 'XScale', 'log')
 
 %% COMPENSATOR
+
 syms a1 T1 a2 T2; % Declare Symbolic Variables
 a2_val = 1e-10;
 

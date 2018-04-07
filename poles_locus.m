@@ -1,48 +1,63 @@
-% Run this file after running master_conv2 and modelling
+%% Variation of voltage source poles with c2 value
 
+c2_val_bak = c2_val;    % Backup original c2 value 
 vs_poles = poles(vohat_dhat);
 c2_range = 0.001e-3:0.01e-3:1e-3;
-pole_data = [];
+pd_vs_c2 = [];
 for c2_val = c2_range
-    pole_data = [pole_data subs(vs_poles, [rc2, c2, rl2, l2, Vd],...
+    pd_vs_c2 = [pd_vs_c2 subs(vs_poles, [rc2, c2, rl2, l2, Vd],...
         [rc2_val, c2_val, rl2_val, l2_val, Vd_val])];
 end
 
 figure(9)
-plot3(c2_range, real(pole_data), imag(pole_data))
+plot3(c2_range, real(pd_vs_c2), imag(pd_vs_c2))
 xlabel('C')
 ylabel('\sigma')
 zlabel('j\omega')
 title('Varation of poles wrt Capacitance')
-c2_val = 0.1e-3;
 
+c2_val = c2_val_bak;    % Restore c2 value
+clear c2_val_bak        % Clear temperory variable
+
+%% Variation of voltage source poles with l2 value
+
+l2_val_bak = l2_val;    % Backup original l2 value
 l2_range = logspace(-6,-3, 100);
-pole_data = [];
+pd_vs_l2 = [];
 for l2_val = l2_range
-    pole_data = [pole_data subs(vs_poles, [rc2, c2, rl2, l2, Vd],...
+    pd_vs_l2 = [pd_vs_l2 subs(vs_poles, [rc2, c2, rl2, l2, Vd],...
         [rc2_val, c2_val, rl2_val, l2_val, Vd_val])];
 end
 
 figure(10)
-plot3(l2_range, real(pole_data), imag(pole_data))
+plot3(l2_range, real(pd_vs_l2), imag(pd_vs_l2))
 xlabel('L')
 ylabel('\sigma')
 zlabel('j\omega')
 title('Varation of poles wrt Inductance')
-l2_val = 2e-3;
 
+l2_val = l2_val_bak;    % Restore l2 vlaue
+clear l2_val_bak        % Clear temperory variable
+
+%% Variation of current source poles with l1 value
+
+l1_val_bak = l1_val;    % Backup original l1 value
 cs_poles = poles(iohat_dhat);
 l1_range = 0.001e-3:0.01e-3:2e-3;
-pole_data = [];
+pd_cs_l1 = [];
 for l1_val = l1_range
-    pole_data = [pole_data subs(cs_poles, [r, rl1, l1, Vd],...
+    pd_cs_l1 = [pd_cs_l1 subs(cs_poles, [r, rl1, l1, Vd],...
         [r_val, rl1_val, l1_val, Vd_val])];
 end
 
 figure(11)
-plot(l1_range, real(pole_data))
+plot(l1_range, real(pd_cs_l1))
 axis([-0.2e-3, 2.2e-3, -11e5, 1e5])
 xlabel('L')
 ylabel('\sigma')
 title('Varation of poles wrt Inductance of Current Source')
-l1_val=1.8e-3;
+
+l1_val = l1_val_bak;    % Rectore l1 value
+clear l1_val_bak        % Clear temperory variable
+
+%% END

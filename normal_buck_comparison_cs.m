@@ -1,9 +1,9 @@
-%% This script calculates model and designs controller.
-
 %% MODELLING OF NORMAL BUCK CONVERTER AS CURRENT SOURCE
-syms r rl1 l1 rc2 c2 Vd d1 s; % Declare Symbolic Variables
-% rc2_val=0.01;
-c2_val=10e-6;
+
+syms r rl1 l1 rc2 c2 Vd d1 s;   % Declare Symbolic Variables
+c2_val_bak = c2_val;            % Backup original c2 value
+c2_val = 10e-6;                 % Assume nominal c2 value
+
 % During ON time of Q1
 A1 = [-(r*rc2 + r*rl1 + rc2*rl1)/(l1*(r+rc2)), -r/(l1*(r+rc2));
     r/(c2*(r+rc2)), -1/(c2*(r+rc2))];
@@ -49,7 +49,9 @@ figure(6);hold on
 pzmap(G_CS2_norm)
 set(gca, 'XScale', 'log')
 % set(gca, 'YScale', 'log')
+
 %% COMPENSATOR
+
 syms a1 T1 a2 T2; % Declare Symbolic Variables
 a2_val = 1e-10;
 
@@ -77,7 +79,9 @@ figure(8);hold on
 margin(Gc*G_CS_norm)
 [num_c1_compr, den_c1_compr] = tfdata(Gc);
 
-%% Restoring c2_val from master_conv
-master_conv2
+%% Restoring c2 val from backup
+
+c2_val = c2_val_bak;
+clear c2_val_bak
 
 %% END
