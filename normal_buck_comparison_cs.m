@@ -82,6 +82,6 @@ margin(Gc*G_CS_norm)
 [num_c1_compr, den_c1_compr] = tfdata(Gc);
 
 %% Restoring c2_val from master_conv
-c2_val = 0.1e-3;
+master_conv2
 
 %% END

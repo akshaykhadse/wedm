@@ -39,12 +39,12 @@ margin(Gc_VS*G_VS)
 discreteGc_VS = c2d(Gc_VS, 1/fSampling, 'tustin')
 [dis_num_c2, dis_den_c2] = tfdata(discreteGc_VS);
 
-tfa = dis_num_c2{1,1}(1)
-tfb = dis_num_c2{1,1}(2)
-tfc = dis_num_c2{1,1}(3)
-tfd = dis_den_c2{1,1}(1)
-tfe = dis_den_c2{1,1}(2)
-tff = dis_den_c2{1,1}(3)
+tfa = dis_num_c2{1,1}(1);
+tfb = dis_num_c2{1,1}(2);
+tfc = dis_num_c2{1,1}(3);
+tfd = dis_den_c2{1,1}(1);
+tfe = dis_den_c2{1,1}(2);
+tff = dis_den_c2{1,1}(3);
 
 %% CURRENT SOURCE COMPENSATOR
 syms a1 T1 a2 T2; % Declare Symbolic Variables
@@ -76,5 +76,10 @@ margin(Gc_CS*G_CS)
 
 discreteGc_CS = c2d(Gc_CS, 1/fSampling, 'tustin')
 [dis_num_c1, dis_den_c1] = tfdata(discreteGc_CS);
+
+tfg = dis_num_c1{1,1}(1);
+tfh = dis_num_c1{1,1}(2);
+tfi = dis_den_c1{1,1}(1);
+tfj = dis_den_c1{1,1}(2);
 
 %% END
