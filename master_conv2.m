@@ -18,6 +18,7 @@ delay_load = t1;
 delayVC = 0;                % Delay between start of volt and curr sources
 
 %% References
+
 I_ref = 10;                 % Current Source Reference
 V_ref = 80;                 % Voltage Source Reference
 
@@ -29,8 +30,8 @@ frq_dc = 10;                % Frequency for dc power caculations
 
 % Resistances
 r_val = 1;                  % Load Resistance Value
-rl1_val = 0.0002;           % Resistance of Inductor L1
-rl2_val = 0.0001;           % Resistance of Inductor L2
+rl1_val = 0.5;              % Resistance of Inductor L1
+rl2_val = 0.1;              % Resistance of Inductor L2
 rc2_val = 0.0001;           % Resistance of Capacitor C2
 
 %% PASSIVE COMPONENT SIZING
