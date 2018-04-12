@@ -67,17 +67,17 @@ Gc1 = syms2tf(subs(Gc1, [a1, T1], [a1_val, T1_val]));
 % Balancing Loop Gain
 Ac = 1/(evalfr(G_CS_norm, wcross)*evalfr(Gc1, wcross));
 fprintf('Compensator Transfer Function\n')
-Gc = Ac*Gc1
+Gc_CS_norm = Ac*Gc1
 
 % Gain Margin, Phase Margin, Bode Plot of Compensated System
-[Gm,Pm,Wgm,Wpm] = margin(Gc*G_CS_norm);
+[Gm,Pm,Wgm,Wpm] = margin(Gc_CS_norm*G_CS_norm);
 fprintf('New Gain Margin = %e\n', Gm)
 fprintf('New Phase Margin = %e\n', Pm)
 fprintf('New Phase Crossover Frequency = %e\n', Wgm)
 fprintf('New Gain Crossover Frequency = %e\n\n', Wpm)
 figure(8);hold on
-margin(Gc*G_CS_norm)
-[num_c1_compr, den_c1_compr] = tfdata(Gc);
+margin(Gc_CS_norm*G_CS_norm)
+[num_c1_compr, den_c1_compr] = tfdata(Gc_CS_norm);
 
 %% Restoring c2 val from backup
 
