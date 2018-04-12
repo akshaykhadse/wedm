@@ -5,8 +5,8 @@
 syms a1 T1 a2 T2; % Declare Symbolic Variables
 wcross2 = 2*pi*f_sw / 10; % Gain crossover frequency an order lower than switching freq
 pm_des_vs = 60; % Desired phase margin
-a2_vs = 1e-5; % ??????
-wm2 = 1; % ??????
+a2_vs = 1e-6; % Previous Value = 1e-5
+wm2 = 1; % Maximum phase frequency
 
 % Lead Compensator Design
 Gc1 = (1+a1*T1*s)/(1+T1*s);

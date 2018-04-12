@@ -3,7 +3,7 @@
 %% Set Defaults
 
 % get(groot,'default')  % View all defaults
-close all
+% close all
 co = 0.25*ones(7,3);
 set(0, 'defaultlinelinewidth', 2);
 set(0,'defaultAxesColorOrder', co);
@@ -156,6 +156,74 @@ xlabel('L', 'FontSize', 14);
 ylabel('\sigma', 'FontSize', 14);
 % title('Varation of poles wrt Inductance of Current Source');
 print -dpdf Documentation/figures/matlab_generated/pd_cs_l1.pdf
+
+%% Voltage source compensator bode
+
+figure(20);
+
+w_start = 1e1; w_end = 1e7;
+[mag, ph, w] = bode(G_VS, {w_start, w_end});
+
+subplot(2,1,1);
+semilogx(squeeze(w), 20*log10(squeeze(mag))); grid on
+ylim([-110, 100]);
+ylabel('Magnitude (dB)','FontSize',14);
+
+subplot(2,1,2);
+semilogx(squeeze(w), squeeze(ph)); grid on
+ylim([-190, 30]);
+ylabel('Phase (Deg)','FontSize',14);
+xlabel('Frequency (rad/s)','FontSize',14);
+
+[mag, ph, w] = bode(Gc_VS * G_VS,{w_start, w_end});
+
+subplot(2,1,1); hold on
+semilogx(squeeze(w), 20*log10(squeeze(mag)), ':');
+ylim([-110, 100]);
+ylabel('Magnitude (dB)','FontSize',14); grid on
+legend('Normal', 'Compensated', 'Location', 'southwest');
+
+subplot(2,1,2); hold on
+semilogx(squeeze(w), squeeze(ph), ':');
+ylim([-190, 30]);
+ylabel('Phase (Deg)','FontSize',14);
+xlabel('Frequency (rad/s)','FontSize',14);
+
+print -dpdf Documentation/figures/matlab_generated/vs_compesator_bode.pdf
+
+%% Current source compensator bode
+
+figure(21);
+
+w_start = 1e2; w_end = 1e9;
+[mag, ph, w] = bode(G_CS, {w_start, w_end});
+
+subplot(2,1,1);
+semilogx(squeeze(w), 20*log10(squeeze(mag))); grid on
+axis([w_start, w_end, -100, 50]);
+ylabel('Magnitude (dB)','FontSize',14);
+
+subplot(2,1,2);
+semilogx(squeeze(w), squeeze(ph)); grid on
+axis([w_start, w_end, -110, 10]);
+ylabel('Phase (Deg)','FontSize',14);
+xlabel('Frequency (rad/s)','FontSize',14);
+
+[mag, ph, w] = bode(Gc_CS * G_CS,{w_start, w_end});
+
+subplot(2,1,1); hold on
+semilogx(squeeze(w), 20*log10(squeeze(mag)), ':');
+axis([w_start, w_end, -100, 50]);
+ylabel('Magnitude (dB)','FontSize',14); grid on
+legend('Normal', 'Compensated', 'Location', 'southwest');
+
+subplot(2,1,2); hold on
+semilogx(squeeze(w), squeeze(ph), ':');
+axis([w_start, w_end, -110, 10]);
+ylabel('Phase (Deg)','FontSize',14);
+xlabel('Frequency (rad/s)','FontSize',14);
+
+print -dpdf Documentation/figures/matlab_generated/cs_compesator_bode.pdf
 
 %% Clear Defaults
 
