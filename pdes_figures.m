@@ -52,33 +52,25 @@ print -dpdf Documentation/figures/matlab_generated/vs_comparison.pdf
 
 figure(13);
 
-[mag, ph, w] = bode(G_CS);
+[mag, ph, w] = bode(G_CS, {1e3, 1e7});
 
 subplot(2,1,1);
-semilogx(squeeze(w), 20*log10(squeeze(mag))); grid on
-y_max = 1.1 * max(20*log10(squeeze(mag)));
-y_min = 0.9 * min(20*log10(squeeze(mag)));
-ylim([y_min, y_max]);
-ylabel('Magnitude (dB)','FontSize',14);
+semilogx(squeeze(w), 20*log10(squeeze(mag)));
 
 subplot(2,1,2);
-semilogx(squeeze(w), squeeze(ph)); grid on
-ylabel('Phase (Deg)','FontSize',14);
-xlabel('Frequency (rad/s)','FontSize',14);
+semilogx(squeeze(w), squeeze(ph));
 
-[mag, ph, w] = bode(G_CS_norm);
+[mag, ph, w] = bode(G_CS_norm, {1e3, 1e7});
 
 subplot(2,1,1); hold on
-semilogx(squeeze(w), 20*log10(squeeze(mag)), ':');
-ylabel('Magnitude (dB)','FontSize',14); grid on
+semilogx(squeeze(w), 20*log10(squeeze(mag)), ':'); grid on
+axis([1e3 1e7 -80 50]);
+ylabel('Magnitude (dB)','FontSize',14);
 legend('Modified', 'Standard', 'Location', 'southwest');
 
 subplot(2,1,2); hold on
-semilogx(squeeze(w), squeeze(ph), ':');
-y_diff = max(squeeze(ph)) - min(squeeze(ph)); grid on
-y_max = max(squeeze(ph)) + 0.1 * y_diff;
-y_min = min(squeeze(ph)) - 0.1 * y_diff;
-ylim([y_min, y_max]);
+semilogx(squeeze(w), squeeze(ph), ':'); grid on
+axis([1e3 1e7 -190 10]);
 ylabel('Phase (Deg)','FontSize',14);
 xlabel('Frequency (rad/s)','FontSize',14);
 
@@ -165,21 +157,16 @@ w_start = 1e1; w_end = 1e7;
 [mag, ph, w] = bode(G_VS, {w_start, w_end});
 
 subplot(2,1,1);
-semilogx(squeeze(w), 20*log10(squeeze(mag))); grid on
-ylim([-110, 100]);
-ylabel('Magnitude (dB)','FontSize',14);
+semilogx(squeeze(w), 20*log10(squeeze(mag)));
 
 subplot(2,1,2);
-semilogx(squeeze(w), squeeze(ph)); grid on
-ylim([-190, 30]);
-ylabel('Phase (Deg)','FontSize',14);
-xlabel('Frequency (rad/s)','FontSize',14);
+semilogx(squeeze(w), squeeze(ph));
 
 [mag, ph, w] = bode(Gc_VS * G_VS,{w_start, w_end});
 
 subplot(2,1,1); hold on
 semilogx(squeeze(w), 20*log10(squeeze(mag)), ':');
-ylim([-110, 100]);
+ylim([-200, 100]);
 ylabel('Magnitude (dB)','FontSize',14); grid on
 legend('Normal', 'Compensated', 'Location', 'southwest');
 
@@ -219,11 +206,52 @@ legend('Normal', 'Compensated', 'Location', 'southwest');
 
 subplot(2,1,2); hold on
 semilogx(squeeze(w), squeeze(ph), ':');
-axis([w_start, w_end, -110, 10]);
+axis([w_start, w_end, -145, 10]);
 ylabel('Phase (Deg)','FontSize',14);
 xlabel('Frequency (rad/s)','FontSize',14);
 
 print -dpdf Documentation/figures/matlab_generated/cs_compesator_bode.pdf
+
+%% L1 reference and power
+
+figure(22);
+
+time = logsout.getElement('V_ref').Values.Time*1e3;
+
+subplot(3, 1, 1);
+plot(time, logsout.getElement('V_ref').Values.Data);
+subplot(3, 1, 2); hold on
+plot(time, logsout.getElement('L1Voltage').Values.Data);
+subplot(3, 1, 3); hold on
+plot(time, logsout.getElement('L1Current').Values.Data);
+
+pulsedRefMode = 1;
+sim('powersupply.slx');
+time = logsout.getElement('V_ref').Values.Time*1e3;
+
+subplot(3, 1, 1); hold on
+plot(time, logsout.getElement('V_ref').Values.Data, ':'); grid on
+xlim([time(end) - 3 * T_mach *1e3 time(end)]);
+ylim([0, 12]);
+ylabel('VS Reference (V)');
+legend('Constant Reference', 'Pulsed Reference');
+
+subplot(3, 1, 2); hold on
+plot(time, logsout.getElement('L1Voltage').Values.Data, ':'); grid on
+xlim([time(end) - 3 * T_mach *1e3 time(end)]);
+ylim([-100, 130]);
+ylabel('L1 Voltage (V)');
+
+subplot(3, 1, 3); hold on
+plot(time, logsout.getElement('L1Current').Values.Data, ':'); grid on
+xlim([time(end) - 3 * T_mach *1e3 time(end)]);
+ylim([0, 12]);
+ylabel('L1 Current (A)');
+xlabel('Time (ms)')
+
+print -dpdf Documentation/figures/matlab_generated/power_comparison.pdf
+
+pulsedRefMode = 0;
 
 %% Clear Defaults
 

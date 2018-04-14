@@ -21,6 +21,7 @@ delayVC = 0;                % Delay between start of volt and curr sources
 
 I_ref = 10;                 % Current Source Reference
 V_ref = 80;                 % Voltage Source Reference
+pulsedRefMode = 0;          % Pulsed reference on = 1
 
 %% Converter specific parameters
 Vd_val = 110;               % DC Link Voltage
@@ -59,7 +60,7 @@ c2_val = (1-V_ref/Vd_val)/(8*v2_ripple*l2_val*f_sw^2);
 % l2_val = 2e-3;
 c2_val = 0.1e-3;            % Bigger capacitor for safe operation
 % 2018/04/07 - Optimising values for pulsed reference
-l1_val = 10e-6;
+l1_val = 100e-6;
 l2_val = 0.1e-3;
 
 %% SNUBBER DESIGN OF Qd
