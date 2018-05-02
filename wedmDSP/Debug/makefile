@@ -12,6 +12,8 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 -lrts2800_fpu32_fast_supplement.lib \
 -lrts2800_fpu32.lib \
+"./CLA.obj" \
+"./F2806x_Adc.obj" \
 "./F2806x_CodeStartBranch.obj" \
 "./F2806x_CpuTimers.obj" \
 "./F2806x_DefaultIsr.obj" \
@@ -21,7 +23,7 @@ ORDERED_OBJS += \
 "./F2806x_SysCtrl.obj" \
 "./F2806x_usDelay.obj" \
 "./main.obj" \
-"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/cmd/28069_RAM_lnk.cmd" \
+"../28069_RAM_CLA_lnk.cmd" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/cmd/F2806x_Headers_nonBIOS.cmd" \
 $(GEN_CMDS__FLAG) \
 -lIQmath_fpu32.lib \
@@ -164,9 +166,9 @@ wedmDSP.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "F2806x_CodeStartBranch.obj" "F2806x_CpuTimers.obj" "F2806x_DefaultIsr.obj" "F2806x_GlobalVariableDefs.obj" "F2806x_PieCtrl.obj" "F2806x_PieVect.obj" "F2806x_SysCtrl.obj" "F2806x_usDelay.obj" "main.obj" 
-	-$(RM) "F2806x_CpuTimers.d" "F2806x_DefaultIsr.d" "F2806x_GlobalVariableDefs.d" "F2806x_PieCtrl.d" "F2806x_PieVect.d" "F2806x_SysCtrl.d" "main.d" 
-	-$(RM) "F2806x_CodeStartBranch.d" "F2806x_usDelay.d" 
+	-$(RM) "CLA.obj" "F2806x_Adc.obj" "F2806x_CodeStartBranch.obj" "F2806x_CpuTimers.obj" "F2806x_DefaultIsr.obj" "F2806x_GlobalVariableDefs.obj" "F2806x_PieCtrl.obj" "F2806x_PieVect.obj" "F2806x_SysCtrl.obj" "F2806x_usDelay.obj" "main.obj" 
+	-$(RM) "F2806x_Adc.d" "F2806x_CpuTimers.d" "F2806x_DefaultIsr.d" "F2806x_GlobalVariableDefs.d" "F2806x_PieCtrl.d" "F2806x_PieVect.d" "F2806x_SysCtrl.d" "main.d" 
+	-$(RM) "CLA.d" "F2806x_CodeStartBranch.d" "F2806x_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

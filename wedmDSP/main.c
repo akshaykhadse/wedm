@@ -19,50 +19,59 @@
 //!  the 2806x control card.
 //
 //###########################################################################
-// $TI Release: F2806x Support Library v2.03.00.00 $
-// $Release Date: Sun Mar 25 13:24:47 CDT 2018 $
-// $Copyright:
-// Copyright (C) 2009-2018 Texas Instruments Incorporated - http://www.ti.com/
 //
-// Redistribution and use in source and binary forms, with or without 
-// modification, are permitted provided that the following conditions 
-// are met:
-// 
-//   Redistributions of source code must retain the above copyright 
-//   notice, this list of conditions and the following disclaimer.
-// 
-//   Redistributions in binary form must reproduce the above copyright
-//   notice, this list of conditions and the following disclaimer in the 
-//   documentation and/or other materials provided with the   
-//   distribution.
-// 
-//   Neither the name of Texas Instruments Incorporated nor the names of
-//   its contributors may be used to endorse or promote products derived
-//   from this software without specific prior written permission.
-// 
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 
-// "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT 
-// LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT 
-// OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
-// SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
-// LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-// DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-// THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT 
-// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE 
-// OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-// $
+// FILE:   Example_2806xClaAdc.c
+//
+// TITLE:  CLA ADC Example
+//
+//!  \addtogroup f2806x_example_list
+//!  <h1>CLA ADC (cla_adc)</h1>
+//!
+//! In this example ePWM1 is setup to generate a periodic ADC SOC.
+//! Channel ADCINA2 is converted. When the ADC begins conversion,
+//! it will assert ADCINT2 which will start CLA task 2.
+//!
+//! Cla Task2 logs 20 ADCRESULT1 values in a circular buffer.
+//! When Task2 completes an interrupt to the CPU clears the ADCINT2 flag.
+//!
+//! \b Watch \b Variables \n
+//! - VoltageCLA       - Last 20 ADCRESULT1 values
+//! - ConversionCount  - Current result number
+//! - LoopCount        - Idle loop counter
+//
+//
 //###########################################################################
 
 //
 // Included Files
 //
 #include "DSP28x_Project.h"     // Device Headerfile and Examples Include File
+#include "CLAShared.h"
+#include "string.h"
 
 //
 // Function Prototypes statements for functions found within this file.
 //
 __interrupt void cpu_timer0_isr(void);
+__interrupt void cla1_isr2(void);
+
+//
+// Globals
+//
+#pragma DATA_SECTION(ConversionCount, "Cla1ToCpuMsgRAM");
+#pragma DATA_SECTION(VoltageCLA,      "Cla1ToCpuMsgRAM");
+
+Uint16 ConversionCount;
+Uint16 LoopCount;
+Uint16 VoltageCLA[NUM_DATA_POINTS];
+
+//
+// These are defined by the linker file
+//
+extern Uint16 Cla1funcsLoadStart;
+extern Uint16 Cla1funcsLoadEnd;
+extern Uint16 Cla1funcsRunStart;
+extern Uint16 Cla1funcsLoadSize;
 
 //
 // Main
@@ -119,6 +128,7 @@ void main(void)
     //
     EALLOW;    // This is needed to write to EALLOW protected registers
     PieVectTable.TINT0 = &cpu_timer0_isr;
+    PieVectTable.CLA1_INT2 = &cla1_isr2;
     EDIS;      // This is needed to disable write to EALLOW protected registers
 
     //
@@ -126,6 +136,8 @@ void main(void)
     //         found in F2806x_CpuTimers.c
     //
     InitCpuTimers();   // For this example, only initialize the Cpu Timers
+    InitAdc();         // For this example, init the ADC
+    AdcOffsetSelfCal();
     
     //
     // Configure CPU-Timer 0 to interrupt every 500 milliseconds:
@@ -163,6 +175,17 @@ void main(void)
     IER |= M_INT1;
 
     //
+    // Enable ADCINT1 in PIE
+    //
+
+    //
+    // Enable INT 11.2 in the PIE (CLA Task2)
+    //
+    PieCtrlRegs.PIEIER11.bit.INTx2 = 1;
+
+    IER |= M_INT11;             // Enable CPU Interrupt 11
+
+    //
     // Enable TINT0 in the PIE: Group 1 interrupt 7
     //
     PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
@@ -174,9 +197,112 @@ void main(void)
     ERTM;   // Enable Global realtime interrupt DBGM
 
     //
+    // Copy CLA code from its load address to CLA program RAM
+    //
+
+    //
+    // Note: during debug the load and run addresses can be
+    // the same as Code Composer Studio can load the CLA program
+    // RAM directly.
+    //
+
+    //
+    // The ClafuncsLoadStart, Cla1funcsLoadSize, and ClafuncsRunStart
+    // symbols are created by the linker.
+    //
+    memcpy(&Cla1funcsRunStart, &Cla1funcsLoadStart, (Uint32)&Cla1funcsLoadSize);
+
+    //
+    // Initialize the CLA registers
+    //
+    EALLOW;
+    Cla1Regs.MVECT2 = (Uint16) (&Cla1Task2 - &Cla1Prog_Start)*sizeof(Uint32);
+    Cla1Regs.MVECT8 = (Uint16) (&Cla1Task8 - &Cla1Prog_Start)*sizeof(Uint32);
+
+    //
+    // ADCINT2 starts Task 2
+    //
+    Cla1Regs.MPISRCSEL1.bit.PERINT2SEL = CLA_INT2_ADCINT2;
+
+    Cla1Regs.MMEMCFG.bit.PROGE = 1;        // Map CLA program memory to the CLA
+
+    //
+    // Enable IACK to start tasks via software
+    //
+    Cla1Regs.MCTL.bit.IACKE = 1;
+
+    Cla1Regs.MIER.all = (M_INT8 | M_INT2); // Enable Task 8 and Task 2
+
+    //
+    // Force CLA task 8.
+    // This will initialize ConversionCount to zero
+    //
+    Cla1ForceTask8andWait();
+
+    AdcRegs.ADCCTL2.bit.ADCNONOVERLAP = 1;  // Enable non-overlap mode
+
+    //
+    // ADCINT trips when ADC begins conversion
+    //
+    AdcRegs.ADCCTL1.bit.INTPULSEPOS = 0;
+
+    AdcRegs.INTSEL1N2.bit.INT2E     = 1;    // Enable ADCINT2
+    AdcRegs.INTSEL1N2.bit.INT2CONT  = 0;    // Disable ADCINT2 Continuous mode
+
+    //
+    // setup EOC1 to trigger ADCINT2 to fire
+    //
+    AdcRegs.INTSEL1N2.bit.INT2SEL   = 1;
+
+    //
+    // set SOC1 channel select to ADCINA2
+    //
+    AdcRegs.ADCSOC1CTL.bit.CHSEL    = 2;
+
+    AdcRegs.ADCSOC1CTL.bit.TRIGSEL  = 5;    // set SOC1 start trigger on EPWM1A
+
+    //
+    // set SOC1 S/H Window to 7 ADC Clock Cycles, (6 ACQPS plus 1)
+    //
+    AdcRegs.ADCSOC1CTL.bit.ACQPS    = 6;
+    EDIS;
+
+    // Assumes ePWM1 clock is already enabled in InitSysCtrl();
+    EALLOW;
+    SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 0;
+    EDIS;
+    EPwm1Regs.ETSEL.bit.SOCAEN  = 1;        // Enable SOC on A group
+
+    //
+    // Select SOC from from CPMA on upcount
+    //
+    EPwm1Regs.ETSEL.bit.SOCASEL = 4;
+
+    EPwm1Regs.ETPS.bit.SOCAPRD  = 1;        // Generate pulse on 1st event
+    EPwm1Regs.CMPA.half.CMPA    = 0x0080;   // Set compare A value
+
+    //
+    // Set period for ePWM1 - this will determine the sampling frequency
+    //
+    EPwm1Regs.TBPRD             = 0xFFFF;
+
+    EPwm1Regs.TBCTL.bit.CTRMODE = 0;        // count up and start
+    EALLOW;
+    SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
+    EDIS;
+
+    //
     // Step 6. IDLE loop. Just sit and loop forever (optional)
     //
-    for(;;);
+    //for(;;);
+
+    //
+    // Wait for ADC interrupt
+    //
+    for(;;)
+    {
+        LoopCount++;
+    }
 }
 
 //
@@ -196,6 +322,20 @@ cpu_timer0_isr(void)
     // Acknowledge this interrupt to receive more interrupts from group 1
     //
     PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
+}
+
+//
+// cla1_isr2 - This interrupt occurs when CLA Task 2 completes
+//
+__interrupt void
+cla1_isr2()
+{
+    //
+    // Clear ADCINT2 flag reinitialize for next SOC
+    //
+    AdcRegs.ADCINTFLGCLR.bit.ADCINT2 = 1;
+
+    PieCtrlRegs.PIEACK.all = 0xFFFF;
 }
 
 //

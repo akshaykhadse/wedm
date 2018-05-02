@@ -6,14 +6,16 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CMD_SRCS += \
-C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/cmd/28069_RAM_lnk.cmd \
+../28069_RAM_CLA_lnk.cmd \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/cmd/F2806x_Headers_nonBIOS.cmd 
 
 ASM_SRCS += \
+C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/examples/c28/cla_adc/CLA.asm \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_CodeStartBranch.asm \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_usDelay.asm 
 
 C_SRCS += \
+C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_Adc.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_CpuTimers.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_DefaultIsr.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/source/F2806x_GlobalVariableDefs.c \
@@ -23,6 +25,7 @@ C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_SysC
 ../main.c 
 
 C_DEPS += \
+./F2806x_Adc.d \
 ./F2806x_CpuTimers.d \
 ./F2806x_DefaultIsr.d \
 ./F2806x_GlobalVariableDefs.d \
@@ -32,6 +35,8 @@ C_DEPS += \
 ./main.d 
 
 OBJS += \
+./CLA.obj \
+./F2806x_Adc.obj \
 ./F2806x_CodeStartBranch.obj \
 ./F2806x_CpuTimers.obj \
 ./F2806x_DefaultIsr.obj \
@@ -43,10 +48,13 @@ OBJS += \
 ./main.obj 
 
 ASM_DEPS += \
+./CLA.d \
 ./F2806x_CodeStartBranch.d \
 ./F2806x_usDelay.d 
 
 OBJS__QUOTED += \
+"CLA.obj" \
+"F2806x_Adc.obj" \
 "F2806x_CodeStartBranch.obj" \
 "F2806x_CpuTimers.obj" \
 "F2806x_DefaultIsr.obj" \
@@ -58,6 +66,7 @@ OBJS__QUOTED += \
 "main.obj" 
 
 C_DEPS__QUOTED += \
+"F2806x_Adc.d" \
 "F2806x_CpuTimers.d" \
 "F2806x_DefaultIsr.d" \
 "F2806x_GlobalVariableDefs.d" \
@@ -67,14 +76,17 @@ C_DEPS__QUOTED += \
 "main.d" 
 
 ASM_DEPS__QUOTED += \
+"CLA.d" \
 "F2806x_CodeStartBranch.d" \
 "F2806x_usDelay.d" 
 
 ASM_SRCS__QUOTED += \
+"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/examples/c28/cla_adc/CLA.asm" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_CodeStartBranch.asm" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_usDelay.asm" 
 
 C_SRCS__QUOTED += \
+"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_Adc.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_CpuTimers.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_DefaultIsr.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/source/F2806x_GlobalVariableDefs.c" \
