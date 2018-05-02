@@ -40,6 +40,13 @@ F2806x_DefaultIsr.obj: C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/co
 	@echo 'Finished building: "$<"'
 	@echo ' '
 
+F2806x_EPwm.obj: C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_EPwm.c $(GEN_OPTS) | $(GEN_HDRS)
+	@echo 'Building file: "$<"'
+	@echo 'Invoking: C2000 Compiler'
+	"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --vcu_support=vcu0 --include_path="C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/include" --include_path="C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/include" --include_path="C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/include" --include_path="C:/ti/c2000/C2000Ware_1_00_04_00/libraries/math/IQmath/c28/include" --include_path="C:/ti/c2000/C2000Ware_1_00_04_00/libraries/math/FPUfastRTS/c28/include" --include_path="C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/examples/c28/cla_adc" -g --define="_DEBUG" --define="LARGE_MODEL" --quiet --verbose_diagnostics --diag_warning=225 --diag_suppress=10063 --issue_remarks --preproc_with_compile --preproc_dependency="F2806x_EPwm.d_raw" $(GEN_OPTS__FLAG) "$<"
+	@echo 'Finished building: "$<"'
+	@echo ' '
+
 F2806x_GlobalVariableDefs.obj: C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/source/F2806x_GlobalVariableDefs.c $(GEN_OPTS) | $(GEN_HDRS)
 	@echo 'Building file: "$<"'
 	@echo 'Invoking: C2000 Compiler'

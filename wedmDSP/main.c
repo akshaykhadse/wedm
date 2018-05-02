@@ -39,6 +39,29 @@
 //! - ConversionCount  - Current result number
 //! - LoopCount        - Idle loop counter
 //
+//###########################################################################
+//
+// FILE:   Example_2806xEPwmDeadBand.c
+//
+// TITLE:  ePWM Deadband Generation Example
+//
+//! \addtogroup f2806x_example_list
+//! <h1>ePWM Deadband Generation (epwm_deadband)</h1>
+//!
+//! This example configures ePWM1, ePWM2 and ePWM3 for:
+//!   - Count up/down
+//!   - Deadband
+//! 3 Examples are included:
+//!   - ePWM3: Active high complementary PWMs
+//!
+//! Each ePWM is configured to interrupt on the 3rd zero event
+//! when this happens the deadband is modified such that
+//! 0 <= DB <= DB_MAX.  That is, the deadband will move up and
+//! down between 0 and the maximum value.
+//!
+//! \b External \b Connections \n
+//!  - EPWM3A is on GPIO4
+//!  - EPWM3B is on GPIO5
 //
 //###########################################################################
 
@@ -54,6 +77,8 @@
 //
 __interrupt void cpu_timer0_isr(void);
 __interrupt void cla1_isr2(void);
+void InitEPwm2Example(void);
+__interrupt void epwm2_isr(void);
 
 //
 // Globals
@@ -64,6 +89,21 @@ __interrupt void cla1_isr2(void);
 Uint16 ConversionCount;
 Uint16 LoopCount;
 Uint16 VoltageCLA[NUM_DATA_POINTS];
+Uint32  EPwm2TimerIntCount;
+Uint16  EPwm2_DB_Direction;
+
+//
+// Defines that Maximum Dead Band values
+//
+#define EPWM2_MAX_DB   0x03FF
+#define EPWM2_MIN_DB   0
+
+
+//
+// Defines to keep track of which way the Dead Band is moving
+//
+#define DB_UP   1
+#define DB_DOWN 0
 
 //
 // These are defined by the linker file
@@ -91,6 +131,12 @@ void main(void)
     // illustrates how to set the GPIO to it's default state.
     //
     // InitGpio();  // Skipped for this example
+
+    //
+    // For this case just init GPIO pins for ePWM3
+    // These functions are in the F2806x_EPwm.c file
+    //
+    InitEPwm2Gpio();
 
     //
     // Step 3. Clear all interrupts and initialize PIE vector table:
@@ -129,6 +175,7 @@ void main(void)
     EALLOW;    // This is needed to write to EALLOW protected registers
     PieVectTable.TINT0 = &cpu_timer0_isr;
     PieVectTable.CLA1_INT2 = &cla1_isr2;
+    PieVectTable.EPWM2_INT = &epwm2_isr;
     EDIS;      // This is needed to disable write to EALLOW protected registers
 
     //
@@ -156,6 +203,16 @@ void main(void)
     // Use write-only instruction to set TSS bit = 0
     //
     CpuTimer0Regs.TCR.all = 0x4001;
+
+    EALLOW;
+    SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 0;
+    EDIS;
+
+    InitEPwm2Example();
+
+    EALLOW;
+    SysCtrlRegs.PCLKCR0.bit.TBCLKSYNC = 1;
+    EDIS;
 
     //
     // Step 5. User specific code, enable interrupts:
@@ -189,6 +246,20 @@ void main(void)
     // Enable TINT0 in the PIE: Group 1 interrupt 7
     //
     PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
+
+    // Initalize counters:
+    //
+    EPwm2TimerIntCount = 0;
+
+    //
+    // Enable CPU INT3 which is connected to EPWM1-3 INT
+    //
+    IER |= M_INT3;
+
+    //
+    // Enable EPWM INTn in the PIE: Group 3 interrupt 1-3
+    //
+    PieCtrlRegs.PIEIER3.bit.INTx2 = 1;
 
     //
     // Enable global Interrupts and higher priority real-time debug events
@@ -284,7 +355,7 @@ void main(void)
     //
     // Set period for ePWM1 - this will determine the sampling frequency
     //
-    EPwm1Regs.TBPRD             = 0xFFFF;
+    EPwm1Regs.TBPRD             = 900;
 
     EPwm1Regs.TBCTL.bit.CTRMODE = 0;        // count up and start
     EALLOW;
@@ -302,6 +373,7 @@ void main(void)
     for(;;)
     {
         LoopCount++;
+        __asm("          NOP");
     }
 }
 
@@ -336,6 +408,108 @@ cla1_isr2()
     AdcRegs.ADCINTFLGCLR.bit.ADCINT2 = 1;
 
     PieCtrlRegs.PIEACK.all = 0xFFFF;
+}
+
+//
+// epwm3_isr -
+//
+__interrupt void
+epwm2_isr(void)
+{
+    if(EPwm2_DB_Direction == DB_UP)
+    {
+        if(EPwm2Regs.DBFED < EPWM2_MAX_DB)
+        {
+            EPwm2Regs.DBFED++;
+            EPwm2Regs.DBRED++;
+        }
+        else
+        {
+            EPwm2_DB_Direction = DB_DOWN;
+            EPwm2Regs.DBFED--;
+            EPwm2Regs.DBRED--;
+        }
+    }
+    else
+    {
+        if(EPwm2Regs.DBFED == EPWM2_MIN_DB)
+        {
+            EPwm2_DB_Direction = DB_UP;
+            EPwm2Regs.DBFED++;
+            EPwm2Regs.DBRED++;
+        }
+        else
+        {
+            EPwm2Regs.DBFED--;
+            EPwm2Regs.DBRED--;
+        }
+    }
+
+    EPwm2TimerIntCount++;
+
+    //
+    // Clear INT flag for this timer
+    //
+    EPwm2Regs.ETCLR.bit.INT = 1;
+
+    //
+    // Acknowledge this interrupt to receive more interrupts from group 3
+    //
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP3;
+}
+
+//
+// InitEPwm3Example -
+//
+void
+InitEPwm2Example()
+{
+    EPwm2Regs.TBPRD = 6000;                        // Set timer period
+    EPwm2Regs.TBPHS.half.TBPHS = 0x0000;            // Phase is 0
+    EPwm2Regs.TBCTR = 0x0000;                       // Clear counter
+
+    //
+    // Setup TBCLK
+    //
+    EPwm2Regs.TBCTL.bit.CTRMODE = TB_COUNT_UPDOWN; // Count up
+    EPwm2Regs.TBCTL.bit.PHSEN = TB_DISABLE;        // Disable phase loading
+    EPwm2Regs.TBCTL.bit.HSPCLKDIV = TB_DIV4;       // Clock ratio to SYSCLKOUT
+
+    //
+    // Slow so we can observe on the scope
+    //
+    EPwm2Regs.TBCTL.bit.CLKDIV = TB_DIV4;
+
+    //
+    // Setup compare
+    //
+    EPwm2Regs.CMPA.half.CMPA = 3000;
+
+    //
+    // Set actions
+    //
+    EPwm2Regs.AQCTLA.bit.CAU = AQ_SET;              // Set PWM3A on CAU
+    EPwm2Regs.AQCTLA.bit.CAD = AQ_CLEAR;            // Clear PWM3A on CAD
+
+    EPwm2Regs.AQCTLB.bit.CAU = AQ_CLEAR;            // Clear PWM3B on CAU
+    EPwm2Regs.AQCTLB.bit.CAD = AQ_SET;              // Set PWM3B on CAD
+
+    //
+    // Active high complementary PWMs - Setup the deadband
+    //
+    EPwm2Regs.DBCTL.bit.OUT_MODE = DB_FULL_ENABLE;
+    EPwm2Regs.DBCTL.bit.POLSEL = DB_ACTV_HIC;
+    EPwm2Regs.DBCTL.bit.IN_MODE = DBA_ALL;
+    EPwm2Regs.DBRED = EPWM2_MIN_DB;
+    EPwm2Regs.DBFED = EPWM2_MIN_DB;
+    EPwm2_DB_Direction = DB_UP;
+
+    //
+    // Interrupt where we will change the deadband
+    //
+    EPwm2Regs.ETSEL.bit.INTSEL = ET_CTR_ZERO;     // Select INT on Zero event
+    EPwm2Regs.ETSEL.bit.INTEN = 1;                // Enable INT
+    EPwm2Regs.ETPS.bit.INTPRD = ET_3RD;           // Generate INT on 3rd event
 }
 
 //
