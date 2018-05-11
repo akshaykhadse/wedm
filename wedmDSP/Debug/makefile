@@ -12,7 +12,6 @@ GEN_CMDS__FLAG :=
 ORDERED_OBJS += \
 -lrts2800_fpu32_fast_supplement.lib \
 -lrts2800_fpu32.lib \
-"./CLA.obj" \
 "./F2806x_Adc.obj" \
 "./F2806x_CodeStartBranch.obj" \
 "./F2806x_CpuTimers.obj" \
@@ -23,8 +22,8 @@ ORDERED_OBJS += \
 "./F2806x_PieVect.obj" \
 "./F2806x_SysCtrl.obj" \
 "./F2806x_usDelay.obj" \
-"./main.obj" \
-"../28069_RAM_CLA_lnk.cmd" \
+"./wedmDSP.obj" \
+"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/cmd/28069_RAM_lnk.cmd" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/cmd/F2806x_Headers_nonBIOS.cmd" \
 $(GEN_CMDS__FLAG) \
 -lIQmath_fpu32.lib \
@@ -153,7 +152,7 @@ all: wedmDSP.out
 wedmDSP.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --vcu_support=vcu0 -g --define="_DEBUG" --define="LARGE_MODEL" --quiet --verbose_diagnostics --diag_warning=225 --diag_suppress=10063 --issue_remarks -z -m"wedmDSP.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/lib" -i"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/include" -i"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/lib" -i"C:/ti/c2000/C2000Ware_1_00_04_00/libraries/math/IQmath/c28/lib" -i"C:/ti/c2000/C2000Ware_1_00_04_00/libraries/math/FPUfastRTS/c28/lib" --reread_libs --priority --verbose_diagnostics --issue_remarks --xml_link_info="Example_2806xLEDBlink_linkInfo.xml" --entry_point=code_start --rom_model -o "wedmDSP.out" $(ORDERED_OBJS)
+	"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla0 --float_support=fpu32 --vcu_support=vcu0 -g --define="_DEBUG" --define="LARGE_MODEL" --quiet --verbose_diagnostics --diag_warning=225 --diag_suppress=10063 --issue_remarks -z -m"wedmDSP.map" --stack_size=0x200 --warn_sections -i"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/lib" -i"C:/ti/ccsv8/tools/compiler/ti-cgt-c2000_18.1.1.LTS/include" -i"D:/common/lib" -i"D:/libraries/math/IQmath/c28/lib" -i"D:/libraries/math/FPUfastRTS/c28/lib" --reread_libs --priority --verbose_diagnostics --issue_remarks --xml_link_info="Example_2806xAdcSoc_linkInfo.xml" --entry_point=code_start --rom_model -o "wedmDSP.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -167,9 +166,9 @@ wedmDSP.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "CLA.obj" "F2806x_Adc.obj" "F2806x_CodeStartBranch.obj" "F2806x_CpuTimers.obj" "F2806x_DefaultIsr.obj" "F2806x_EPwm.obj" "F2806x_GlobalVariableDefs.obj" "F2806x_PieCtrl.obj" "F2806x_PieVect.obj" "F2806x_SysCtrl.obj" "F2806x_usDelay.obj" "main.obj" 
-	-$(RM) "F2806x_Adc.d" "F2806x_CpuTimers.d" "F2806x_DefaultIsr.d" "F2806x_EPwm.d" "F2806x_GlobalVariableDefs.d" "F2806x_PieCtrl.d" "F2806x_PieVect.d" "F2806x_SysCtrl.d" "main.d" 
-	-$(RM) "CLA.d" "F2806x_CodeStartBranch.d" "F2806x_usDelay.d" 
+	-$(RM) "F2806x_Adc.obj" "F2806x_CodeStartBranch.obj" "F2806x_CpuTimers.obj" "F2806x_DefaultIsr.obj" "F2806x_EPwm.obj" "F2806x_GlobalVariableDefs.obj" "F2806x_PieCtrl.obj" "F2806x_PieVect.obj" "F2806x_SysCtrl.obj" "F2806x_usDelay.obj" "wedmDSP.obj" 
+	-$(RM) "F2806x_Adc.d" "F2806x_CpuTimers.d" "F2806x_DefaultIsr.d" "F2806x_EPwm.d" "F2806x_GlobalVariableDefs.d" "F2806x_PieCtrl.d" "F2806x_PieVect.d" "F2806x_SysCtrl.d" "wedmDSP.d" 
+	-$(RM) "F2806x_CodeStartBranch.d" "F2806x_usDelay.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
