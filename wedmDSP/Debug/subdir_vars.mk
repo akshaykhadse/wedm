@@ -15,9 +15,9 @@ C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_usDe
 
 C_SRCS += \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_Adc.c \
-D:/common/source/F2806x_CpuTimers.c \
+C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_CpuTimers.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_DefaultIsr.c \
-D:/common/source/F2806x_EPwm.c \
+C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_EPwm.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/source/F2806x_GlobalVariableDefs.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_PieCtrl.c \
 C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_PieVect.c \
@@ -82,9 +82,9 @@ ASM_DEPS__QUOTED += \
 
 C_SRCS__QUOTED += \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_Adc.c" \
-"D:/common/source/F2806x_CpuTimers.c" \
+"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_CpuTimers.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_DefaultIsr.c" \
-"D:/common/source/F2806x_EPwm.c" \
+"C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_EPwm.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/headers/source/F2806x_GlobalVariableDefs.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_PieCtrl.c" \
 "C:/ti/c2000/C2000Ware_1_00_04_00/device_support/f2806x/common/source/F2806x_PieVect.c" \
