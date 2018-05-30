@@ -41,21 +41,21 @@
 #define CPU_FREQ   90       // CPU Frequency (MHz)
 #define CPU_T0_PER 3.47     // CPU Timer0 period (uSecs) 146.5kHz
 
-#define EPWM4_PER 9500       // EPWM4 Period
-#define EPWM4_DUTY 4500   // EPWM4 Duty
-#define EPWM4_DB   200   // EPWM4 Dead Band
-#define EPWM4_HSPCLKDIV 3 //EPWM4 HSPCLKDIV
-#define EPWM4_CLKDIV 4 //EPWM4 CLKDIV
+#define EPWM4_PER 4560       // EPWM4 Period
+#define EPWM4_DUTY 0.5   // EPWM4 Duty
+#define EPWM4_DB   0.1   // EPWM4 Dead Band
+#define EPWM4_HSPCLKDIV 0 //EPWM4 HSPCLKDIV
+#define EPWM4_CLKDIV 0 //EPWM4 CLKDIV
 
-#define EPWM5_PER 9500     // EPWM5 Period
-#define EPWM5A_DUTY 4500    // EPWM5A Duty
-#define EPWM5B_DUTY 4500   // EPWM5B Duty
-#define EPWM5_HSPCLKDIV 3 //EPWM5 HSPCLKDIV
-#define EPWM5_CLKDIV 4 //EPWM5 CLKDIV
+#define EPWM5_PER 4560     // EPWM5 Period
+#define EPWM5A_DUTY 0.2    // EPWM5A Duty
+#define EPWM5B_DUTY 0   // EPWM5B Duty
+#define EPWM5_HSPCLKDIV 0 //EPWM5 HSPCLKDIV
+#define EPWM5_CLKDIV 0 //EPWM5 CLKDIV
 
 #define EPWM6_PER 9500     // EPWM6 Period
-#define EPWM6A_DUTY 4500    // EPWM6A Duty
-#define EPWM6B_DUTY 4500   // EPWM6B Duty
+#define EPWM6A_DUTY 0.5    // EPWM6A Duty
+#define EPWM6B_DUTY 0   // EPWM6B Duty
 #define EPWM6_HSPCLKDIV 3 //EPWM6 HSPCLKDIV
 #define EPWM6_CLKDIV 4 //EPWM6 CLKDIV
 
@@ -67,19 +67,19 @@
 // +-----------+-----------+--------+-------+--------+
 // | 100 Hz    | 3         | 4      | 9374  | 9500   |
 // +-----------+-----------+--------+-------+--------+
-// | 1 kHz     | 1         | 2      | 44999 | 44999  |
+// | 1 kHz     | 0         | 1      | 44999 | 44999  |
 // +-----------+-----------+--------+-------+--------+
-// | 10 kHz    | 1         | 1      | 8999  | 9100   |
+// | 10 kHz    | 0         | 0      | 8999  | 9100   |
 // +-----------+-----------+--------+-------+--------+
-// | 15 kHz    | 1         | 1      | 5999  | 6080   |
+// | 15 kHz    | 0         | 0      | 5999  | 6080   |
 // +-----------+-----------+--------+-------+--------+
-// | 20 kHz    | 1         | 1      | 4499  | 4560   |
+// | 20 kHz    | 0         | 0      | 4499  | 4560   |
 // +-----------+-----------+--------+-------+--------+
-// | 30 kHz    | 1         | 1      | 2999  | 3040   |
+// | 30 kHz    | 0         | 0      | 2999  | 3040   |
 // +-----------+-----------+--------+-------+--------+
-// | 40 kHz    | 1         | 1      | 2249  | 2280   |
+// | 40 kHz    | 0         | 0      | 2249  | 2280   |
 // +-----------+-----------+--------+-------+--------+
-// | 50 kHz    | 1         | 1      | 1799  | 1823   |
+// | 50 kHz    | 0         | 0      | 1799  | 1823   |
 // +-----------+-----------+--------+-------+--------+
 
 #define LOG_LEN 5        // Number of values to log
@@ -291,7 +291,7 @@ InitEPwm4Example()
     // 101 /10
     // 110 /12
     // 111 /14
-    EPwm4Regs.TBCTL.bit.CLKDIV = EPWM5_CLKDIV;           // Time Base Prescaler
+    EPwm4Regs.TBCTL.bit.CLKDIV = EPWM4_CLKDIV;           // Time Base Prescaler
     // 000 /1 (default on reset)
     // 001 /2
     // 010 /4
@@ -308,7 +308,7 @@ InitEPwm4Example()
     // TPWM = 2 x TBPRD x TBCLK
     // FPWM = 1 / (TPWM)
 
-    EPwm4Regs.CMPA.half.CMPA = EPWM4_DUTY;          // Duty cycle
+    EPwm4Regs.CMPA.half.CMPA = EPWM4_DUTY*EPWM4_PER;          // Duty cycle
 
     // Set actions
     /*
@@ -339,8 +339,8 @@ InitEPwm4Example()
     // Dead Band
     // FED = DBFED × TBCLK/2
     // RED = DBRED × TBCLK/2
-    EPwm4Regs.DBRED = EPWM4_DB;
-    EPwm4Regs.DBFED = EPWM4_DB;
+    EPwm4Regs.DBRED = EPWM4_DB*EPWM4_PER;
+    EPwm4Regs.DBFED = EPWM4_DB*EPWM4_PER;
 }
 
 void
@@ -377,8 +377,8 @@ InitEPwm5Example()
     EPwm5Regs.AQCTLB.bit.CBD = AQ_CLEAR;
     */
 
-    EPwm5Regs.CMPA.half.CMPA = EPWM5A_DUTY;         // adjust duty for output EPWM5A
-    EPwm5Regs.CMPB = EPWM5B_DUTY;                   // adjust duty for output EPWM5B
+    EPwm5Regs.CMPA.half.CMPA = EPWM5A_DUTY*EPWM5_PER;         // adjust duty for output EPWM5A
+    EPwm5Regs.CMPB = EPWM5B_DUTY*EPWM5_PER;                   // adjust duty for output EPWM5B
 }
 
 void
@@ -390,7 +390,7 @@ InitEPwm6Example()
     EPwm6Regs.TBPHS.half.TBPHS = 0;                 // Set Phase register to zero
     EPwm6Regs.TBCTR = 0x0000;                  // Clear counter
     EPwm6Regs.TBCTL.bit.HSPCLKDIV = EPWM6_HSPCLKDIV;        // Clock ratio to SYSCLKOUT
-    EPwm6Regs.TBCTL.bit.CLKDIV = EPWM5_CLKDIV;
+    EPwm6Regs.TBCTL.bit.CLKDIV = EPWM6_CLKDIV;
 
     EPwm6Regs.TBCTL.bit.PRDLD = TB_SHADOW;
     EPwm6Regs.TBCTL.bit.SYNCOSEL = TB_CTR_ZERO;     // Sync down-stream module
@@ -415,8 +415,8 @@ InitEPwm6Example()
     EPwm6Regs.AQCTLB.bit.CBD = AQ_CLEAR;
     */
 
-    EPwm6Regs.CMPA.half.CMPA = EPWM6A_DUTY;         // adjust duty for output EPWM5A
-    EPwm6Regs.CMPB = EPWM6B_DUTY;                   // adjust duty for output EPWM5B
+    EPwm6Regs.CMPA.half.CMPA = EPWM6A_DUTY*EPWM6_PER;         // adjust duty for output EPWM5A
+    EPwm6Regs.CMPB = EPWM6B_DUTY*EPWM6_PER;                   // adjust duty for output EPWM5B
 }
 
 // End of File
