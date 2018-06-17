@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportImportMemento.1>
+<VarMeta IMemento.internal.id="current1Val"/>
+<VarMeta IMemento.internal.id="current1Sum"/>
+<VarMeta IMemento.internal.id="current2Val"/>
+<VarMeta IMemento.internal.id="current2Sum"/>
+<VarMeta IMemento.internal.id="current3Val"/>
+<VarMeta IMemento.internal.id="current3Sum"/>
+<VarMeta IMemento.internal.id="voltage1Val"/>
+<VarMeta IMemento.internal.id="voltage1Sum"/>
+<VarMeta IMemento.internal.id="voltage2Val"/>
+<VarMeta IMemento.internal.id="voltage2Sum"/>
+<VarMeta IMemento.internal.id="SampleCount"/>
+<VarMeta IMemento.internal.id="adcCount"/>
+<VarMeta IMemento.internal.id="claTask8Count"/>
+<VarMeta IMemento.internal.id="mainCount"/>
+<VarMeta IMemento.internal.id="current1"/>
+<VarMeta IMemento.internal.id="current2"/>
+<VarMeta IMemento.internal.id="current3"/>
+<VarMeta IMemento.internal.id="voltage1"/>
+<VarMeta IMemento.internal.id="voltage2"/>
+</ExportImportMemento.1>

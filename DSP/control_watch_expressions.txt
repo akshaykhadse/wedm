@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExportImportMemento.1>
+<VarMeta IMemento.internal.id="adcCount"/>
+<VarMeta IMemento.internal.id="controllerCount"/>
+<VarMeta IMemento.internal.id="current1"/>
+<VarMeta IMemento.internal.id="current2"/>
+<VarMeta IMemento.internal.id="current3"/>
+<VarMeta IMemento.internal.id="voltage1"/>
+<VarMeta IMemento.internal.id="voltage2"/>
+<VarMeta IMemento.internal.id="e1"/>
+<VarMeta IMemento.internal.id="u1"/>
+<VarMeta IMemento.internal.id="(u1[0] / 2.0 + 0.5)"/>
+<VarMeta IMemento.internal.id="e2"/>
+<VarMeta IMemento.internal.id="u2"/>
+<VarMeta IMemento.internal.id="(u2[0] / 2.0 + 0.5)"/>
+</ExportImportMemento.1>
