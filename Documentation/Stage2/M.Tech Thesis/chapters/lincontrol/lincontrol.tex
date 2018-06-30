@@ -1,0 +1,283 @@
+\Chapter{Controller Design}
+\label{chap:lincontrol}
+	The dielectric strength of deionized water is around 70 MV/m. Therefore, if the gap is 1 $\mu$m, minimum voltage of 70 V is required to ensure the sparking. Keeping a sufficient margin, the control objectives for the power supply are as follows:
+	\begin{enumerate}
+		\item Voltage source must maintain a voltage $V_{\text{ref}}$ i.e. 80 V across its load terminals while rejecting load current disturbances up to $I_{\text{ref}}$ i.e. 10 A.
+		\item Current source must provide a current of 10 A.
+		\item Generating switching signal for $Q_d$ to control the erosion time during each machining cycle 
+	\end{enumerate}
+	The control objectives mentioned above are to be achieved by designing a scheme for switching the appropriate devices such that the aforementioned criteria is satisfactorily met. A PI controller is implemented and tuned using trial and error initially. However, this chapter describes a more systematic approach of compensator design based on the frequency response of the small signal transfer functions derived earlier. Automated K Factor approach \cite{muhamad2005design} used conventionally for power electronic converters has been found inadequate in this case. The removal of capacitor in current source and the load from the voltage source lead to different models than those for which this approach has been tested. Hence, the compensator design criteria are discussed here. A relatively advantageous technique of current mode control is also reviewed.
+
+\section{Direct Duty Ratio Control}
+	 A simple method to achieve this goal is varying the duty cycle of a pulse width modulated (PWM) signal with fixed frequency $F_s$. $F_s$ is the switching frequency of the MOSFETs used in the converters. A feedback loop is constructed by using a lead-lag compensator for this purpose as shown in figure \ref{fig:dirduty-1}.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{direct-duty}
+		\caption{Block diagram of direct duty ratio control of single quadrant converter}
+		\label{fig:dirduty-1}
+	\end{figure}
+
+	For the two quadrant converter, since the control objective is tracking the reference voltage $v_{\text{ref}}$, the output voltage $v(t)$ is sensed. $v(t)$ is compared with $v_{\text{ref}}$ to obtain the error signal. This error signal is the representative of the deviation of current state of the system from the desired state. The design procedure followed is described next.
+
+	To improve the transient response gain crossover frequency $\omega_{gc}$ should be maximum. But, to avoid resonance, it is chosen roughly an order on magnitude lower than the switching frequency. This is chosen as
+	\begin{equation}
+		\omega_{\text{cross}} = \dfrac{2 \pi F_s}{10}
+		\label{eq:50}
+	\end{equation}
+    Also, the desirable range of phase margin is 45 to 60$^\circ$ \cite{book:768263}. Let the desired phase margin be $PM_{des}$.
+    Phase that has to be added to the system is 
+    \begin{equation}
+    \phi_{m_1} = PM_{des} -\left(180 + \phi_{\text{OL}}\Bigr|_{\omega = \omega_{\text{cross}}}\right)
+	\label{eq:50a}    
+    \end{equation}
+    The general form of compensator is 
+    \begin{equation}
+    	G_{\text{lead}} = \dfrac{1+a_1T_1s}{1+T_1s}
+	    \label{eq:51}    
+    \end{equation}
+    where $a_1>1$
+    The maximum phase lead due to this compensator is given by
+    \begin{equation}
+    	\phi_{m_1} = \sin^{-1}\left(\dfrac{a_1-1}{a_1+1}\right)
+	    \label{eq:52}    
+    \end{equation}
+    This phase lag is added in between the corner frequencies $\dfrac{1}{T_1}$ and $\dfrac{1}{a_1T_1}$ and is maximum at
+    \begin{equation}
+    	\omega_{m_1} = \dfrac{1}{T_1\sqrt{a_1}}
+	    \label{eq:53}    
+    \end{equation}
+    Thus, to make phase margin as desired at the gain crossover frequency as decided, $T_1$ and $a_1$ are chosen as
+    \begin{equation}
+		\begin{split}
+			a_1 &= \dfrac{1+\sin(\phi_{m_1})}{1-\sin(\phi_{m_1})}\\
+			T_1 &= \dfrac{1}{\omega_{m_1}\sqrt{a_1}}		
+		\end{split}
+		\label{eq:54}    
+    \end{equation}
+    To reduce the steady state error, a lag compensator $G_{\text{lag}}$ is required such that $\omega_{m_2} << \omega{\text{cross}}$. In the general form
+    \begin{equation}
+    	G_{\text{lag}} = \dfrac{1+a_2T_2s}{1+T_2s}
+	    \label{eq:55}    
+    \end{equation}
+    where $0 < a_2 < 1$.
+    The steady state gain added by this compensator is 
+    \begin{equation}
+    	\lim_{s\to\infty} \dfrac{1+a_2T_2s}{1+T_2s} = \dfrac{1}{a_2}
+	    \label{eq:56}    
+    \end{equation}
+    Choosing a small enough $a_2$, $T_2$ has been found as
+    \begin{equation}
+		T_2 = \dfrac{1}{\omega_{m_2}\sqrt{a_2}}
+		\label{eq:57}
+    \end{equation}
+    Finally, the loop gain is balanced by taking $K$ as
+    \begin{equation}
+		K = \Bigl| \dfrac{1}{G_{\text{lag}} G_{\text{lead}} G_{\text{OL}}} \Bigr|_{\omega = \omega_{\text{cross}}}
+		\label{eq:58}
+    \end{equation}
+    The final controller is
+    \begin{equation}
+		G_c(s) = K G_{\text{lag}} G_{\text{lead}}
+		\label{eq:59}
+    \end{equation}
+    The bode plot for compensated open loop transfer function of the voltage source is shown in figure \ref{fig:comp-vs}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.8\textwidth]{vs_compesator_bode}
+		\caption{Bode plot of compensated transfer function of voltage source}
+		\label{fig:comp-vs}
+	\end{figure}
+	For the current source, phase margin is already sufficient, so closing the negative feedback loop with unity should be enough. This has been verified in the simulation. Figure \ref{fig:comp-cs} shows the bode plot obtained by following the same process as the previous.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{cs_compesator_bode}
+		\caption{Bode plot of compensated transfer function of current source}
+		\label{fig:comp-cs}
+	\end{figure}
+
+\section{Current Mode Control}
+	Converters employing direct duty ratio control require a separate protection against over current for each switch. However, if the control method is based on the peak current through switch, then the requirement for such a protection effort is eliminated as the current is not allowed to rise above a particular threshold in each switching cycle. Also, the dynamics of such a controller are much simple than the direct duty ratio control. This section describes peak current mode control \cite{book:941109}, loosely referred to as current mode control, which employs this method to achieve the output current or voltage tracking objective.
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{current-mode-minimal-master}
+		\caption{Block diagram of current mode control of single quadrant converter}
+		\label{fig:16}
+	\end{figure}
+
+	Figure \ref{fig:16} represents the block diagram for current mode control of a single quadrant converter. At the start of each switching cycle of frequency $F_s$, $Q_1$ is switched on by a clock pulse which sets the latch in a high state. The switch remains in the on state until a reset pulse is applied to the latch. During on time, the current $i_s(t)$ through $Q_1$ rises with slope $m_1$ as shown in figure \ref{fig:17}. When $i_s(t)$ reaches the control current $i_c(t)$, the comparator, being non inverting in nature, generates a reset pulse for the latch which turns the switch off. For the remainder of the switching period, the current through switch is zero. If the inductor $L$ is chosen such that the continuous conduction mode operation is ensured around $i_c(t)$, then the current through the inductor decreases at a rate of $-m_2$ during the off time to a value of $i_L(T_S)$ at $T_s$ as shown in figure \ref{fig:18}.
+
+	\begin{figure}[h]
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{switch-current}
+		\caption{Switch current}
+		\label{fig:17}
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{inductor-current}
+		\caption{Inductor current}
+		\label{fig:18}
+	\end{subfigure}
+	\caption{Switch and inductor currents in current mode control}
+	\end{figure}
+
+	The slopes $m_1$ and $-m_2$ are given by \cite{book:941109}
+	\begin{align}
+		m_1 = \dfrac{v_g-v}{L} \quad \text{and} \quad  -m_2=\dfrac{v}{L}
+		\label{eq:1}
+	\end{align}
+	where $v_g$ is the dc link voltage, $v$ is the output voltage, and $L$ is the value of inductor of the buck converter.
+	During on time, inductor current at $t=dT_s$, $\hat{i}_L(dT_s)$ in terms of slope $m_1$ is given by
+	\begin{equation}
+		i_L(dT_s) = i_c = i_L(0)+m_1dT_S
+		\label{eq:2}
+	\end{equation}
+	During the off time, the inductor current at $t=T_s$ is 
+	\begin{equation*}
+		i_L(T_s) = i_L(dT_s) - m_2(1-d)T_S
+	\end{equation*}
+	Substituting $i_L(dT_s)$ from equation \eqref{eq:1} in this relation results in
+	\begin{equation}
+		i_L(T_s) = i_L(0)+m_1dT_S - m_2(1-d)T_S
+		\label{eq:3}
+	\end{equation}
+	At steady state, $m_2=M_2$, $d=D$, $i_L(0) = i_L(T_s)$, $m_1=M_1$, and . From equations \eqref{eq:2} and \eqref{eq:3}, at steady state
+	\begin{equation*}
+		0 = M_1DT_S - M_2(1-D)T_S
+	\end{equation*}
+	\begin{equation}
+		\dfrac{M_2}{M_1} = \dfrac{D}{1-D}
+		\label{eq:4}
+	\end{equation}
+
+	This method requires additional current sensing circuit as compared to duty ratio control methods, but in practice, duty ratio control methods also require current sensing circuit for protection against over currents. This method exploits the available current sensors which would otherwise be operating independently from the control scheme to achieve the control objective. Switch failures due to excessive currents are avoided by saturating the peak control signal $i_c(t)$ thus ensuring that the switch will turn off when excessive current flows through it during each switching period.
+
+	A drawback of this method is its high noise sensitivity. Perturbations in sensed switch current can cause premature turn off of the switch. Also, converter becomes unstable even for small perturbations in switch current when operating on duty cycles greater than 50\% as the perturbation increases in magnitude in each subsequent switching cycle. However, this can be remedied by adding a ramp to the observed switch current. The intuition behind this is explained in appendix \ref{app:instability-cmc}.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.6\textwidth]{current-mode-voltage-control}
+		\caption{Controlled voltage source using current mode control}
+		\label{fig:24}
+	\end{figure}
+	For the two quadrant converter, an outer voltage feedback loop is constructed on top the current mode controller as shown in figure \ref{fig:24}. A small signal model of the converter is derived under a justifiable assumption for this purpose. If the magnitude of the ramp and that of the inductor current ripple are less, the mean inductor current $i_L$ tracks the reference $i_c$. Thus, the current mode controller designed above operates ideally under these conditions. Therefore, the inductor current transfer function is $\dfrac{i_L}{i_c} \approx 1$. The current mode control part of this controller can be replaced by an ideal current source of magnitude $i_c(t)$ and an equivalent circuit can be constructed as shown in figure \ref{fig:25}
+	%It is assumed that the current mode controller operates ideally, and hence causes the average inductor current ${i}_L$ to be identical to the control ${i}_c$. This approximation is justified whenever the inductor current ripple and artificial ramp have negligible magnitudes. The inductor current then is no longer an independent state of the system because $\dfrac{i_L}{i_c} \approx 1$.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{modelling}
+		\caption{Current mode control replaced as current source in buck converter}
+		\label{fig:25}
+	\end{figure}
+	From Kirchhoff's Current Law, the output current of the current source is
+	\begin{equation}
+		i_c(t) = C\dfrac{dv(t)}{dt} + \dfrac{v(t)}{R}
+		\label{eq:cmc-1}
+	\end{equation}
+	Let the steady state value of the output current and output voltage be $I_c$ and $V$ respectively. If a small perturbation of magnitude $\hat{i}_c(t)$ is introduced in the current $i_c(t)$, the output voltage $v(t)$ gets perturbed by a magnitude of, say, $\hat{v}(t)$, then
+	\begin{align}
+		i_c(t) &= I_c + \hat{i_c}(t)\\
+		v(t) &= V + \hat{v}(t)
+		\label{eq:cmc-2}
+	\end{align}
+	From \eqref{eq:cmc-1},
+	\begin{equation}
+		I_c + \hat{i_c}(t) = C\dfrac{d}{dt}(V + \hat{v}(t)) + \dfrac{V + \hat{v}(t)}{R}
+		\label{eq:cmc-3}
+	\end{equation}
+	At the steady state, 
+	\begin{equation}
+		\dfrac{dV}{dt} = 0 \quad \text{and} \quad I_c = \dfrac{V}{R}
+		\label{eq:cmc-4}
+	\end{equation}
+	Therefore,
+	\begin{equation}
+		\hat{i_c}(t) = C\dfrac{d\hat{v}(t)}{dt} + \dfrac{\hat{v}(t)}{R}
+		\label{eq:cmc-5}
+	\end{equation}
+	Taking Laplace transform
+	\begin{equation}
+		\hat{i}_c(s) = sC\hat{v}(s) + \dfrac{\hat{v}(s)}{R}
+	\end{equation}
+	\begin{equation}
+		\dfrac{\hat{v}(s)}{\hat{i}_c(s)} = \dfrac{R}{1+sRC}
+	\end{equation}
+	This transfer function represents the first order dynamics. Thus, the simpler dynamics in comparison to models required for direct duty ratio control. A PI controller is used to complete the feedback loop to derive a controlled voltage source from a current mode controlled converter.
+	
+	\section{Pulsed Reference Scheme}
+	The majority of the losses in the proposed converter are due to switches. Moreover, since the machining duty is about 10\% of the complete machining cycle, the ignition switch remains closed for 90\% of the time. When the ignition switch is turned ON, the current source delivers 10 A current through it. Thus, the losses during this period are $V_{Q_{d ON}}\times I_{ref}$. However, the value of current through ignition switch can be reduced during this period to reduce the losses. A pulsed reference scheme is proposed for the same as given below.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[]{power_comparison}
+		\caption{Power comparison in pulsed reference scheme}
+		\label{fig:pulsed-reference}
+	\end{figure}
+	The reference of the current source is pulsating between 10 A and 2 A instead of continuous 10A. When the machining duty period is completed the reference is lowered and maintained at this value until the machining cycle is complete. The reference is raised again just before the next machining cycle is initiated. This sequence of alternating references ensures that the current through ignition switch is considerably lower, thus reducing the $V_{Q_{d ON}}\times I_{ref}$ losses. Figure \ref{fig:pulsed-reference} shows the comparison of the voltage and current across the inductor under the pulsed and continuous reference schemes. The current through the ignition switch is governed by the inductor value. A low enough inductor value will ensure that the current through ignition switch decreases as the reference is lowered. It is verified in the simulations that inductor value of 100 $\mu$H is adequate for the pulsed reference scheme to cause a reduction of about 30\% in the overall converter power consumption.
+	
+	
+	\section{Nonlinear Control}
+	The linear controllers as discussed in the previous chapters are based on approximation of the system dynamics in the neighbourhood of an equilibrium point. These controllers work satisfactorily if the system is operated close to this equilibrium point, however,  the response is not guaranteed for operating points away from the equilibrium. If the reference for the system under consideration is not fixed, separate controllers may be required for each case. 
+    
+    The small signal model derived in chapter \ref{chap:modelling} relates the output voltage and current to the duty of switches. The time averaging and small signal perturbation techniques used to derive this model are based on the assumptions that converter will operate close to the reference value at all times. This can result in restriction on the voltage and current ranges of the pulsed power supply. Hence, a nonlinear control technique is proposed in the following sections.
+    
+    Nonlinear controllers preserve the dynamic performance over wide range of operation. This section elaborates on Sliding Mode Control of the individual converters in the pulsed power supply topology.
+
+\subsection{Sliding Mode Control}
+    Figure \ref{fig:nl-3} shows the phase portrait of the voltage source. In this representation, each point is a state vector $(x_1,x_2)$ where $x_1$ is represented along X-axis and $x_2$ is represented along Y-axis. The arrows at each point represent the vector of derivatives of the states $(\dot{x_1},\dot{x_2})$. In this figure, the magnitude of $\dot{x_1}$ is scaled by a factor of $1/LC$ to limit the overlapping of arrows due to $|\dot{x_1}| >> |\dot{x_2}|$ for the practical values of $L = 2$ mH and $C = 100$ $\mu$F. The two focii of this phase portrait are presented by asterisks. If the system starts from an initial state $(x_{10},x_{20})$ with $u_0$ as its input, it will move along the arrows as these represent the direction of the change in the states for the particular input.
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.7\linewidth]{phase_map}
+      \vspace{-0.5cm}
+      \caption{Phase portrait of voltage source}
+      \label{fig:nl-3}
+	\end{figure}
+	Consider a surface $\sigma (x) = c x_1 + x_2 = 0$ represented by a straight line in figure \ref{fig:nl-3}. If the dynamics are restricted to this this surface only, the states converge to the equilibrium point $(0,0)$ when $c > 0$. This is due to the fact that $x_2 = \dot{x_1}$ and the dynamics on the surface are $\dot{x1} = -c x_1$. As a result, the system moves towards equilibrium point when it is on this surface. This surface is called the sliding mode. In general, for a $n$ dimensional system the sliding surface is a $n-1$ dimensional hyperplane.
+	
+	Design of a sliding mode control involves determining a suitable input which will make the sliding mode reachable from any point in the state space. In other words, if system is started from any state and the control law is followed, the system should reach this sliding surface. Further, any deviations from this surface should result in such an input which will push the system towards the same sliding surface.
+	
+	From figure \ref{fig:nl-3}, it is evident that following the input $u=0$ whenever the state is above the sliding surface \cite{spiazzi1997sliding} i.e. $\sigma (x) > 0$ and $u=1$ when the state is below the sliding surface i.e. $\sigma (x) < 0$ makes the sliding surface reachable. This choice of inputs is not unique, the can be other functions which can achieve the same purpose. Thus, the sliding mode control law can be summarised as
+    \begin{align}
+    	\begin{split}
+	        u &= 1 \quad if \quad \sigma (x) < 0\\
+	        u &= 0 \quad if \quad \sigma (x) > 0
+	        \label{eq:nl-3}
+	    \end{split}
+    \end{align}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.6\linewidth]{vs-trajectory}
+      \vspace{-0.5cm}
+      \caption{Trajectory of voltage source}
+      \label{fig:nl-4}
+	\end{figure}
+    Figure \ref{fig:nl-4} shows the trajectory followed by the simulated two quadrant converter to achieve the reference of 40 V. The sliding surface used for this controller is represented by a straight line. Initially the system oscillates around this sliding surface while moving closer to the equilibrium point with each oscillation. The magnitude of oscillations also decreases gradually to a small fixed value. The oscillations don't die out completely because of the finite sampling and actuation time constraints of the practical systems.
+
+\subsection{Controller Implementation}
+    \begin{figure}[h]
+      \centering
+      \includegraphics[width=0.6\linewidth]{sliding-mode}
+      \caption{Implementation of sliding mode controller}
+      \label{fig:nl-5}
+	\end{figure}
+	Figure \ref{fig:nl-5} shows one implementation of the sliding mode controller. A subtractor is used to calculate the state $x_1$ which is then differentiated to obtain the state $x_2$. A summer is used to obtain the value of the sliding parameter $\sigma(x)$. However, most practical systems employ a PI controller over $\sigma(x)$.
+	
+	From the phase plane in figure \ref{fig:nl-3}, the gradient vectors for both the inputs are co-linear along the X-axis. However, the point where their magnitudes balance each other is not at the equilibrium point. The vector sum of both the gradients is zero at a point slightly to the left of equilibrium point. This can be confirmed from the trajectory in figure \ref{fig:nl-4} and the controller is found to be stabilised when $x_1=-5$ if integrator is not used. At this point, the trajectory ceases any movement along the X-axis, hence, the steady state error. The system continues oscillation along Y direction only as both the gradients are parallel to Y-axis and have equal magnitude.
+	
+	Introduction of PI action \cite{spiazzi1997sliding} on the sliding parameter causes its value to accumulate over time thus biasing the $cx_1$ term while $\dot{x_1}$ remains the same resulting in delayed corrective action. Finally, a comparator is used to compare the sliding parameter value and provide a suitable input to the switch. Constant switching frequency is not an issue with discrete controllers as this algorithm can be executed at a precise rate via timed interrupts and so ignored in this particular realisation. 
+    \begin{figure}[h]
+        \begin{subfigure}{.49\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{nl-response}
+            \caption{Voltage source response}
+            \label{fig:nl-6}
+        \end{subfigure}
+        \begin{subfigure}{.49\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{nl-cs-response}
+            \caption{Current source response}
+            \label{fig:nl-7}
+	    \end{subfigure}
+	    \caption{Step response of sliding mode controllers}
+	\end{figure}
+	Figure \ref{fig:nl-6} and figure \ref{fig:nl-7} show the simulated step response of voltage and current sources respectively operating via sliding mode controllers. The voltage source reference is 80 V and the current source reference is 10 A. The operation without the PI action on sliding surface is also shown to compare the performance with the proposed modification to the implementation.

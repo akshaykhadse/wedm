@@ -1,0 +1,91 @@
+%============================= appendix.tex ====================================
+\Chapter{Time Averaging Modelling Technique}
+\label{app:modelling}
+	The large signal representation of voltage source in figure \ref{fig:working-4} as derived in equation \eqref{eq:mod14}
+	\begin{align*}
+		\begin{split}
+			\dot{x} &= [dA_1+(1-d)A_2]x + [dB_1 + (1-d)B_2]V_d\\
+			V_o &= [dC_1+(1-d)C_2]x
+		\end{split}
+	\end{align*}
+
+	Introducing small perturbations in $x$, $V_o$ and $d$ as
+	\begin{equation}
+		\begin{split}
+			x &= X + \hat{x}\\
+			v_o &= V_o + \hat{v_o}\\
+			d &= D + \hat{d}
+		\end{split}
+		\label{eq:mod15}
+	\end{equation} 
+	Since the transfer function is to be determined between $\hat{v_o}$ and $\hat{d}$, perturbations in $v_d$ are assumed to be zero for simplicity, therefore
+	\begin{equation}
+		v_d = V_d
+		\label{eq:mod16}
+	\end{equation}
+	Using the fact that at steady state $\dot{X} = 0$ and the equations \eqref{eq:mod15} in equation \eqref{eq:mod14}
+	\begin{equation}
+		\dot{\hat{x}} = AX + BV_d + A\hat{x} + [(A_1-A_2)X+(B_1-B_2)V_d]\hat{d} + \text{terms with products of $\hat{x}$ and $\hat{d}$ (neglected)} 
+		\label{eq:mod17}
+	\end{equation}
+	where
+	\begin{align}
+		A &= A_1D+A_2(1-D)\\
+		B &= B_1D+B_2(1-D)
+		\label{eq:mod18}
+	\end{align}
+	At steady state, the perturbations in equation \eqref{eq:mod17} are zero, therefore
+	\begin{equation}
+		AX+BV_d=0
+		\label{eq:mod19}
+	\end{equation}
+	Hence, when perturbations are introduced in a converter operating under steady state
+	\begin{equation}
+		\dot{\hat{x}} = A\hat{x} + [(A_1-A_2)X+(B_1-B_2)V_d]\hat{d}
+		\label{eq:mod20}
+	\end{equation}
+
+	Similarly, for output voltage, using equations \eqref{eq:mod15} in equation \eqref{eq:mod14}
+	\begin{equation}
+		V_o + \hat{v}_o = CX + C\hat{x} + [(C_1-C_2)X]\hat{d}
+		\label{eq:mod21}
+	\end{equation}
+	where
+	\begin{equation}
+		C = C_1D+C_2(1-D)
+		\label{eq:mod22}
+	\end{equation}
+	At steady state
+	\begin{equation}
+		V_o = CX
+		\label{eq:mod23}
+	\end{equation}
+	Hence, when perturbations are introduced in a converter operating under steady state
+		\begin{equation}
+		\hat{v}_o = C\hat{x}+[(C_1-C_2)X]\hat{d}
+		\label{eq:mod24}
+	\end{equation}
+	Taking Laplace transform of equation \eqref{eq:mod20}
+	\begin{align}
+		s\hat{x}(s) &= Ax(s)+[(A_1-A_2)X+(B_1-B_2)V_d]\hat{d}(s)\\
+		\therefore \hat{x}(s) &= [sI-A]^{-1}[(A_1-A_2)X+(B_1-B_2)V_d]\hat{d}(s)
+		\label{eq:mod25}
+	\end{align}
+	where $I$ is a unity matrix
+	Taking Laplace transform of equation \eqref{eq:mod24}
+	\begin{equation}
+		\hat{v}_o(s) = C\hat{x}(s)+[(C_1-C_2)X]\hat{d}(s)
+		\label{eq:mod26}
+	\end{equation}
+	Substituting in $\hat{x}(s)$ from equation \eqref{eq:mod25}
+	\begin{equation}
+		\hat{v}_o(s) = \{C[sI-A]^{-1}[(A_1-A_2)X+(B_1-B_2)V_d]+(C_1-C_2)X\}\hat{d}(s)
+		\label{eq:mod27b}
+	\end{equation}
+	\begin{equation}
+		\therefore \dfrac{\hat{v}_o(s)}{\hat{d}(s)} = C[sI-A]^{-1}[(A_1-A_2)X+(B_1-B_2)V_d]+(C_1-C_2)X
+		\label{eq:mod27}
+	\end{equation}
+
+	This is the small signal transfer function of the output voltage of two quadrant converter with respect to the duty ratio of the switch $Q_2$
+%===============================================================================

@@ -1,0 +1,44 @@
+%\Chapter{Summary and Conclusions}
+\section{Conclusions}
+\label{conclusions}
+	A pulsed power supply was developed for Wire Electric Discharge Machining application based on the original topology proposed by \citet{tastekin2009novel}. The this topology deviates from the standard DC-DC converter topologies leading to reduction in the damping factor as observed in the frequency responses in \Figref{fig:uncomp-vs}. Moreover, due to these modifications standard ripple based sizing criteria is not adequate. Hence, the the appropriate values of L and C were inferred from the trajectories of the poles, which were verified via the hardware setup.
+
+	The ON state losses via the ignition switch dissipate power for about 70\% to 90\% of the time due to the low machining period requirement of the EDM process. These losses were reduced by lowering the current source reference during the dead time. The time averaging leads to only and approximate model of the converters. Hence, non linear model and sliding mode control was designed and simulated for individual current and voltage sources each.
+	
+	The Semikron IGBT modules and the passive components were assembled according to the topology mentioned in \Figref{fig:working-3}.  PI controllers were implemented on a TI F28069 DSP board. The IGBTs were driven by were interfaced to the DSP via a buffer circuit. The operation of complete converter was tested for DC link voltage of 20 to 50V at machining frequency of 1kHz.
+
+	The current and voltage sensors with required range and bandwidth were not readily available. Hence, these sensors were made using shunt resistance and potential dividers along with OP-AMP based conditioning circuits. The biases and slopes of the sensor response were experimentally found out for their calibration.
+	
+	The voltage source used in the hardware was found to be working satisfactory but its output capacitor was overrated for the experimental conditions. The current source output had three distinct regions: (a) constant 4 A current region, (b) constant 5 A current region, and (c) zero current region. The possible reasons for these discrepancies were identified which led to the conclusion that the current and voltage sources operate independently only for a sufficiently large current source inductor.
+ 
+\begin{comment}
+    The aim of this project is to facilitate investigations and thereby the development of contemporary process for Si-wafer manufacturing. Each of the previous chapters dealt with a specific sub-problem towards this larger goal. In this concluding chapter, the findings of the work accomplished till date are summarised and their contribution to the entire WEDM process is chalked out.
+    
+%\section{Design}
+\subsection{Design}
+    The design procedure for pulsed power supply for the WEDM process as discussed in \autoref{chap:psdesign} and \autoref{chap:hardware} is different form that of standard converters. Due importance was was given to the spark load application resulting in elimination of the capacitor form current source and the resistor from the voltage source. The sizing criteria presented was also found to be working as per the initial experimentation carried.
+    
+    This avenue will help in fabricating power supplies of semiconductor loads in WEDM processes. The design methodology followed tackles the issue of restricted discrete setting ranges based on a steel grade standard of conventional WEDM equipment.
+
+%\section{Modelling and Control}
+\subsection{Modelling and Control}
+    The \autoref{chap:modelling} and \autoref{chap:lincontrol} present the basic linear control techniques of PID control, compensator based control, and current mode control. The PID control was implemented on the hardware and used for the experimentation. The above techniques were also simulated and the results were in good agreement with the literature.
+    
+    This contributes a tried and tested method of PID control for the modified application of the converters for EDM application. Also, several alternatives are investigated which can serve the same purpose, the only constraint being the computation capability of the processor.
+
+%\section{Hardware}
+\subsection{Hardware}
+    The \autoref{chap:hardware} described the fabrication details of the hardware setup developed. Several issues in sensing circuits were addressed before proposing the final voltage and control circuits. These in situ sensors were tested before being used in the main converter. The power electronic circuit was a pre-assembled IGBT module arrangement with gate drivers. However, the auxiliary circuitry required to drive these switches was designed and tested specifically for the specific processor and drivers.
+    
+    This work outlines the general requirements and procedure for assembling a power supply unit. The design presented for high frequency current and voltage sensors is of peculiar importance to manufacturing processes as it indirectly helps pacing up the operation.
+
+%\section{Improvement}
+\subsection{Improvements}
+    The nonlinear control technique of sliding mode control is reviewed in \autoref{chap:nonlinear}. An implementation of this controller was simulated. The steady state error was also addressed in this regard. 
+    
+    Non linear control techniques overcome the problem of operation in a small neighbourhood of the equilibrium point which is inherent to the linear controllers. Thus, this method can improve the dynamic ranges of the individual current and the voltage sources. This will be of utility in investigation of other unconventional loads for the WEDM process.
+\end{comment}
+
+\section{Publications}
+The following paper is submitted based on the work done in this project.\\
+M. Kane, \textbf{A. Khadse}, H. Bahirat, S. Kulkarni, ``Design and Control of Pulsed Voltage Supply for Electric Discharge Machining,'' in \textit{IEEE International Conference on Power Electronics, Drives and Energy Systems}, 2018 (Submitted)

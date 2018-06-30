@@ -1,0 +1,41 @@
+\Chapter{Literature Review}
+\label{chap:litreview}
+	WEDM is a complex cutting process. The spark this process exhibits stochastic behaviour. There are many parameters like discharge frequency, discharge current, wire feed rate etc which affect the cutting performance of WEDM. Besides pulsed DC power supply, research avenues in other areas of WEDM are also explored. Following subsections give a brief account of the literature looked at in this regard.
+
+%	WEDM is an extensive process with a large number of parameters like pulse duration, discharge frequency, discharge current, wire feed rate, etc., which in turn affect the output product in terms of surface roughness, cutting rates and material removal rates (MRR), etc. While a lot of literature is available for steel and other metals ranging from effects of process parameters on cutting to improve the MRR, CR and surface finish, this chapter presents the relevant material available on process modelling, monitoring and control.
+
+\section{WEDM Control}
+\subsection{Process Modelling}
+	A influence of the work-piece material and pulse parameters is modelled by \citet{spur1993anode} in 1993. The spark-gap discharge has been studied and simulated by \citet{han2002high}. They have also developed an adaptive control system for maintaining near ideal machining parameters.
+
+\subsection{Fuzzy Control Systems}
+	Fuzzy control systems have been a popular choice in this application because of independence from the requirement of comprehensive mathematical models. \citet{kinoshita1976study} modelled the effects of various mechanical and electrical parameters in the WEDM. \cite{de1982has} analysed the spark ignition delay and developed a pulse classifier based on this. They also determined how various machining parameters are affected by this delay.
+
+\subsection{Wire Breakage Avoidance}
+	\citet{kinoshita1982control} correlated the frequency of the EDM pulses to the breakage of wire electrode. An observer has also been developed that controls the pulse generator and wire translation to avoid wire breakage. The increase in localised temperature due at certain points of wire has been found to cause its breakage. To prevent this, a monitoring and control system has been developed in \cite{kunieda1990line}.
+
+\subsection{Wire Lag and Wire Vibrations}
+	\citet{dauw1994high} used an optical sensor for on-line monitoring the wire position and a controller for high speed. It has also been proposed to increase the gap distance to prevent wire gauging and breakage on high curvature areas of the work-piece \cite{wang2003computer} and many contour planning systems for WEDM apply this today. The transient behaviour of the wire vibrations are described in \cite{mohri1998system} and some mathematical models have been developed.
+
+\subsection{Adaptive Control Systems}
+	Much of the work uses adaptive control systems in this field for maintenance scheduling, machining variable height workpieces and predicting the thermal overload. Workpieces with non-uniform thickness have been found to exhibit increased thermal density during machining \cite{kinoshita1982control}. An estimator has been designed to determine the workpiece height and regulate the machining frequency accordingly in \citet{rajurkar1997wedm}.
+	
+\section{Pulsed Power Supplies}
+	Very few research papers are available as far as WEDM power supplies are concerned. Most of the information is either proprietary or lies in patents. \citet{sen2003developments} have briefed about the WEDM power supplies developed till 2003. A few other authors have given newer topologies for WEDM power supplies.
+\subsection{Basic Relaxation Circuit Based Power Supplies}
+	A RC relaxation circuit with the spark gap connected across the spark gap can cause the breakdown of the dielectric medium. Spark gets initiated when the capacitor connected in parallel to the load is charged to the breakdown voltage of the gap. Due to this, the capacitor is discharged and starts charging again from the supply. The resistance is required to prevent the formation of a continuous arc in the gap. A slightly modified version of this circuit employs a freewheeling diode to restrict the reversal of the current flow direction.
+
+	In another power supply, a tube triode pulser or DC interrupter is used to generate high frequency pulses which are fed to the spark gap. These supplies have the advantage of low energy consumption and higher frequency operation over the RC relaxation power supplies.
+\subsection{Switching Circuit Power Supplies}
+	The operation of transistor as a switch is exploited to control the current from the DC supply to the spark gap. These supplies provide control over the spark current if multiple transistors are used in series and parallel configuration.
+
+	Thyristorised power supplies along with a RLCL oscillator circuit for charging and discharging of the capacitor across the spark gap are also possible. In this, a thyristor and a diode is used to control the duty of machining based on a low voltage pulsed generator. These type of supplies need forced commutation.
+\subsection{LCC Resonant Converter}
+	A LCC resonant converter tuned to its natural frequency is used along with a half wave rectifier to generate high ionisation voltages across the spark gap. An improved version of this power supply has inherent short circuit protection.\cite{sen2003developments}
+
+	\citet{casanueva2008new} have proposed a bipolar supply to minimise the corrosion due to the electrolysis effect of the unipolar supplies. This power supply uses a full bridge rectifier to control the current fed to a LC series parallel resonant circuit. Finally, a transformer in the output stage is used to generate high ionisation voltages across the gap.
+
+\subsection{Parallel Converters Based Power Supplies}
+	A EDM power supply based on a current controlled buck converter and a rectifier is proposed by \citet{looser2010novel}. The rectifier is used to generate the voltage required for the breakdown of the spark gap while the buck converter controls the amount of current through the spark gap. These power supplies can be used for dry EDM with large gap lengths.
+	
+	A similar power supply is developed by \citet{tastekin2009novel}. The ignition voltage is built up by means of a voltage controlled two quadrant DC-DC converter instead of a rectifier while the current is controlled by a buck converter. This allows for independent control of spark gap voltage and current. This topology has been further developed in this project.
