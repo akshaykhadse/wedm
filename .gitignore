@@ -90,4 +90,5 @@ report/converted/*
 *.toc
 *.aux
 *.lof
+*.lot
 
